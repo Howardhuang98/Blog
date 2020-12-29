@@ -13,8 +13,7 @@ class MyThread(threading.Thread):
     def run(self):
         print("%s正在运行中......" % self.name)
         print("运行时间为{}".format(time.ctime()))
-        time.sleep(2)
-        print("然后睡了10s,现在时间为{}".format(time.ctime()))
+        time.sleep(10)
 
         """Method representing the thread's activity.
 
@@ -28,3 +27,4 @@ class MyThread(threading.Thread):
 if __name__ == '__main__':
     for i in range(10):
         MyThread("第{}个线程".format(i)).start()
+    print(threading.active_count())
