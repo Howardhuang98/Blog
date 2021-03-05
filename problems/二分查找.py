@@ -17,6 +17,17 @@ def binary_search(a:list,target:int):
     else:        
         return index
 
+    
+def binary_search2(a,target):
+    mid = int(len(a)/2)
+    if a[mid]==target:
+        return mid
+    if a[mid]<target:
+        return binary_search2(a[mid:],target)
+    if a[mid]> target:
+        return binary_search2(a[:mid],target)
+
+
 if __name__ == "__main__":
-    index = binary_search(a=[1,2,4,234,588,6000],target = 234)
+    index = binary_search2(a=[1,2,4,234,588,600],target = 600)
     print(index)
