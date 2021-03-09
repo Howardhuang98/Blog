@@ -14,39 +14,45 @@ def find_inversion(a: list):
 """
 
 
-def merge(a: list, p: int, q: int, r: int):
+def merge(a: list, p: int, q: int, r: int, counter):
     """
     将p-q,q-r合并，这两段是有序的
     """
-    counter = 0
     i = 0
     j = 0
     L = a[p:q]
     R = a[q:r]
-    L.append(int('inf'))
-    R.append(int('inf'))
+    L.append(float('inf'))
+    R.append(float('inf'))
     for t in range(p, r):
         if L[i] > R[j]:
             a[t] = R[j]
             j += 1
-            counter += len(L)
+            counter += len(L) - 1 - i
         else:
             a[t] = L[i]
             i += 1
 
-    return counter
+    print(counter)
+    return a, counter
 
 
-def find_inversion2(a: list,p,r):
-    q = int(r/2)
-    if p+1<r:
-        find_inversion2(a,p,q)
-        find_inversion2(a,q,r)
-        counter = merge(a,p,q,r)
+def merge_sort(a: list, p, r):
+    counter = 0
+    result = []
+    if p + 1 < r:
+        q = (p + r) // 2
+        merge_sort(a, p, q)
+        merge_sort(a, q, r)
+        a, counter = merge(a, p, q, r, counter)
+        result.append(counter)
+
     return a
 
 
 if __name__ == '__main__':
-    result = find_inversion(a=[1, 5, 3, 2, 512, 3])
-    result = find_inversion2(a=[1, 5, 3, 2, 512, 3],p=0,r=6)
+    a = [1, 20, 10, 4, 5, 6]
+    result = merge_sort(a, p=0, r=6)
     print(result)
+    result2 = find_inversion(a=[1, 20, 10, 4, 5, 6])
+    print(result2)
