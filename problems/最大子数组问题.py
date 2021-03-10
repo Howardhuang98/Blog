@@ -1,3 +1,6 @@
+import time
+import random
+import matplotlib.pyplot as plt
 """
 暴力遍历
 """
@@ -71,7 +74,26 @@ def find_min_array(a: list, low, high):
 
 if __name__ == '__main__':
     a = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7,8]
-    b = [1,3,5,7]
+    b = [-1,-3,-5,-7]
     l, r, m = min_subarray(a)
-    left, left_index, right, right_index = find_min_array(a, 0, 16)
-    print(left, right)
+    left, left_index, right, right_index = find_min_array(b, 0, 4)
+    test = []
+    time1 = []
+    time2 = []
+    for i in range(10000):
+        test.append(random.randrange(0,100))
+        start = time.time()
+        left, left_index, right, right_index = find_min_array(test, 0, i+1)
+        end = time.time()
+        print("分治法：{}个数组，耗费{}秒".format(i, end - start))
+        time1.append(end-start)
+        start = time.time()
+        l, r, m = min_subarray(test)
+        end = time.time()
+        print("暴力遍历法：{}个数组，耗费{}秒".format(i, end - start))
+        time2.append(end - start)
+
+
+
+
+
