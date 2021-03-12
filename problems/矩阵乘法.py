@@ -1,3 +1,4 @@
+import numpy
 """
 输入变量为
 a = [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]
@@ -23,6 +24,11 @@ def matrix_multiply(a, b):
         c.append(row)
         row = []
     return c
+
+
+
+
+
 
 
 if __name__ == '__main__':
