@@ -1,4 +1,8 @@
 import heapq
+import time
+import random
+import pandas as pd
+
 
 class Sort():
     def __init__(self, a: list):
@@ -27,7 +31,7 @@ class Sort():
         R = []
         for i in self.list[p:q]:
             L.append(i)
-        for i in a[q:r]:
+        for i in self.list[q:r]:
             R.append(i)
         L.append(10000000)
         R.append(10000000)
@@ -102,18 +106,78 @@ class Sort():
         self.list = c
         return self.list
 
+    def counting_sort(self):
+        k = 20000
+        b = []
+        c = []
+        for i in range(k + 1):
+            c.append(0)
+        for j in range(len(self.list)):
+            c[self.list[j]] += 1
+            b.append(0)
+        for i in range(1, k + 1):
+            c[i] = c[i] + c[i - 1]
+        for j in range(len(self.list) - 1, -1, -1):
+            b[c[self.list[j]] - 1] = self.list[j]
+            c[self.list[j]] -= 1
+        self.list = b
+        return self.list
 
 
-
-
-
+def random_int_list(start, stop, length):
+    start, stop = (int(start), int(stop)) if start <= stop else (int(stop), int(start))
+    length = int(abs(length)) if length else 0
+    random_list = []
+    for i in range(length):
+        random_list.append(random.randint(start, stop))
+    return random_list
 
 
 if __name__ == '__main__':
-    a = [1, 6, 7, 3, 4, 24, 3,88,9]
-    s = Sort(a)
-    result = s.insert_sort()
-    result2 = s.merge_sort()
-    result3 = s.quick_sort()
-    result4 = s.heap_sort()
-    print(result4)
+    data = {}
+    data['time_of_insert'] = []
+    data['time_of_merge'] = []
+    data['time_of_quick'] = []
+    data['time_of_heap'] = []
+    data['time_of_counting'] = []
+    for i in range(10,2000,5): # 做10,20,30 ...长度的实验
+        test_list = random_int_list(0,1000,i)
+        #####
+        a = Sort(test_list)
+        start = time.time()
+        a.insert_sort()
+        end = time.time()
+        data['time_of_insert'].append(end-start)
+        #####
+        test_list = random_int_list(0, 1000, i)
+        b = Sort(test_list)
+        start = time.time()
+        b.merge_sort()
+        end = time.time()
+        data['time_of_merge'].append(end - start)
+        #####
+        test_list = random_int_list(0, 1000, i)
+        c = Sort(test_list)
+        start = time.time()
+        c.quick_sort()
+        end = time.time()
+        data['time_of_quick'].append(end - start)
+        #####
+        test_list = random_int_list(0, 1000, i)
+        d = Sort(test_list)
+        start = time.time()
+        d.heap_sort()
+        end = time.time()
+        data['time_of_heap'].append(end - start)
+        #####
+        test_list = random_int_list(0, 1000, i)
+        e = Sort(test_list)
+        start = time.time()
+        e.counting_sort()
+        end = time.time()
+        data['time_of_counting'].append(end - start)
+    df = pd.DataFrame(data=data)
+    df.to_csv("data.csv")
+
+
+
