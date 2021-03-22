@@ -16,6 +16,7 @@ def insert(a):
 
 
 if __name__ == '__main__':
-    a = [5, 4, 8, 9]
-    heapq._heapify_max(a)  # 最大堆化
-    print(dir(heapq))
+    a = [4,2,9,18,8]
+    heapq.heapify(a)  # 最大堆化
+    heapq.heappop(a)
+    print(a)

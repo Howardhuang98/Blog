@@ -38,7 +38,7 @@ class Heap:
 
         return self.list
 
-        return self.list
+
 
 
 def build_max_heap(a):
