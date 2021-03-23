@@ -65,7 +65,7 @@ class Sort():
 
         return self.list
 
-    def partition(self,p,r):
+    def partition(self, p, r):
         """
         分割 [p,r+1]
         :param p:
@@ -73,7 +73,7 @@ class Sort():
         :return:
         """
         x = self.list[r]
-        j = p-1  # 分割指针，处于分割位置
+        j = p - 1  # 分割指针，处于分割位置
         for i in range(p, r):
             if self.list[i] <= x:
                 j += 1
@@ -95,13 +95,13 @@ class Sort():
             q = self.partition(p, r)
             self.quick_sort(p, q - 1)
             self.quick_sort(q + 1, r)
-        return a
+        return self.list
 
     def heap_sort(self):
         size = len(self.list)
         heapq.heapify(self.list)
         c = []
-        for i in range(0,size):
+        for i in range(0, size):
             c.append(heapq.heappop(self.list))
         self.list = c
         return self.list
@@ -135,19 +135,20 @@ def random_int_list(start, stop, length):
 
 if __name__ == '__main__':
     data = {}
-    data['time_of_insert'] = []
+    #data['time_of_insert'] = []
     data['time_of_merge'] = []
     data['time_of_quick'] = []
     data['time_of_heap'] = []
     data['time_of_counting'] = []
-    for i in range(10,2000,5): # 做10,20,30 ...长度的实验
-        test_list = random_int_list(0,1000,i)
-        #####
+    for i in range(10, 100000, 1000):  # 做10,20,30 ...长度的实验
+        test_list = random_int_list(0, 1000, i)
+        """
         a = Sort(test_list)
         start = time.time()
         a.insert_sort()
         end = time.time()
-        data['time_of_insert'].append(end-start)
+        data['time_of_insert'].append(end - start)
+        """
         #####
         test_list = random_int_list(0, 1000, i)
         b = Sort(test_list)
@@ -178,6 +179,3 @@ if __name__ == '__main__':
         data['time_of_counting'].append(end - start)
     df = pd.DataFrame(data=data)
     df.to_csv("data.csv")
-
-
-
