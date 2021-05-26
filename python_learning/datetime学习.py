@@ -1,4 +1,3 @@
 import datetime
-
-a = datetime.datetime
-print(a.__doc__)
+a = datetime.datetime()
+print(datetime.__doc__)
