@@ -19,13 +19,13 @@ if __name__ == '__main__':
     # 窗口
     window = Tk()
     window.title("windows")
-    window.geometry("500x500")
+    window.geometry("2048x1152")
+    print(window.winfo_screenheight(),window.winfo_screenwidth())
     # 时间显示
     time_str = get_time()
     lbl = Label(window, text=time_str, font=("微软雅黑:", 50))
     lbl.grid(column=1, row=0)
     update_time(lbl)
     # 图片
-    tkinter.Image()
 
     window.mainloop()
