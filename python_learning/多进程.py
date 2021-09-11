@@ -3,7 +3,7 @@ import datetime
 import time
 
 
-def task(t: int):
+def task(msg:str,t: int):
     print("this task will run {} second".format(t))
     time.sleep(t)
     return "result"
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     start = time.time()
     with multiprocessing.Pool(processes=2) as pool:
         # map 函数 用于启动函数
-        res = pool.map(task, [1, 1, 1, 1, 1, 1])
+        res = pool.map(task, [['s',1]])
         print(res)
     end = time.time()
     print("{} seconds used".format(end-start))
