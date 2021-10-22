@@ -2,3 +2,4 @@
 *.pdf
 debug.log
 .idea
+*.pth
