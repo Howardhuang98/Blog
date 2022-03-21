@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记 - Huang Hao's Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u300aStructure Learning of Bayesian Networks by Genetic Algorithms\u300b\u9605\u8bfb\u7b14\u8bb0";
+    var mkdocs_page_input_path = "Paper Readings\\\u300aStructure Learning of Bayesian Networks by Genetic Algorithms\u300b\u9605\u8bfb\u7b14\u8bb0.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Huang Hao's Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Huang Hao' Blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Paper Readings</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/">《A Survey of Learning Causality with Data: Problems and Methods》阅读笔记</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#abstract">Abstract</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#genetic-algorithm">Genetic algorithm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assume-a-order-between-the-nodes">assume a order between the nodes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#with-ordering-between-the-nodes">With ordering between the nodes</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《attention is all your need》阅读笔记</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">算法基础</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/python%E7%9A%84%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/">python的语言特性</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《算法导论》阅读笔记</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">力扣题目总结</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Huang Hao's Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Paper Readings &raquo;</li>
+        
+      
+    
+    <li>《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="structure-learning-of-bayesian-networks-by-genetic-algorithms">《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</h1>
+<h2 id="abstract">Abstract</h2>
+<p>假设 an order between the nodes of the BN, 这个假设可以保证遗传算法生成的网络是一个合法的BN。此外，提出一个repair operator来讲非法结构转化为合法结构。</p>
+<h2 id="introduction">introduction</h2>
+<p>Joint probability: 
+$$
+P\left(x_{1}, \ldots, x_{n}\right)=\prod_{i=1}^{n} P\left(x_{i} \mid \pi_{i}\right)
+$$
+K2 algorithm: </p>
+<p><img alt="image-20220305230431058" src="../%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220305230431058.png" /></p>
+<p><img alt="image-20220305230512851" src="../%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220305230512851.png" /></p>
+<h2 id="genetic-algorithm">Genetic algorithm</h2>
+<p><img alt="image-20220305231035138" src="../%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220305231035138.png" /></p>
+<p>但是crossover之后，不能保证后代是一个合法的BN。</p>
+<h2 id="assume-a-order-between-the-nodes">assume a order between the nodes</h2>
+<p>假设一个一个order，可以使得n*n的矩阵缩小为一个三角矩阵。</p>
+<p>$n^2$ 变为$\left(\begin{array}{l}n \ 2\end{array}\right)$ </p>
+<p>设置最大parents数目q：设置一个局部优化器，在parents过多的时候，找到最佳的q个parents. </p>
+<h2 id="with-ordering-between-the-nodes">With ordering between the nodes</h2>
+<p>生成 $\lambda$ 个 gene</p>
+<p>计算每个 gene 的适应度</p>
+<p>在t时刻，第j个个体的排名为$I_t^j$</p>
+<p>第j个个体，选为父母的概率为$p_{j, t}=\frac{\operatorname{rank}\left(g\left(I_{t}^{j}\right)\right)}{\lambda(\lambda+1) / 2}$</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="btn btn-neutral float-right" title="《attention is all your need》阅读笔记">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/" class="btn btn-neutral" title="《A Survey of Learning Causality with Data: Problems and Methods》阅读笔记"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
