@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>《深入浅出强化学习：原理入门》 - Huang Hao's Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u300a\u6df1\u5165\u6d45\u51fa\u5f3a\u5316\u5b66\u4e60\uff1a\u539f\u7406\u5165\u95e8\u300b";
+    var mkdocs_page_input_path = "\u5185\u5bb9\\\u4e66\u7c4d\u9605\u8bfb\\\u300a\u6df1\u5165\u6d45\u51fa\u5f3a\u5316\u5b66\u4e60\uff1a\u539f\u7406\u5165\u95e8\u300b.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Huang Hao's Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Huang Hao' Blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">内容</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Paper阅读</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/Bayesian%20network%20structure%20learning%20%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">Bayesian network structure learning: 最短路径问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/EM%20algorithm%20%E6%9C%9F%E6%9C%9B%E6%9C%80%E5%A4%A7%E7%AE%97%E6%B3%95/">EM algorithm 期望最大算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/K2%E7%AE%97%E6%B3%95%E3%80%8AA%20Bayesian%20Method%20for%20the%20Induction%20of%20Probabilistic%20Networks%20from%20Data%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">K2算法《A Bayesian Method for the Induction of Probabilistic Networks from Data》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/Linear%20non-Gaussian%20Acyclic%20Model/">A Linear Non-Gaussian Acyclic Model for Causal Discovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/">《A Survey of Learning Causality with Data: Problems and Methods》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AAtomistic%20Line%20Graph%20Neural%20Network%20for%20improved%20materials%20property%20predictions%E3%80%8B%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Atomistic Line Graph Neural Network for improved materials property predictions》 阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ACAUSAL%20DISCOVERY%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《CAUSAL DISCOVERY WITH REINFORCEMENT LEARNING》 读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AExploiting%20Experts%E2%80%99%20Knowledge%20for%20Structure%20Learning%20of%20Bayesian%20Networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Exploiting Experts’ Knowledge for Structure Learning of Bayesian Networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AImproved%20K2%20algorithm%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Improved K2 algorithm for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ALearning%20to%20Optimize%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Learning to Optimize》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0/">《PC algorithm》学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AThe%20max-min%20hill-climbing%20Bayesian%20network%20structure%20learning%20algorithm%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《The max-min hill-climbing Bayesian network structure learning algorithm》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《attention is all your need》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Adetermining%20the%20direction%20of%20the%20local%20search%20in%20topological%20ordering%20space%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94/">《determining the direction of the local search in topological ordering space for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AdirectLiGAM%E3%80%8B%E7%BB%93%E6%9E%84%E6%96%B9%E7%A8%8B%E6%A8%A1%E5%9E%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《A Linear Non-Gaussian Acyclic Model for Causal Discovery》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Apointer%20networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《pointer networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%EF%BC%9A%E4%B8%89%E6%AC%A1%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC/">数值分析：三次样条插值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E9%A2%91%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%AD%A6VS%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E5%AD%A6/">频率统计学VS贝叶斯统计学</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/BIC%20%E8%AF%84%E5%88%86/">BIC 评分</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《PC algorithm》学习.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0.assets/%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/SPHINX%20%E4%BD%BF%E7%94%A8/">SPHINX 使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/argmax%EF%BC%8Cargsort%E7%9A%84%E4%BD%BF%E7%94%A8/">argmax，argsort的使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/conda%20%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">conda 虚拟环境</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/datatime%20%E6%A8%A1%E5%9D%97/">datetime 模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/django/">django</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/flask%20%E5%B0%8F%E5%9E%8B%E5%8D%9A%E5%AE%A2/">flask 小型博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/google%20%E6%96%87%E6%A1%A3%E6%A0%87%E5%87%86/">Google 文档标准</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/keras.backend.rnn%E5%AD%A6%E4%B9%A0/">keras.backend.rnn学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/lru_cache%20%E8%A3%85%E9%A5%B0%E5%99%A8/">lru_cache 装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/np.cov%20%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E7%9A%84%E8%AE%A1%E7%AE%97/">np.cov 协方差矩阵的计算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/">python logging 标准库</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%20%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">Python 类与对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/pytorch%20%E5%AD%A6%E4%B9%A0/">pytorch 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/super%28%29/">super()</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/tkinter%20%E5%AD%A6%E4%B9%A0/">tkinter 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/try%E7%9A%84%E7%94%A8%E6%B3%95/">try的用法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E3%80%8Acelery%E3%80%8B/">《celery》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">定义函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E6%A8%A1%E5%9D%97/">模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/">模块与包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E7%B1%BB/">类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E9%97%AD%E5%8C%85/">闭包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Session 与 cookie.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../python/session%20%E4%B8%8E%20cookie.assets/session%20%E4%B8%8E%20cookie/">session 与 cookie</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">书籍阅读</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/">凸优化学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/">《操作系统》</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">《深入浅出强化学习：原理入门》</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">强化学习的基本概念</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">策略</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">状态价值函数</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">状态行为价值函数</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">最优状态价值函数</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">最优状态行为价值函数：</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">小结</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bootstraping">bootstraping 算法</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">值函数迭代算法：</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/">深度学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《算法导论》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《计算机网络》读书笔记</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">其他</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/JavaScript/">JavaScript</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/Jekyll%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Jekyll 搭建博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/Nginx/">Nginx教程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">R语言学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/bootstrap%E5%AD%A6%E4%B9%A0/">bootstrap学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/docker/">docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">git 版本控制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/git/">git</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/htmlCSS/">html学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/">HTTP协议的学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/mysql%20%E5%AE%89%E8%A3%85/">mysql 安装</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/yum/">yum</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E3%80%8Adocker%E3%80%8B/">《docker》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E4%BD%BF%E7%94%A8markdown%E5%88%B6%E4%BD%9Cppt/">slide 1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">力扣题目总结</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/">参数的传递</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E7%9A%84io/">文件的io</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/">线程与进程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E5%88%9D%E8%AF%86/">网络协议——初识</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%84%E6%88%90/">网页的组成</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%8D%89%E7%A8%BF%E6%9C%AC/">Draft</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Huang Hao's Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>内容 &raquo;</li>
+        
+      
+        
+          <li>书籍阅读 &raquo;</li>
+        
+      
+    
+    <li>《深入浅出强化学习：原理入门》</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">《深入浅出强化学习：原理入门》</h1>
+<p><img alt="image-20211125103454186" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125103454186.png" /></p>
+<p><strong>马尔科夫决策过程</strong></p>
+<p><strong>马尔科夫性</strong>：指的是系统的下一个状态$s_{t+1}$仅与当前状态$s_{t}$有关，而与以前的状态无关。
+$$
+p(s_{t+1}|s_t)=p(s_{t+1}|s_1,...,s_t)
+$$
+<strong>马尔科夫过程</strong>：马尔科夫过程用二元组表示，(S,P)，其中S是有限状态集合，P是状态转移矩阵。</p>
+<p><strong>马尔科夫决策决策过程</strong>：</p>
+<p>$(S,A,P,R,\lambda)$ </p>
+<p>(状态集，动作集，状态转移矩阵，回报函数，折扣因子)</p>
+<p>马尔科夫决策过程的状态转移矩阵是包含动作的</p>
+<p><img alt="image-20211125104158931" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125104158931.png" /></p>
+<h2 id="_2">强化学习的基本概念</h2>
+<p>给定一个马尔科夫决策过程，寻找最优策略。</p>
+<h3 id="_3">策略</h3>
+<p><strong>策略</strong>是状态到动作的映射，常用$\pi$表示。它指的是给定状态s时，动作集上的一个分布，即：
+$$
+\pi(a|s)=p(A_t=a|S_t=s)
+$$
+强化学习一般采用随机策略，原因是随机策略可以将探索耦合到采样过程中。</p>
+<p>当给定策略$\pi$的时候，状态序列可能为：
+$$
+\begin{aligned}
+&amp;s_{1} \rightarrow s_{2} \rightarrow s_{3} \rightarrow s_{4} \rightarrow s_{5} \
+&amp;s_{1} \rightarrow s_{2} \rightarrow s_{3} \rightarrow s_{5} \
+&amp;\vdots
+\end{aligned}
+$$
+因为策略与状态转移都具有随机性！所以累积回报：
+$$
+G_{t}=R_{t+1}+\gamma R_{t+2}+\cdots=\sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1}
+$$
+是随机的，为了评价状态$s_1$，需要找到一个确定的值，所以用累积回报的期望来表示。</p>
+<h3 id="_4">状态价值函数</h3>
+<p>给定策略$\pi$，累积回报服从一个概率分布，累计汇报在s处的期望值定义为：
+$$
+v_{\pi}(s)=\mathrm{E}<em>{\pi}\left[\sum</em>{k=0}^{\infty} \gamma^{k} R_{t+k+1} \mid S_{t}=s\right]
+$$
+这就是状态价值函数。</p>
+<h3 id="_5">状态行为价值函数</h3>
+<p>$$
+q_{\pi}(s, a)=E_{\pi}\left[\sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1} \mid S_{t}=s, A_{t}=a\right]
+$$</p>
+<p>状态行为价值函数，它描述的是在给定状态，给定策略，该动作的价值。</p>
+<p><img alt="image-20211125110810690" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125110810690.png" /></p>
+<h4 id="_6">贝尔曼方程</h4>
+<p>$$
+\begin{aligned}
+&amp;v(s)=E\left[G_{t} \mid S_{t}=s\right] \
+&amp;=E\left[R_{t+1}+\gamma R_{t+2}+\cdots \mid S_{t}=s\right] \
+&amp;=E\left[R_{t+1}+\gamma\left(R_{t+2}+\gamma R_{t+3}+\cdots\right) \mid S_{t}=s\right] \
+&amp;=E\left[R_{t+1}+\gamma G_{t+1} \mid S_{t}=s\right] \
+&amp;=E\left[R_{t+1}+\gamma v\left(S_{t+1}\right) \mid S_{t}=s\right]
+\end{aligned}
+$$</p>
+<h2 id="_7">最优状态价值函数</h2>
+<p>最优状态价值函数为所有策略中，值最大的值函数：
+$$
+v^{*}(s)=\max <em>{\pi} v</em>{\pi}(s)
+$$</p>
+<h2 id="_8">最优状态行为价值函数：</h2>
+<p>$$
+q^{*}(s, a)=\max <em>{\pi} q</em>{\pi}(s, a)
+$$</p>
+<h2 id="_9">小结</h2>
+<p><img alt="image-20211125111715517" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125111715517.png" /></p>
+<h2 id="bootstraping">bootstraping 算法</h2>
+<p><img alt="image-20211208132423678" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208132423678.png" /></p>
+<p>状态价值函数可以改写为以下形式：
+$$
+v_{\pi}(s)=\sum_{a \in A} \pi(a \mid s)\left(R_{s}^{a}+\gamma \sum_{s^{\prime} \in S} P_{s s^{\prime}}^{a}v_{\pi}\left(s^{\prime}\right)\right)
+$$
+可以看到，价值函数是未知的，这该如何解呢？</p>
+<p>这个式子里已知，$R_{s}^{a}, \pi, P^{a}<em>{ss'}$ ，未知 $v</em>\pi$ </p>
+<p><img alt="image-20211208133559771" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208133559771.png" /></p>
+<p>这是一种迭代算法，不断地更新$v()$。</p>
+<p>通过这个策略评估算法，可以得到某个动作函数的值函数。</p>
+<p>在通过这个值函数来改善策略：</p>
+<p>如果采用贪婪得方式，那么：</p>
+<p><img alt="image-20211208135311953" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208135311953.png" /></p>
+<p><img alt="image-20211208135331588" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208135331588.png" /></p>
+<p>如果只评估一次后就对策略进行改善，则称为值函数迭代算法：</p>
+<p><img alt="image-20211208140001710" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208140001710.png" /></p>
+<h3 id="_10">值函数迭代算法：</h3>
+<p>值函数评估过程中，包括两个迭代循环：</p>
+<ul>
+<li>外层是为了保证值函数的准确性</li>
+<li>内层是是对所有状态空间的扫描</li>
+</ul>
+<p>这里反映出了dp算法与无模型的强化学习的本质区别：状态转移矩阵P！</p>
+<p>dp已知模型，所以可以确切地知道每一步执行后的状态，这个性质使得智能体不需要采取任何行动就能对未来进行评估。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/" class="btn btn-neutral float-right" title="深度学习">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="btn btn-neutral" title="《操作系统》"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

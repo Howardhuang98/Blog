@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记 - Huang Hao's Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u300aNEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING\u300b\u8bfb\u4e66\u7b14\u8bb0";
+    var mkdocs_page_input_path = "\u5185\u5bb9\\paper\u9605\u8bfb\\\u300aNEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING\u300b\u9605\u8bfb\u7b14\u8bb0.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Huang Hao's Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Huang Hao' Blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">内容</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Paper阅读</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Bayesian%20network%20structure%20learning%20%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">Bayesian network structure learning: 最短路径问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../EM%20algorithm%20%E6%9C%9F%E6%9C%9B%E6%9C%80%E5%A4%A7%E7%AE%97%E6%B3%95/">EM algorithm 期望最大算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../K2%E7%AE%97%E6%B3%95%E3%80%8AA%20Bayesian%20Method%20for%20the%20Induction%20of%20Probabilistic%20Networks%20from%20Data%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">K2算法《A Bayesian Method for the Induction of Probabilistic Networks from Data》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Linear%20non-Gaussian%20Acyclic%20Model/">A Linear Non-Gaussian Acyclic Model for Causal Discovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/">《A Survey of Learning Causality with Data: Problems and Methods》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8AAtomistic%20Line%20Graph%20Neural%20Network%20for%20improved%20materials%20property%20predictions%E3%80%8B%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Atomistic Line Graph Neural Network for improved materials property predictions》 阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8ACAUSAL%20DISCOVERY%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《CAUSAL DISCOVERY WITH REINFORCEMENT LEARNING》 读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8AExploiting%20Experts%E2%80%99%20Knowledge%20for%20Structure%20Learning%20of%20Bayesian%20Networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Exploiting Experts’ Knowledge for Structure Learning of Bayesian Networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8AImproved%20K2%20algorithm%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Improved K2 algorithm for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8ALearning%20to%20Optimize%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Learning to Optimize》阅读笔记</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_1">视频解读</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#abstract">abstract</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#intro">intro</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#previous-work">previous work</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#neural-network-architecture-for-tsp">neural network architecture for TSP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pointer-network">pointer network 结构细节</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#policy-gradient">使用policy gradient进行优化</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0/">《PC algorithm》学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8AThe%20max-min%20hill-climbing%20Bayesian%20network%20structure%20learning%20algorithm%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《The max-min hill-climbing Bayesian network structure learning algorithm》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《attention is all your need》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8Adetermining%20the%20direction%20of%20the%20local%20search%20in%20topological%20ordering%20space%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94/">《determining the direction of the local search in topological ordering space for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8AdirectLiGAM%E3%80%8B%E7%BB%93%E6%9E%84%E6%96%B9%E7%A8%8B%E6%A8%A1%E5%9E%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《A Linear Non-Gaussian Acyclic Model for Causal Discovery》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8Apointer%20networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《pointer networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%EF%BC%9A%E4%B8%89%E6%AC%A1%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC/">数值分析：三次样条插值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E9%A2%91%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%AD%A6VS%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E5%AD%A6/">频率统计学VS贝叶斯统计学</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/BIC%20%E8%AF%84%E5%88%86/">BIC 评分</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《PC algorithm》学习.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0.assets/%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/SPHINX%20%E4%BD%BF%E7%94%A8/">SPHINX 使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/argmax%EF%BC%8Cargsort%E7%9A%84%E4%BD%BF%E7%94%A8/">argmax，argsort的使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/conda%20%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">conda 虚拟环境</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/datatime%20%E6%A8%A1%E5%9D%97/">datetime 模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/django/">django</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/flask%20%E5%B0%8F%E5%9E%8B%E5%8D%9A%E5%AE%A2/">flask 小型博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/google%20%E6%96%87%E6%A1%A3%E6%A0%87%E5%87%86/">Google 文档标准</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/keras.backend.rnn%E5%AD%A6%E4%B9%A0/">keras.backend.rnn学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/lru_cache%20%E8%A3%85%E9%A5%B0%E5%99%A8/">lru_cache 装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/np.cov%20%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E7%9A%84%E8%AE%A1%E7%AE%97/">np.cov 协方差矩阵的计算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/">python logging 标准库</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%20%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">Python 类与对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/pytorch%20%E5%AD%A6%E4%B9%A0/">pytorch 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/super%28%29/">super()</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/tkinter%20%E5%AD%A6%E4%B9%A0/">tkinter 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/try%E7%9A%84%E7%94%A8%E6%B3%95/">try的用法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E3%80%8Acelery%E3%80%8B/">《celery》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">定义函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E6%A8%A1%E5%9D%97/">模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/">模块与包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E7%B1%BB/">类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E9%97%AD%E5%8C%85/">闭包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Session 与 cookie.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../python/session%20%E4%B8%8E%20cookie.assets/session%20%E4%B8%8E%20cookie/">session 与 cookie</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">书籍阅读</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/">凸优化学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/">《操作系统》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B/">《深入浅出强化学习：原理入门》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/">深度学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《算法导论》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《计算机网络》读书笔记</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">其他</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/JavaScript/">JavaScript</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/Jekyll%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Jekyll 搭建博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/Nginx/">Nginx教程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">R语言学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/bootstrap%E5%AD%A6%E4%B9%A0/">bootstrap学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/docker/">docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">git 版本控制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/git/">git</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/htmlCSS/">html学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/">HTTP协议的学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/mysql%20%E5%AE%89%E8%A3%85/">mysql 安装</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/yum/">yum</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E3%80%8Adocker%E3%80%8B/">《docker》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E4%BD%BF%E7%94%A8markdown%E5%88%B6%E4%BD%9Cppt/">slide 1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">力扣题目总结</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/">参数的传递</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E7%9A%84io/">文件的io</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/">线程与进程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E5%88%9D%E8%AF%86/">网络协议——初识</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%84%E6%88%90/">网页的组成</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%8D%89%E7%A8%BF%E6%9C%AC/">Draft</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Huang Hao's Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>内容 &raquo;</li>
+        
+      
+        
+          <li>Paper阅读 &raquo;</li>
+        
+      
+    
+    <li>《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="neural-combinatorial-optimization-with-reinforcement-learning">《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记</h1>
+<p><img src="《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》阅读笔记.assets/image-20211022203023593.png" alt="image-20211022203023593" style="zoom: 80%;" /></p>
+<p><img src="《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》阅读笔记.assets/image-20211028103136492.png" alt="image-20211028103136492" style="zoom: 80%;" /></p>
+<p>谷歌大脑出品。</p>
+<p>https://www.bilibili.com/video/av66411702/</p>
+<p>https://www.bilibili.com/video/BV1FV41177dR?from=search&amp;seid=437844097357445861&amp;spm_id_from=333.337.0.0</p>
+<h2 id="_1">视频解读</h2>
+<p>combinatorial optimization  </p>
+<p><img alt="image-20211022203636004" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211022203636004.png" /></p>
+<p><img alt="image-20211022203650624" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211022203650624.png" /></p>
+<p>神经网络：输入problem，输出solution。</p>
+<p><img alt="image-20211022203921816" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211022203921816.png" /></p>
+<p><img alt="image-20211022204023768" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211022204023768.png" /></p>
+<p>Euclidean space 欧几里得空间。</p>
+<p><img alt="image-20211022204257631" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211022204257631.png" /></p>
+<h2 id="abstract">abstract</h2>
+<p>本文提出了一个框架用于解决组合优化问题，使用NN和RL。</p>
+<p>本文专注于TSP问题，训练了一个RNN，给定城市的坐标，预测每个city permutations 的概率。</p>
+<p>用negative tour length 为奖励，使用policy gradient method优化参数</p>
+<h2 id="intro">intro</h2>
+<p>组合优化是计算机领域的基础问题，经典案例：TSP。</p>
+<p><img alt="image-20211025105900210" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211025105900210.png" /></p>
+<blockquote>
+<p>The <strong>travelling salesman problem</strong> (also called the <strong>traveling salesperson problem</strong>[<a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#cite_note-1">1]</a> or <strong>TSP</strong>) asks the following question: "Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?" It is an <a href="https://en.wikipedia.org/wiki/NP-hardness">NP-hard</a> problem in <a href="https://en.wikipedia.org/wiki/Combinatorial_optimization">combinatorial optimization</a>, important in <a href="https://en.wikipedia.org/wiki/Theoretical_computer_science">theoretical computer science</a> and <a href="https://en.wikipedia.org/wiki/Operations_research">operations research</a>.</p>
+</blockquote>
+<p>寻找最优的TSP路径是NP难，即使在2d空间内。</p>
+<p>我们使用RL来解决组合优化问题，作为对比，我们使用已知最优解的监督学习方法与本方法进行对比。</p>
+<p>基于policy gradient，提出两种方法：</p>
+<ol>
+<li>RL pretrain，使用一个训练集训练RNN that parameterizes a stochastic policy ，使用 expected reward作为目标。测试期间，policy的参数固定，并且执行推断，通过贪婪的解码或采样。</li>
+<li>active search，没有pretrain。首先给一个随机的policy。在一个测试案例上反复迭代，以更新这个RNN参数（也就是policy），使用期望奖励，同时跟踪当前搜索过程的最优解。（感觉没说清楚）</li>
+</ol>
+<blockquote>
+<p>原文：It starts from a randompolicy and iteratively optimizes the RNN parameters on a single test instance, again using the expected reward objective, while keeping track of the best solution sampled during the search. We find that combining RL pretraining and active search works best in practice.</p>
+</blockquote>
+<h2 id="previous-work">previous work</h2>
+<p>TODO</p>
+<h2 id="neural-network-architecture-for-tsp">neural network architecture for TSP</h2>
+<p>问题建模：</p>
+<p>$n$ 个城市</p>
+<p>地点坐标：${x_i}^n_{i=1}$</p>
+<p>$x_i \in R^2$ 坐标是2维的</p>
+<p>对于$x_i$的一个排序，记录为 $\pi$，也就是一个解。</p>
+<p>那么，旅途长度写为：
+$$
+L(\pi \mid s)=\left|\mathbf{x}<em>{\pi(n)}-\mathbf{x}</em>{\pi(1)}\right|<em>{2}+\sum</em>{\pi(i)}^{n-1}\left|\mathbf{x}<em>{\pi(i+1)}\right|</em>{2}
+$$
+policy function 写为：
+$$
+p(\pi \mid s)\
+p(\pi \mid s)=\prod_{i=1}^{n} p(\pi(i) \mid \pi(&lt;i), s)
+$$
+这个函数的输入是一个sequence，输出也是个sequence。</p>
+<p>但是，这有两个问题：</p>
+<ol>
+<li>训练完了以后，限制了输入n</li>
+<li>sequence2sequence模型需要ground truth来优化参数。</li>
+</ol>
+<p>本文就要解决这两个issue。</p>
+<h3 id="pointer-network">pointer network 结构细节</h3>
+<p>pointer network 包含了两个RNN，一个为encoder，另一个为decoder。并且都包含了LSTM。</p>
+<p><img alt="image-20211027102653037" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211027102653037.png" /></p>
+<p>前半部分用RNN（LSTM）结构，得到一个上下文向量 $<g>$</p>
+<p>后半部分使用pointer network来解码，得到一个排序，这个输出的长度由输入的长度决定。</p>
+<blockquote>
+<p>https://github.com/keon/pointer-networks</p>
+</blockquote>
+<p><img alt="image-20211027104353410" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211027104353410.png" /></p>
+<h2 id="policy-gradient">使用policy gradient进行优化</h2>
+<p>2015年Vinyals等人使用的是监督学习进行训练pointer network，这个情况在解决TSP问题时，并不适用：</p>
+<ol>
+<li>模型的质量很大程度取决于label。</li>
+<li>很难得到高质量的label，并且infeasible for new problem statements。</li>
+<li>TSP更注重competitive的结果，而并不是能够拟合重现其他算法的结果。</li>
+</ol>
+<p>使用强化学习来优化指针函数的参数（实际上就是训练policy function）</p>
+<p>记 pinter network的参数为$\theta$, 输入坐标的序列为 $s$ , 目标函数写为（将其最小化）：
+$$
+J(\boldsymbol{\theta} \mid s)=\mathbb{E}<em>{\pi \sim p</em>{\theta}(. \mid s)} L(\pi \mid s)
+$$
+specify： $\pi \sim p_{\theta}(. \mid s)$ 即使用pointer network 计算出的 solution的概率分布；$L(\pi \mid s)$ 给定s，该动作的loss或cost，全部相乘求和则得到期望。</p>
+<p>目标函数给定后，需要目标函数对参数求导，以得到梯度下降的方向：
+$$
+\nabla_{\theta} J(\theta \mid s)=\mathbb{E}<em>{\pi \sim p</em>{\theta}(. \mid s)}\left[(L(\pi \mid s)-b(s)) \nabla_{\theta} \log p_{\theta}(\pi \mid s)\right]
+$$
+其中$b(s)$是一个函数，给定$s$时，估计L，他是一个不准确的估计。</p>
+<blockquote>
+<p>根据大数定律，样本均值<a href="https://zh.wikipedia.org/wiki/依概率收敛">依概率收敛</a>于期望值。</p>
+</blockquote>
+<p>所以可以使用蒙特卡洛采样计算这个梯度：</p>
+<p>采样：
+$$
+s_{1}, s_{2}, \ldots, s_{B} \sim \mathcal{S}\
+\pi_{i} \sim p_{\theta}\left(. \mid s_{i}\right)
+$$
+近似计算：
+$$
+\nabla_{\theta} J(\theta) \approx \frac{1}{B} \sum_{i=1}^{B}\left(L\left(\pi_{i} \mid s_{i}\right)-b\left(s_{i}\right)\right) \nabla_{\theta} \log p_{\theta}\left(\pi_{i} \mid s_{i}\right)
+$$
+对于$b(s)$函数的选择，一般是最近一段时间内获得reward的滑动平均值。但是也可以使用带参数的$b(s)$函数，可以提高performance。本文使用一个auxiliary network，称为critic，参数记录为$\theta_v$</p>
+<p>这个critic的作用：</p>
+<p>对于当前的$p_{\theta}$ 以及 $s$，估计一个 期望的 路径长度。</p>
+<p>所以critic的损失函数写为：
+$$
+\mathcal{L}\left(\theta_{v}\right)=\frac{1}{B} \sum_{i=1}^{B}\left|b_{\theta_{v}}\left(s_{i}\right)-L\left(\pi_{i} \mid s_{i}\right)\right|_{2}^{2}
+$$
+综上，actor-critic training 算法：</p>
+<p><img alt="image-20211027112152883" src="../%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20211027112152883.png" /></p>
+<p>为了方便理解，把B看成1，所以算法步骤为：</p>
+<ol>
+<li>t = 1</li>
+<li>采样抽取一个s</li>
+<li>根据pointer network(actor), 得到一个 $\pi$ 答案</li>
+<li>根据critic，得到一个 $b$ 预估路径长度</li>
+<li>求pointer network(actor)的梯度，</li>
+<li>求critic的梯度</li>
+<li>更新pointer network(actor)的参数</li>
+<li>更新critic的参数</li>
+<li>下一次迭代</li>
+</ol>
+<p>obviously，刚开始actor和critic都是不准确的，但是在第7步中，第一次更新了critic的参数，这一次更新使得critic准确了一些，然后再用它来指导actor的更新。</p>
+<p>抽象理解，一个体操运动员和一个教练，两人都是一无所知。</p>
+<ol>
+<li>运动员表演</li>
+<li>教练打分</li>
+<li>运动员根据教练打分，修改动作</li>
+<li>教练根据ground truth，修改打分策略</li>
+<li>继续重复，最终得到了一个优秀运动员以及优秀的裁判</li>
+</ol>
+<blockquote>
+<p>ps: </p>
+<ol>
+<li>既然ground truth 如此好获得，何必还要找个裁判呢？直接体操运动员自己看ground truth修改动作不就好了。</li>
+<li>critic机制适用于ground truth难以获得的时候，例如5次表演只能获得一次ground truth。或者说critic机制为了避免每次都去花费算力计算ground truth，而采取的一种加速策略</li>
+</ol>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="btn btn-neutral float-right" title="《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../%E3%80%8ALearning%20to%20Optimize%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="btn btn-neutral" title="《Learning to Optimize》阅读笔记"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E3%80%8ALearning%20to%20Optimize%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

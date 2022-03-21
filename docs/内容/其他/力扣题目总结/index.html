@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>力扣题目总结 - Huang Hao's Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u529b\u6263\u9898\u76ee\u603b\u7ed3";
+    var mkdocs_page_input_path = "\u5185\u5bb9\\\u5176\u4ed6\\\u529b\u6263\u9898\u76ee\u603b\u7ed3.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Huang Hao's Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Huang Hao' Blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">内容</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Paper阅读</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/Bayesian%20network%20structure%20learning%20%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">Bayesian network structure learning: 最短路径问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/EM%20algorithm%20%E6%9C%9F%E6%9C%9B%E6%9C%80%E5%A4%A7%E7%AE%97%E6%B3%95/">EM algorithm 期望最大算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/K2%E7%AE%97%E6%B3%95%E3%80%8AA%20Bayesian%20Method%20for%20the%20Induction%20of%20Probabilistic%20Networks%20from%20Data%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">K2算法《A Bayesian Method for the Induction of Probabilistic Networks from Data》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/Linear%20non-Gaussian%20Acyclic%20Model/">A Linear Non-Gaussian Acyclic Model for Causal Discovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/">《A Survey of Learning Causality with Data: Problems and Methods》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AAtomistic%20Line%20Graph%20Neural%20Network%20for%20improved%20materials%20property%20predictions%E3%80%8B%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Atomistic Line Graph Neural Network for improved materials property predictions》 阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ACAUSAL%20DISCOVERY%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《CAUSAL DISCOVERY WITH REINFORCEMENT LEARNING》 读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AExploiting%20Experts%E2%80%99%20Knowledge%20for%20Structure%20Learning%20of%20Bayesian%20Networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Exploiting Experts’ Knowledge for Structure Learning of Bayesian Networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AImproved%20K2%20algorithm%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Improved K2 algorithm for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ALearning%20to%20Optimize%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Learning to Optimize》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0/">《PC algorithm》学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AThe%20max-min%20hill-climbing%20Bayesian%20network%20structure%20learning%20algorithm%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《The max-min hill-climbing Bayesian network structure learning algorithm》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《attention is all your need》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Adetermining%20the%20direction%20of%20the%20local%20search%20in%20topological%20ordering%20space%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94/">《determining the direction of the local search in topological ordering space for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AdirectLiGAM%E3%80%8B%E7%BB%93%E6%9E%84%E6%96%B9%E7%A8%8B%E6%A8%A1%E5%9E%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《A Linear Non-Gaussian Acyclic Model for Causal Discovery》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Apointer%20networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《pointer networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%EF%BC%9A%E4%B8%89%E6%AC%A1%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC/">数值分析：三次样条插值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E9%A2%91%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%AD%A6VS%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E5%AD%A6/">频率统计学VS贝叶斯统计学</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/BIC%20%E8%AF%84%E5%88%86/">BIC 评分</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《PC algorithm》学习.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0.assets/%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/SPHINX%20%E4%BD%BF%E7%94%A8/">SPHINX 使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/argmax%EF%BC%8Cargsort%E7%9A%84%E4%BD%BF%E7%94%A8/">argmax，argsort的使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/conda%20%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">conda 虚拟环境</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/datatime%20%E6%A8%A1%E5%9D%97/">datetime 模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/django/">django</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/flask%20%E5%B0%8F%E5%9E%8B%E5%8D%9A%E5%AE%A2/">flask 小型博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/google%20%E6%96%87%E6%A1%A3%E6%A0%87%E5%87%86/">Google 文档标准</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/keras.backend.rnn%E5%AD%A6%E4%B9%A0/">keras.backend.rnn学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/lru_cache%20%E8%A3%85%E9%A5%B0%E5%99%A8/">lru_cache 装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/np.cov%20%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E7%9A%84%E8%AE%A1%E7%AE%97/">np.cov 协方差矩阵的计算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/">python logging 标准库</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%20%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">Python 类与对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/pytorch%20%E5%AD%A6%E4%B9%A0/">pytorch 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/super%28%29/">super()</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/tkinter%20%E5%AD%A6%E4%B9%A0/">tkinter 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/try%E7%9A%84%E7%94%A8%E6%B3%95/">try的用法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E3%80%8Acelery%E3%80%8B/">《celery》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">定义函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E6%A8%A1%E5%9D%97/">模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/">模块与包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E7%B1%BB/">类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/%E9%97%AD%E5%8C%85/">闭包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Session 与 cookie.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../python/session%20%E4%B8%8E%20cookie.assets/session%20%E4%B8%8E%20cookie/">session 与 cookie</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">书籍阅读</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/">凸优化学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/">《操作系统》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B/">《深入浅出强化学习：原理入门》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/">深度学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《算法导论》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《计算机网络》读书笔记</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">其他</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../JavaScript/">JavaScript</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Jekyll%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Jekyll 搭建博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Nginx/">Nginx教程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">R语言学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../bootstrap%E5%AD%A6%E4%B9%A0/">bootstrap学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../docker/">docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">git 版本控制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../git/">git</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../htmlCSS/">html学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/">HTTP协议的学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mysql%20%E5%AE%89%E8%A3%85/">mysql 安装</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../yum/">yum</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8Adocker%E3%80%8B/">《docker》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E4%BD%BF%E7%94%A8markdown%E5%88%B6%E4%BD%9Cppt/">slide 1</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">力扣题目总结</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/">参数的传递</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%96%87%E4%BB%B6%E7%9A%84io/">文件的io</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/">线程与进程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E5%88%9D%E8%AF%86/">网络协议——初识</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%84%E6%88%90/">网页的组成</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E8%8D%89%E7%A8%BF%E6%9C%AC/">Draft</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Huang Hao's Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>内容 &raquo;</li>
+        
+      
+        
+          <li>其他 &raquo;</li>
+        
+      
+    
+    <li>力扣题目总结</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">力扣题目总结</h1>
+<h1 id="_2">力扣刷题技巧</h1>
+<h2 id="_3">数组</h2>
+<p>数组是存放在连续内存空间上的相同类型数据的集合。</p>
+<h3 id="_4">二分查找</h3>
+<p>二分查找一定是<strong>有序数</strong>，复杂度为 O(logn)</p>
+<h3 id="_5">移除元素</h3>
+<p>原地一处某个数值的元素</p>
+<p>方法1，第一层循环找该数值，第二层循环把后面的元素移动到前面来</p>
+<p>方法2，双指针，左边指针找，右边指针维护一个[val,val,val] 数组</p>
+<h3 id="_6">有序数组的平方</h3>
+<p>双指针法</p>
+<p>用过一个额外的空间来储存结果</p>
+<h3 id="_7">长度最小的子数组</h3>
+<p>滑动窗口，双指针法</p>
+<p>窗口值 大于 目标值，窗口缩小</p>
+<p>窗口值 小于，窗口增大</p>
+<h3 id="_8">螺旋矩阵</h3>
+<p>按圈迭代</p>
+<p>n = 4，迭代两圈</p>
+<h2 id="_9">链表</h2>
+<p><img alt="链表1" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/20200806194529815.png" /></p>
+<p>类型</p>
+<ul>
+<li>单链表</li>
+<li>双链表</li>
+<li>循环链表</li>
+</ul>
+<h3 id="_10">移除链表元素</h3>
+<p><img alt="image-20220314204243316" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220314204243316.png" /></p>
+<h3 id="_11">设计链表</h3>
+<p>链表的功能：</p>
+<p><img alt="image-20220314204804151" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220314204804151.png" /></p>
+<p><img alt="image-20220314204818145" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220314204818145.png" /></p>
+<h3 id="_12">翻转链表</h3>
+<p>双指针维护</p>
+<p>额外空间储存，遍历</p>
+<p>递归</p>
+<h2 id="_13">哈希表</h2>
+<p><img alt="哈希表1" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/20210104234805168.png" /></p>
+<h3 id="_14">四数相加</h3>
+<p><img alt="image-20220314215032764" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220314215032764.png" /></p>
+<p>用哈希表做备忘录。</p>
+<h2 id="_15">二叉树</h2>
+<p>满二叉树</p>
+<p>完全二叉树</p>
+<p>二叉搜索树</p>
+<p>平衡二叉搜索树</p>
+<h3 id="_16">二叉树的存储</h3>
+<ol>
+<li>链式存储（常用）</li>
+<li>顺序存储</li>
+</ol>
+<h3 id="_17">遍历</h3>
+<p>什么序指的是根节点的排位</p>
+<p>前序遍历，中序遍历，后续遍历  ----&gt; 深度优先搜索</p>
+<p>层序 ---&gt; 广度优先搜索  </p>
+<ul>
+<li>递归遍历</li>
+<li>非递归遍历，使用栈来模拟递归的过程</li>
+</ul>
+<h2 id="_18">双指针</h2>
+<ul>
+<li>使用双指针进行搜索，可以减小搜索空间。双指针的奥义在于使用<strong>排序</strong>来<strong>减小搜索空间</strong>！</li>
+<li>在排序过的数组中，双指针找两数的<strong>和</strong>只用n，而遍历需要n^2</li>
+<li>快慢指针</li>
+<li>维护数组 ，链表</li>
+</ul>
+<h3 id="_19">三数之和（最经典）</h3>
+<p><img alt="image-20220308204553199" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308204553199.png" /></p>
+<p>第一步，排序。</p>
+<p>第二步，双指针。</p>
+<h3 id="_20">最接近的三数之和</h3>
+<p>如前一题，使用额外的空间来保存gap，最后来比较</p>
+<h3 id="_21">四数之和</h3>
+<p>固定两个数，然后再使用双指针</p>
+<h3 id="n">删除链表的倒数第 N 个结点</h3>
+<p><img alt="image-20220308213108512" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308213108512.png" /></p>
+<ol>
+<li>链表的操作</li>
+<li>dummy node用于记录头部</li>
+<li>快慢指针的距离来保证n</li>
+</ol>
+<h3 id="_22">移除元素</h3>
+<p><img alt="image-20220308213701029" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308213701029.png" /></p>
+<p><img alt="image-20220308213710252" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308213710252.png" /></p>
+<p>使用前后指针，来维护一个数组。</p>
+<h3 id="_23">接雨水（好题）</h3>
+<p><img alt="image-20220308215631628" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308215631628.png" /></p>
+<p>常规思想：</p>
+<p>对每个位置i，min(左边最高的列，右边最高的列)-height[i]，是这一列的水量</p>
+<p>遍历，所以n^2复杂度</p>
+<p>动态规划：</p>
+<p>建立一个数组，记录该位置，左、右边的最高</p>
+<p>时间复杂度为n</p>
+<p>双指针：</p>
+<p>优化空间复杂度</p>
+<h3 id="_24">旋转链表</h3>
+<p><img alt="image-20220308222342529" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308222342529.png" /></p>
+<p>使用双指针来维护链表</p>
+<p>其实就是找到合适的地方（依据k），进行截断操作。</p>
+<h3 id="_25">移动零</h3>
+<p><img alt="image-20220309112248724" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220309112248724.png" /></p>
+<p>使用双指针来维护数组</p>
+<h3 id="_26">反转字符串中的单词</h3>
+<p><img alt="image-20220311140839641" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220311140839641.png" /></p>
+<p>使用双指针来维护字符串。</p>
+<p>方法1：使用双指针，使用额外的一个n的空间来存放新的字符串</p>
+<p>如何节约n大小的空间呢？原地操作，但是由于<strong>python的字符串是不可变的</strong>，所以没办法节约空间</p>
+<h3 id="_27">链表的中间结点</h3>
+<p><img alt="image-20220311144106611" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220311144106611.png" /></p>
+<p>单指针，遍历 n +2/n 个元素就能找到</p>
+<p>快慢指针，快的两个一走，慢的一个一走。</p>
+<h2 id="_28">队列和栈</h2>
+<h3 id="_29">理论基础</h3>
+<p><img alt="栈与队列理论1" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/20210104235346563.png" /></p>
+<p><strong>递归的实现就是：每一次递归调用都会把函数的局部变量、参数值和返回地址等压入调用栈中</strong>，然后递归返回的时候，从栈顶弹出上一次递归的各项参数，所以这就是递归为什么可以返回上一层位置的原因。</p>
+<h3 id="_30">用栈实现队列</h3>
+<p>肯定要用两个栈</p>
+<ol>
+<li>加元素，放到A</li>
+<li>出元素，A-B, 从B弹出</li>
+</ol>
+<h3 id="_31">括号匹配</h3>
+<p><strong>括号匹配是使用栈解决的经典问题</strong></p>
+<p><img alt="20.有效括号" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/20.%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.gif" /></p>
+<p>递归的思想</p>
+<p>栈的思想</p>
+<h2 id="_32">回溯，递归</h2>
+<ul>
+<li>
+<p>组合问题</p>
+</li>
+<li>
+<p>切割问题</p>
+</li>
+<li>
+<p>子集问题</p>
+</li>
+<li>
+<p>排列问题</p>
+</li>
+<li>
+<p>棋盘问题</p>
+</li>
+</ul>
+<p>所有的回溯法都可以抽象为一个树形结构，递归来做纵向深度，横向枝选择用for循环</p>
+<h3 id="_33">模板</h3>
+<pre><code class="language-python">def backtracking(参数):
+    if 终止条件:
+        return 结果
+    for：
+        减枝操作
+        处理节点
+        backtracking()
+    return
+</code></pre>
+<ol>
+<li>终止条件用于定义叶子节点</li>
+<li>for循环用于生成每个叶子下面的枝</li>
+<li>方法一 使用index指针</li>
+<li>方法二 使用 used数组 for i in [1,0,1,0] </li>
+<li>在处理节点的时候，<strong>不要轻易改变当前节点的数据</strong>！例如，不要修改path，而是直接将修改后的path传入下一个节点！</li>
+</ol>
+<p>网上的模板</p>
+<pre><code class="language-python">def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.add(路径)
+        return
+    //相当于多叉树的遍历，i的个数从2变成了n，并且写成了for循环的形式
+    for 选择 in 选择列表:
+        if 选择 in 路径：
+            continue
+        路径.add(选择)
+        backtrack(路径, 选择列表)
+        //将数值改回成原来的状态
+        路径.remove(选择)
+</code></pre>
+<hr />
+<p><img alt="image-20220309212839507" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220309212839507.png" /></p>
+<p>终止条件</p>
+<p>自我调用</p>
+<h3 id="_34">翻转链表</h3>
+<p><img alt="image-20220309220123884" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220309220123884.png" /></p>
+<h3 id="_35">组合</h3>
+<p><img alt="image-20220309223852310" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220309223852310.png" /></p>
+<p>递归需要注意各种终止条件</p>
+<h3 id="_36">子集</h3>
+<p><img alt="image-20220310202044603" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220310202044603.png" /></p>
+<p>和排列有些相似，相当于在 每个节点都会添加result</p>
+<h3 id="_37">全排列</h3>
+<p><img alt="image-20220310101003876" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220310101003876.png" /></p>
+<p>使用回溯算法</p>
+<p><strong>回溯法</strong> 采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：</p>
+<ul>
+<li>找到一个可能存在的正确的答案；</li>
+<li>在尝试了所有可能的分步方法后宣告该问题没有答案。</li>
+</ul>
+<p>（1，2，3）的全排列是 1+（2，3）的全排列</p>
+<pre><code class="language-python">class Solution:
+    def permute(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        &quot;&quot;&quot;
+        def backtrack(first = 0):
+            # 所有数都填完了
+            if first == n:  
+                res.append(nums[:])
+            for i in range(first, n):
+                # 动态维护数组
+                nums[first], nums[i] = nums[i], nums[first]
+                # 继续递归填下一个数
+                backtrack(first + 1)
+                # 撤销操作
+                nums[first], nums[i] = nums[i], nums[first]
+
+        n = len(nums)
+        res = []
+        backtrack()
+        return res
+
+</code></pre>
+<h3 id="2">全排列2</h3>
+<p><img alt="image-20220310175848507" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220310175848507.png" /></p>
+<p>由于重复元素，涉及到去重，需要减枝操作</p>
+<h3 id="n_1">N皇后</h3>
+<p><img alt="image-20220310201415900" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220310201415900.png" /></p>
+<h2 id="_38">深度优先搜索/ 广度优先搜索</h2>
+<p>回溯算法其实就是深度优先算法</p>
+<h3 id="_39">图像渲染</h3>
+<p><img alt="image-20220313202258010" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220313202258010.png" /></p>
+<p>广度优先算法依靠队列来实现：</p>
+<pre><code class="language-python">class Solution:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -&gt; List[List[int]]:
+        # 特殊情况
+        currColor = image[sr][sc]
+        if currColor == newColor:
+            return image
+
+        n, m = len(image), len(image[0])
+        que = collections.deque([(sr, sc)])
+        image[sr][sc] = newColor
+        while que:
+            x, y = que.popleft()
+            for mx, my in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
+                if 0 &lt;= mx &lt; n and 0 &lt;= my &lt; m and image[mx][my] == currColor:
+                    que.append((mx, my))
+                    image[mx][my] = newColor
+
+        return image
+</code></pre>
+<p>利用队列的先进先出</p>
+<p>模板：</p>
+<pre><code>while queue 不空：
+    cur = queue.pop()
+    for 节点 in cur的所有相邻节点：
+        if 该节点有效且未访问过：
+            queue.push(该节点)
+</code></pre>
+<pre><code class="language-python">depth = 0
+while queue 不空：
+    size = queue.size()
+    for i in rang(size):
+        # 取出这一层的元素
+        cur = queue.popleft()
+        for 节点 in cur的所有相邻节点：
+            if 有效 and 未被访问：
+                queue.append(节点)
+                optional：处理该节点
+    depth += 1
+
+</code></pre>
+<h3 id="01">01矩阵</h3>
+<p><img alt="image-20220315145810827" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220315145810827.png" /></p>
+<h2 id="_40">动态规划</h2>
+<p>问题：</p>
+<ol>
+<li>斐波那契额数列</li>
+<li>跳台阶</li>
+<li>背包问题</li>
+<li>打家劫舍</li>
+<li>股票问题</li>
+<li>子序列问题</li>
+</ol>
+<p>高难度问题：区间dp，概率dp。</p>
+<hr />
+<p>dp数组以及其下标的含义</p>
+<p>递推公式</p>
+<p>dp数组如何初始化</p>
+<p>遍历顺序</p>
+<p>打印dp数组</p>
+<h3 id="_41">爬楼梯（经典）</h3>
+<p><img alt="image-20220311150128650" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220311150128650.png" />
+$$
+f(n) = f(n-1)+f(n-2)
+$$
+五步法：</p>
+<ol>
+<li>确定dp数组的含义</li>
+<li>确定递归公式</li>
+<li>初始化dp数组</li>
+<li>确定遍历顺序</li>
+</ol>
+<p>dp数组，dp[i]达到i阶有dp[i]种方法</p>
+<p>dp[i] = dp[i-2]+dp[i-1]</p>
+<h3 id="01_1">01背包（经典，基础）</h3>
+<p>​    </p>
+<table>
+<thead>
+<tr>
+<th>物品</th>
+<th>重量</th>
+<th>价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>背包最大能装4。</p>
+<p>如果使用回溯算法，那么2^3种情况要遍历，是暴力遍历。</p>
+<p>定义二维dp[i][j]数组。</p>
+<p>[0:i]的物品任取放到容量为j的背包内的最大价值</p>
+<p>dp[i][j]=max(dp[i-1][j], dp[i-1][j-weight[i]]+weight[i])</p>
+<p>初始化，把表画出来看看：</p>
+<p><img alt="image-20220311205047749" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220311205047749.png" /></p>
+<p>注意遍历顺序，虽然在这里可以颠倒。</p>
+<h3 id="_42">完全背包</h3>
+<h3 id="_43">打家劫舍</h3>
+<p><img alt="image-20220311171412291" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220311171412291.png" />
+$$
+d p[i]=\max (d p[i-2]+n u m s[i], d p[i-1])
+$$
+dp[i] 指的是 0:i 家可以偷到的最多钱</p>
+<h3 id="_44">最长回文串</h3>
+<p><img alt="image-20220312121254700" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220312121254700.png" /></p>
+<p>建立二维数组</p>
+<p>dp[i][j] = 1 如果 s[i:j]是回文串</p>
+<h2 id="_45">数据结构</h2>
+<h3 id="_46">用两个栈实现队列</h3>
+<p><img alt="image-20220309114047820" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220309114047820.png" /></p>
+<p>一个栈用于储存</p>
+<p>一个栈用辅助操作</p>
+<h3 id="min">包含min函数的栈</h3>
+<p>一个栈用于储存数据</p>
+<p>一个栈用于保存min</p>
+<p><strong>注意pop会导致min的改变</strong></p>
+<h2 id="_47">其他类型</h2>
+<h3 id="_48">颜色分类</h3>
+<p><img alt="image-20220308222913128" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308222913128.png" /></p>
+<p>快速排序</p>
+<h3 id="_49">下一个排列</h3>
+<p><img alt="image-20220308214024127" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220308214024127.png" /></p>
+<ol>
+<li>将后面的大数放到前面</li>
+<li>为了保证增加幅度小，大数要靠右</li>
+<li>换位后，将大数后面的那部分改为升序，以使它最小</li>
+</ol>
+<h3 id="_50">反转字符串中的单词</h3>
+<p><img alt="image-20220309210939558" src="../%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.assets/image-20220309210939558.png" /></p>
+<p>这题需要注意的是python的字符串不可变，不能原地操作</p>
+<p>使用str.split进行操作会很简单</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/" class="btn btn-neutral float-right" title="参数的传递">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../%E4%BD%BF%E7%94%A8markdown%E5%88%B6%E4%BD%9Cppt/" class="btn btn-neutral" title="slide 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../%E4%BD%BF%E7%94%A8markdown%E5%88%B6%E4%BD%9Cppt/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

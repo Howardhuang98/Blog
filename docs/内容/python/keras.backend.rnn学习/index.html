@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>keras.backend.rnn学习 - Huang Hao's Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "keras.backend.rnn\u5b66\u4e60";
+    var mkdocs_page_input_path = "\u5185\u5bb9\\python\\keras.backend.rnn\u5b66\u4e60.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Huang Hao's Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Huang Hao' Blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">内容</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Paper阅读</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/Bayesian%20network%20structure%20learning%20%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">Bayesian network structure learning: 最短路径问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/EM%20algorithm%20%E6%9C%9F%E6%9C%9B%E6%9C%80%E5%A4%A7%E7%AE%97%E6%B3%95/">EM algorithm 期望最大算法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/K2%E7%AE%97%E6%B3%95%E3%80%8AA%20Bayesian%20Method%20for%20the%20Induction%20of%20Probabilistic%20Networks%20from%20Data%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">K2算法《A Bayesian Method for the Induction of Probabilistic Networks from Data》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/Linear%20non-Gaussian%20Acyclic%20Model/">A Linear Non-Gaussian Acyclic Model for Causal Discovery</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AA%20Survey%20of%20Learning%20Causality%20with%20Data%20Problems%20and%20Methods%E3%80%8B/">《A Survey of Learning Causality with Data: Problems and Methods》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AAtomistic%20Line%20Graph%20Neural%20Network%20for%20improved%20materials%20property%20predictions%E3%80%8B%20%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Atomistic Line Graph Neural Network for improved materials property predictions》 阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ACAUSAL%20DISCOVERY%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《CAUSAL DISCOVERY WITH REINFORCEMENT LEARNING》 读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AExploiting%20Experts%E2%80%99%20Knowledge%20for%20Structure%20Learning%20of%20Bayesian%20Networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Exploiting Experts’ Knowledge for Structure Learning of Bayesian Networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AImproved%20K2%20algorithm%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Improved K2 algorithm for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ALearning%20to%20Optimize%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Learning to Optimize》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANEURAL%20COMBINATORIAL%20OPTIMIZATION%20WITH%20REINFORCEMENT%20LEARNING%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《NEURAL COMBINATORIAL OPTIMIZATION WITH REINFORCEMENT LEARNING》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0/">《PC algorithm》学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AThe%20max-min%20hill-climbing%20Bayesian%20network%20structure%20learning%20algorithm%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《The max-min hill-climbing Bayesian network structure learning algorithm》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Aattention%20is%20all%20your%20need%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《attention is all your need》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Adetermining%20the%20direction%20of%20the%20local%20search%20in%20topological%20ordering%20space%20for%20Bayesian%20network%20structure%20learning%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94/">《determining the direction of the local search in topological ordering space for Bayesian network structure learning》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8AdirectLiGAM%E3%80%8B%E7%BB%93%E6%9E%84%E6%96%B9%E7%A8%8B%E6%A8%A1%E5%9E%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《A Linear Non-Gaussian Acyclic Model for Causal Discovery》读书笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8Apointer%20networks%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《pointer networks》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%EF%BC%9A%E4%B8%89%E6%AC%A1%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC/">数值分析：三次样条插值</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E9%A2%91%E7%8E%87%E7%BB%9F%E8%AE%A1%E5%AD%A6VS%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E5%AD%A6/">频率统计学VS贝叶斯统计学</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《Neural Machine Translation By Jointly Learning To Align And Translate》阅读笔记.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8ANeural%20Machine%20Translation%20By%20Jointly%20Learning%20To%20Align%20And%20Translate%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/BIC%20%E8%AF%84%E5%88%86/">BIC 评分</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">《PC algorithm》学习.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../paper%E9%98%85%E8%AF%BB/%E3%80%8APC%20algorithm%E3%80%8B%E5%AD%A6%E4%B9%A0.assets/%E3%80%8AStructure%20Learning%20of%20Bayesian%20Networks%20by%20Genetic%20Algorithms%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《Structure Learning of Bayesian Networks by Genetic Algorithms》阅读笔记</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../SPHINX%20%E4%BD%BF%E7%94%A8/">SPHINX 使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../argmax%EF%BC%8Cargsort%E7%9A%84%E4%BD%BF%E7%94%A8/">argmax，argsort的使用</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../conda%20%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">conda 虚拟环境</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../datatime%20%E6%A8%A1%E5%9D%97/">datetime 模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../django/">django</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../flask%20%E5%B0%8F%E5%9E%8B%E5%8D%9A%E5%AE%A2/">flask 小型博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../google%20%E6%96%87%E6%A1%A3%E6%A0%87%E5%87%86/">Google 文档标准</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">keras.backend.rnn学习</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_1">源码分析</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">难点</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lru_cache%20%E8%A3%85%E9%A5%B0%E5%99%A8/">lru_cache 装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../np.cov%20%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E7%9A%84%E8%AE%A1%E7%AE%97/">np.cov 协方差矩阵的计算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/">python logging 标准库</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python%20%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">Python 类与对象</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../pytorch%20%E5%AD%A6%E4%B9%A0/">pytorch 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../super%28%29/">super()</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tkinter%20%E5%AD%A6%E4%B9%A0/">tkinter 学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../try%E7%9A%84%E7%94%A8%E6%B3%95/">try的用法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E3%80%8Acelery%E3%80%8B/">《celery》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">定义函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%A8%A1%E5%9D%97/">模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85/">模块与包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E7%94%9F%E6%88%90%E5%99%A8/">生成器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E7%B1%BB/">类</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E9%97%AD%E5%8C%85/">闭包</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Session 与 cookie.assets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../session%20%E4%B8%8E%20cookie.assets/session%20%E4%B8%8E%20cookie/">session 与 cookie</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">书籍阅读</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/">凸优化学习笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/">《操作系统》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B/">《深入浅出强化学习：原理入门》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/">深度学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《算法导论》阅读笔记</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E4%B9%A6%E7%B1%8D%E9%98%85%E8%AF%BB/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《计算机网络》读书笔记</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">其他</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/JavaScript/">JavaScript</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/Jekyll%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Jekyll 搭建博客</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/Nginx/">Nginx教程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">R语言学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/bootstrap%E5%AD%A6%E4%B9%A0/">bootstrap学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/docker/">docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/git%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">git 版本控制</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/git/">git</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/htmlCSS/">html学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/http%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0/">HTTP协议的学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/mysql%20%E5%AE%89%E8%A3%85/">mysql 安装</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/yum/">yum</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E3%80%8Adocker%E3%80%8B/">《docker》</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E4%BD%BF%E7%94%A8markdown%E5%88%B6%E4%BD%9Cppt/">slide 1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%8A%9B%E6%89%A3%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">力扣题目总结</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/">参数的传递</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E7%9A%84io/">文件的io</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/">线程与进程</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E5%88%9D%E8%AF%86/">网络协议——初识</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%84%E6%88%90/">网页的组成</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%8D%89%E7%A8%BF%E6%9C%AC/">Draft</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%85%B6%E4%BB%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Huang Hao's Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>内容 &raquo;</li>
+        
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+    
+    <li>keras.backend.rnn学习</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="kerasbackendrnn">keras.backend.rnn学习</h1>
+<p><img alt="image-20211118120614961" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118120614961.png" /></p>
+<ol>
+<li>step 需要定义的步函数</li>
+</ol>
+<pre><code class="language-python">step(input,states):
+    &quot;&quot;&quot;
+    内容
+    &quot;&quot;&quot;
+    return output new_states
+</code></pre>
+<ol>
+<li>inputs</li>
+</ol>
+<p>[samples, time, features]</p>
+<p>转化为input是[samples,features]</p>
+<ol>
+<li>initial_states</li>
+</ol>
+<p>Tensor with shape <code>(samples, state_size)</code></p>
+<ol>
+<li>后面的参数包括：反向遍历，mask，常量，展开等</li>
+</ol>
+<h2 id="_1">源码分析</h2>
+<ol>
+<li>定义了一个swap函数，用于交换batch维和time_step维</li>
+</ol>
+<p><img alt="image-20211118190006467" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118190006467.png" /></p>
+<ol>
+<li>(默认情况下，time_major = False), 对inputs执行交换维度</li>
+</ol>
+<p><img alt="image-20211118190107118" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118190107118.png" /></p>
+<p>得到的是 inputs [time steps, batch, features]</p>
+<ol>
+<li>获取一些属性</li>
+</ol>
+<p><img alt="image-20211118190337229" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118190337229.png" /></p>
+<ol>
+<li>检查维度最少为3</li>
+</ol>
+<p><img alt="image-20211118190444066" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118190444066.png" /></p>
+<ol>
+<li>检查mask，初始化常量</li>
+</ol>
+<p><img alt="image-20211118190555292" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118190555292.png" /></p>
+<ol>
+<li>如果不按时间步展开（默认Unroll == False），进入到一个else中</li>
+</ol>
+<p><img alt="image-20211118191106918" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118191106918.png" /></p>
+<p>states是一个List</p>
+<p>input_ta是一个TensorArray，</p>
+<p>TensorArray可以看做是具有动态size功能的Tensor数组。通常都是跟while_loop或map_fn结合使用。</p>
+<ol>
+<li>实验性地送入input[0]到step_function中，得到out_put的形状以及属性等参数</li>
+</ol>
+<p><img alt="image-20211118191945824" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118191945824.png" /></p>
+<p>所以现在得到了</p>
+<p>input_ta，output_ta</p>
+<ol>
+<li>经过一系列检查后，定义_step函数（这里面包含了自定义的step_function）</li>
+</ol>
+<p><img alt="image-20211118192608117" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118192608117.png" /></p>
+<p>这个大的_step函数返回(time + 1, output_ta_t) + tuple(new_states)</p>
+<p><img alt="image-20211118192752469" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118192752469.png" /></p>
+<ol>
+<li>进入 while loop 循环体:</li>
+</ol>
+<p><img alt="image-20211118192959864" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118192959864.png" /></p>
+<ol>
+<li>经过一系列处理后输出到结果</li>
+</ol>
+<p><img alt="image-20211118193119234" src="../keras.backend.rnn%E5%AD%A6%E4%B9%A0.assets/image-20211118193119234.png" /></p>
+<h2 id="_2">难点</h2>
+<p>TensorArray以及while loop</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lru_cache%20%E8%A3%85%E9%A5%B0%E5%99%A8/" class="btn btn-neutral float-right" title="lru_cache 装饰器">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../google%20%E6%96%87%E6%A1%A3%E6%A0%87%E5%87%86/" class="btn btn-neutral" title="Google 文档标准"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../google%20%E6%96%87%E6%A1%A3%E6%A0%87%E5%87%86/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../lru_cache%20%E8%A3%85%E9%A5%B0%E5%99%A8/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
