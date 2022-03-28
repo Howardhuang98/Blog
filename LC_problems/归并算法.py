@@ -1,42 +1,34 @@
-def merge(a: list, p: int, q: int, r: int):
+def merge(A, p, q, r):
     """
-    merge函数，用于将a，分割为p-q，q-r两段
+    A数组分为两个部分，A[p,q],A[q,r]
     """
-    L = []
-    R = []
-    for i in a[p:q]:
-        L.append(i)
-    for i in a[q:r]:
-        R.append(i)
-    L.append(100000)
-    R.append(100000)
-    L_index = 0
-    R_index = 0
+    L = [i for i in A[p:q]]
+    R = [i for i in A[q:r]]
+    # 额外的空间，储存L,R， 加上哨兵，以免i，j指针移到外面去了
+    L.append(float("+inf"))
+    R.append(float("+inf"))
+    i = 0
+    j = 0
     for k in range(p, r):
-        if L[L_index] < R[R_index]:
-            a[k] = L[L_index]
-            L_index += 1
+        # 小的进入
+        if L[i] <= R[j]:
+            A[k] = L[i]
+            i += 1
         else:
-            a[k] = R[R_index]
-            R_index += 1
-    return a
+            A[k] = R[j]
+            j += 1
 
 
-def merge_sort(a, p, r):
-    """并归排序"""
-    if p + 1 < r:
-        q = int((p + r) / 2)
-        merge_sort(a, p, q)
-        merge_sort(a, q, r)
-        merge(a, p, q, r)
-
-    return a
+def merge_sort(A, p, r):
+    if p < r-1:
+        q = int((r + p) / 2)
+        merge_sort(A, p, q)
+        merge_sort(A, q, r)
+        merge(A, p, q, r)
+    return A
 
 
 if __name__ == "__main__":
-    a = [1, 3, 5, 7, 2, 5, 8, 10]
-    a = merge(a, 0, 4, 8)
+    a = [3,2,2,6,4,3,6]
+    merge_sort(a,0,len(a))
     print(a)
-    b = [1, 2, 4324, 232, 433, 123, 424, 7]
-    b = merge_sort(b, 0, 8)
-    print(b)
