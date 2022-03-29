@@ -1,0 +1,774 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>《运筹学教程》 - Huang Hao's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-header__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang Hao's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              《运筹学教程》
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-nav__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Huang Hao's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Huang Hao' Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          书籍阅读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="书籍阅读" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          书籍阅读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/" class="md-nav__link">
+        凸优化学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-nav__link">
+        《操作系统》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B/" class="md-nav__link">
+        《深入浅出强化学习：原理入门》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/" class="md-nav__link">
+        深度学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《算法导论》阅读笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B/" class="md-nav__link">
+        《线性代数及其应用》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B/" class="md-nav__link">
+        《统计学习方法》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《计算机网络》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          《运筹学教程》
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        《运筹学教程》
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    运筹学的主要分支
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    线性规划
+  </a>
+  
+    <nav class="md-nav" aria-label="线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    线性规划问题的标准型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    求解线性规划
+  </a>
+  
+    <nav class="md-nav" aria-label="求解线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    图解法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    线性规划可能的几种解
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    单纯形法原理
+  </a>
+  
+    <nav class="md-nav" aria-label="单纯形法原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    重要定理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    最优性检验
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    运筹学的主要分支
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    线性规划
+  </a>
+  
+    <nav class="md-nav" aria-label="线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    线性规划问题的标准型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    求解线性规划
+  </a>
+  
+    <nav class="md-nav" aria-label="求解线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    图解法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    线性规划可能的几种解
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    单纯形法原理
+  </a>
+  
+    <nav class="md-nav" aria-label="单纯形法原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    重要定理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    最优性检验
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">《运筹学教程》</h1>
+<h2 id="_2">运筹学的主要分支</h2>
+<ol>
+<li>线性规划</li>
+<li>非线性规划</li>
+<li>整数规划</li>
+<li>目标规划</li>
+<li>动态规划</li>
+<li>图论与网络分析</li>
+</ol>
+<p>以及储存论，排队论，对策论，决策论。</p>
+<h2 id="_3">线性规划</h2>
+<p>一般来讲，主要问题涉及到资源的限制（每天可用的能力），单位项目带来的收益。</p>
+<p><img alt="image-20220321193000877" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321193000877.png" /></p>
+<p><img alt="image-20220321193124864" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321193124864.png" /></p>
+<p>线性规划主要由：</p>
+<ul>
+<li>变量，决策变量</li>
+<li>目标函数</li>
+<li>约束条件：变量取值的时候要受到各种限制</li>
+</ul>
+<h3 id="_4">线性规划问题的标准型</h3>
+<p>极大值，约束条件为等式，<span class="arithmatex">\(b_i\)</span>为非负值，<span class="arithmatex">\(x_i\)</span>为非负的，写为以下标准形式：</p>
+<p><img alt="image-20220321193310994" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321193310994.png" /></p>
+<h3 id="_5">求解线性规划</h3>
+<h4 id="_6">图解法</h4>
+<p><img alt="image-20220321193559726" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321193559726.png" /></p>
+<p><img alt="image-20220321193609157" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321193609157.png" /></p>
+<h4 id="_7">线性规划可能的几种解</h4>
+<ol>
+<li>无穷多最优解：最优的取值落在一根线上。</li>
+<li>无界解：解的值没有被限制住，可能趋于无穷大</li>
+<li>无可行解：没有可行域</li>
+</ol>
+<h3 id="_8">单纯形法原理</h3>
+<p>对于一个标准形式的线性规划：</p>
+<p><img alt="image-20220321194047766" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321194047766.png" /></p>
+<p>做以下定义：</p>
+<p>满足约束条件的解<span class="arithmatex">\(X\)</span>是<strong>可行解</strong></p>
+<p>使目标函数达到最大的，是<strong>最优解</strong></p>
+<p>对于约束条件，一般将其写为约束矩阵<span class="arithmatex">\(A\)</span>，一般来讲它的<strong>秩为m</strong>，或者小于m。在此我们假设为m。</p>
+<p><span class="arithmatex">\(B\)</span>是矩阵<span class="arithmatex">\(A\)</span>中的一个满秩的矩阵，它是一个<strong>基</strong>
+$$
+\boldsymbol{B}=\left(\begin{array}{ccc}
+a_{11} &amp; \cdots &amp; a_{1 m} \
+\vdots &amp; &amp; \vdots \
+a_{m 1} &amp; \cdots &amp; a_{m m}
+\end{array}\right)=\left(\boldsymbol{P}<em>{1}, \cdots, \boldsymbol{P}</em>{m}\right)
+$$
+<strong>基解</strong>：使所有的非基变量为0，<span class="arithmatex">\(BX=b\)</span> 这个方程由于满秩，可以解出唯一解，称之为基解。基解不多于<span class="arithmatex">\(C_n^{m}\)</span>个。</p>
+<p><strong>基可行解</strong>：基解中，满足非负条件的解，称为基可行解。</p>
+<h4 id="_9">重要定理</h4>
+<ol>
+<li>如果线性规划问题存在可行解，那么问题的可行域是凸集；</li>
+<li>线性问题的基可行解对应可行域的顶点；</li>
+<li>如果线性规划问题由最优解，那么一定存在一个基可行解是最优解。</li>
+</ol>
+<p>通过初等行变换，由于秩是m，肯定可以得到这样的情况：
+$$
+\left(\boldsymbol{P}<em>{1}, \boldsymbol{P}</em>{2}, \cdots, \boldsymbol{P}<em>{m}\right)=\left(\begin{array}{cccc}
+1 &amp; 0 &amp; \cdots &amp; 0 \
+0 &amp; 1 &amp; \cdots &amp; 0 \
+\vdots &amp; \vdots &amp; &amp; \vdots \
+0 &amp; 0 &amp; \cdots &amp; 1
+\end{array}\right)
+$$
+对这个求解，可以得到：
+$$
+\mathbf{X}=\left(x</em>{1}, \cdots, x_{m}, x_{m+1}, \cdots, x_{n}\right)^{\mathrm{T}}=\left(b_{1}, \cdots, b_{m}, 0, \cdots, 0\right)^{\mathrm{T}}
+$$
+这样就得到了第一基解，如何通过它来计算下一个顶点呢？</p>
+<p>首先：
+$$
+\sum_{i-1}^{m} \boldsymbol{P}<em>{i} x</em>{i}^{0}=\boldsymbol{b}
+$$
+因为<span class="arithmatex">\(\left(\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{m}\right)\)</span> 是线性无关的，可以用这些向量的线性组合来得到其他向量<span class="arithmatex">\(\boldsymbol{P}_{j}\)</span>：
+$$
+\boldsymbol{P}<em>{j}=\sum</em>{i=1}^{m} a_{i j} \boldsymbol{P}<em>{i}
+$$
+所以，加上数学技巧，乘上一个<span class="arithmatex">\(\theta&gt;0\)</span>：
+$$
+\theta\left(\boldsymbol{P}</em>{j}-\sum_{i=1}^{m} a_{i j} \boldsymbol{P}<em>{i}\right)=0
+$$
+目的是为了找到<span class="arithmatex">\(x_i^0\)</span> 与 <span class="arithmatex">\(P_j\)</span>的关系，所以把上面的式子，和上上的式子加和，得到：
+$$
+\sum</em>{i=1}^{m}\left(x_{i}^{0}-\theta a_{i j}\right) \boldsymbol{P}<em>{i}+\theta \mathbf{P}</em>{j}=\boldsymbol{b}
+$$
+这样的关系式可以用于我们找下一个基解：</p>
+<p>对于前面的<span class="arithmatex">\(P_i\)</span>,需要有一个不再作为基向量，所以
+$$
+x_{i}^{0}-\theta a_{i j} \geqslant 0
+$$
+有一个<span class="arithmatex">\(i\)</span>是导致这个式子取等号的，所以
+$$
+\theta=\min <em>{i}\left{\frac{x</em>{i}^{0}}{a_{i j}}\left|a_{i j}\right\rangle 0\right}=\frac{x_{l}^{0}}{a_{l j}}
+$$</p>
+<h4 id="_10">最优性检验</h4>
+<p>第一次基解：
+$$
+z^{(0)}=\sum_{i=1}^{m} c_{i} x_{i}^{0}
+$$
+第二次基解：
+$$
+\begin{aligned}
+z^{(1)} &amp;=\sum_{i=1}^{m} c_{i}\left(x_{i}^{0}-\theta a_{i j}\right)+\theta c_{j} \
+&amp;=\sum_{i=1}^{m} c_{i} x_{i}^{0}+\theta\left(c_{j}-\sum_{i=1}^{m} c_{i} a_{i j}\right) \
+&amp;=z^{(0)}+\theta\left(c_{j}-\sum_{i=1}^{m} c_{i} a_{i j}\right)
+\end{aligned}
+$$
+是存在递推关系的，如果
+$$
+c_j-\sum_{i=1}^{m} c_{i} a_{i j}
+$$
+这一项小于零，则说明移入该基向量会使目标函数减小。大于零则说明会增大。</p>
+<p>判断：</p>
+<ol>
+<li>所有<span class="arithmatex">\(\sigma_{j}&lt;=0\)</span> , 该基解是最优解；</li>
+<li>所有<span class="arithmatex">\(\sigma_{j}&lt;=0\)</span>，并且还有等于零的，说明有无穷多解；</li>
+<li>所有<span class="arithmatex">\(\sigma_{j}&lt;=0\)</span>，都是严格小于，说明是唯一最优解；</li>
+<li>如果存在<span class="arithmatex">\(\sigma_{j}&gt;0\)</span>,且<span class="arithmatex">\(P_j&lt;=0\)</span>, 则说明有<strong>无界解</strong>。</li>
+</ol>
+<p>单纯形法案例：</p>
+<p><img alt="image-20220321203206915" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321203206915.png" /></p>
+<p><img alt="image-20220321203217563" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321203217563.png" /></p>
+<p><img alt="image-20220321203226399" src="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B.assets/image-20220321203226399.png" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 《计算机网络》读书笔记" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              《计算机网络》读书笔记
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

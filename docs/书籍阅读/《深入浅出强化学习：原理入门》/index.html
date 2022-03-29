@@ -1,0 +1,770 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>《深入浅出强化学习：原理入门》 - Huang Hao's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-header__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang Hao's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              《深入浅出强化学习：原理入门》
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-nav__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Huang Hao's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Huang Hao' Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          书籍阅读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="书籍阅读" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          书籍阅读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/" class="md-nav__link">
+        凸优化学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-nav__link">
+        《操作系统》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          《深入浅出强化学习：原理入门》
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        《深入浅出强化学习：原理入门》
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    强化学习的基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="强化学习的基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    状态价值函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    状态行为价值函数
+  </a>
+  
+    <nav class="md-nav" aria-label="状态行为价值函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    贝尔曼方程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    最优状态价值函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    最优状态行为价值函数：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstraping" class="md-nav__link">
+    bootstraping 算法
+  </a>
+  
+    <nav class="md-nav" aria-label="bootstraping 算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    值函数迭代算法：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/" class="md-nav__link">
+        深度学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《算法导论》阅读笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B/" class="md-nav__link">
+        《线性代数及其应用》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B/" class="md-nav__link">
+        《统计学习方法》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《计算机网络》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B/" class="md-nav__link">
+        《运筹学教程》
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    强化学习的基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="强化学习的基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    状态价值函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    状态行为价值函数
+  </a>
+  
+    <nav class="md-nav" aria-label="状态行为价值函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    贝尔曼方程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    最优状态价值函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    最优状态行为价值函数：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstraping" class="md-nav__link">
+    bootstraping 算法
+  </a>
+  
+    <nav class="md-nav" aria-label="bootstraping 算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    值函数迭代算法：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">《深入浅出强化学习：原理入门》</h1>
+<p><img alt="image-20211125103454186" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125103454186.png" /></p>
+<p><strong>马尔科夫决策过程</strong></p>
+<p><strong>马尔科夫性</strong>：指的是系统的下一个状态<span class="arithmatex">\(s_{t+1}\)</span>仅与当前状态<span class="arithmatex">\(s_{t}\)</span>有关，而与以前的状态无关。
+$$
+p(s_{t+1}|s_t)=p(s_{t+1}|s_1,...,s_t)
+$$
+<strong>马尔科夫过程</strong>：马尔科夫过程用二元组表示，(S,P)，其中S是有限状态集合，P是状态转移矩阵。</p>
+<p><strong>马尔科夫决策决策过程</strong>：</p>
+<p><span class="arithmatex">\((S,A,P,R,\lambda)\)</span> </p>
+<p>(状态集，动作集，状态转移矩阵，回报函数，折扣因子)</p>
+<p>马尔科夫决策过程的状态转移矩阵是包含动作的</p>
+<p><img alt="image-20211125104158931" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125104158931.png" /></p>
+<h2 id="_2">强化学习的基本概念</h2>
+<p>给定一个马尔科夫决策过程，寻找最优策略。</p>
+<h3 id="_3">策略</h3>
+<p><strong>策略</strong>是状态到动作的映射，常用<span class="arithmatex">\(\pi\)</span>表示。它指的是给定状态s时，动作集上的一个分布，即：
+$$
+\pi(a|s)=p(A_t=a|S_t=s)
+$$
+强化学习一般采用随机策略，原因是随机策略可以将探索耦合到采样过程中。</p>
+<p>当给定策略<span class="arithmatex">\(\pi\)</span>的时候，状态序列可能为：
+$$
+\begin{aligned}
+&amp;s_{1} \rightarrow s_{2} \rightarrow s_{3} \rightarrow s_{4} \rightarrow s_{5} \
+&amp;s_{1} \rightarrow s_{2} \rightarrow s_{3} \rightarrow s_{5} \
+&amp;\vdots
+\end{aligned}
+$$
+因为策略与状态转移都具有随机性！所以累积回报：
+$$
+G_{t}=R_{t+1}+\gamma R_{t+2}+\cdots=\sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1}
+$$
+是随机的，为了评价状态<span class="arithmatex">\(s_1\)</span>，需要找到一个确定的值，所以用累积回报的期望来表示。</p>
+<h3 id="_4">状态价值函数</h3>
+<p>给定策略<span class="arithmatex">\(\pi\)</span>，累积回报服从一个概率分布，累计汇报在s处的期望值定义为：
+$$
+v_{\pi}(s)=\mathrm{E}<em>{\pi}\left[\sum</em>{k=0}^{\infty} \gamma^{k} R_{t+k+1} \mid S_{t}=s\right]
+$$
+这就是状态价值函数。</p>
+<h3 id="_5">状态行为价值函数</h3>
+<div class="arithmatex">\[
+q_{\pi}(s, a)=E_{\pi}\left[\sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1} \mid S_{t}=s, A_{t}=a\right]
+\]</div>
+<p>状态行为价值函数，它描述的是在给定状态，给定策略，该动作的价值。</p>
+<p><img alt="image-20211125110810690" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125110810690.png" /></p>
+<h4 id="_6">贝尔曼方程</h4>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;v(s)=E\left[G_{t} \mid S_{t}=s\right] \\
+&amp;=E\left[R_{t+1}+\gamma R_{t+2}+\cdots \mid S_{t}=s\right] \\
+&amp;=E\left[R_{t+1}+\gamma\left(R_{t+2}+\gamma R_{t+3}+\cdots\right) \mid S_{t}=s\right] \\
+&amp;=E\left[R_{t+1}+\gamma G_{t+1} \mid S_{t}=s\right] \\
+&amp;=E\left[R_{t+1}+\gamma v\left(S_{t+1}\right) \mid S_{t}=s\right]
+\end{aligned}
+\]</div>
+<h2 id="_7">最优状态价值函数</h2>
+<p>最优状态价值函数为所有策略中，值最大的值函数：
+$$
+v^{*}(s)=\max <em>{\pi} v</em>{\pi}(s)
+$$</p>
+<h2 id="_8">最优状态行为价值函数：</h2>
+<div class="arithmatex">\[
+q^{*}(s, a)=\max _{\pi} q_{\pi}(s, a)
+\]</div>
+<h2 id="_9">小结</h2>
+<p><img alt="image-20211125111715517" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211125111715517.png" /></p>
+<h2 id="bootstraping">bootstraping 算法</h2>
+<p><img alt="image-20211208132423678" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208132423678.png" /></p>
+<p>状态价值函数可以改写为以下形式：
+$$
+v_{\pi}(s)=\sum_{a \in A} \pi(a \mid s)\left(R_{s}^{a}+\gamma \sum_{s^{\prime} \in S} P_{s s^{\prime}}^{a}v_{\pi}\left(s^{\prime}\right)\right)
+$$
+可以看到，价值函数是未知的，这该如何解呢？</p>
+<p>这个式子里已知，<span class="arithmatex">\(R_{s}^{a}, \pi, P^{a}_{ss'}\)</span> ，未知 <span class="arithmatex">\(v_\pi\)</span> </p>
+<p><img alt="image-20211208133559771" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208133559771.png" /></p>
+<p>这是一种迭代算法，不断地更新<span class="arithmatex">\(v()\)</span>。</p>
+<p>通过这个策略评估算法，可以得到某个动作函数的值函数。</p>
+<p>在通过这个值函数来改善策略：</p>
+<p>如果采用贪婪得方式，那么：</p>
+<p><img alt="image-20211208135311953" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208135311953.png" /></p>
+<p><img alt="image-20211208135331588" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208135331588.png" /></p>
+<p>如果只评估一次后就对策略进行改善，则称为值函数迭代算法：</p>
+<p><img alt="image-20211208140001710" src="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B.assets/image-20211208140001710.png" /></p>
+<h3 id="_10">值函数迭代算法：</h3>
+<p>值函数评估过程中，包括两个迭代循环：</p>
+<ul>
+<li>外层是为了保证值函数的准确性</li>
+<li>内层是是对所有状态空间的扫描</li>
+</ul>
+<p>这里反映出了dp算法与无模型的强化学习的本质区别：状态转移矩阵P！</p>
+<p>dp已知模型，所以可以确切地知道每一步执行后的状态，这个性质使得智能体不需要采取任何行动就能对未来进行评估。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 《操作系统》" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              《操作系统》
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/" class="md-footer__link md-footer__link--next" aria-label="Next: 深度学习" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              深度学习
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

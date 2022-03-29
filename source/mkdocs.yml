@@ -1,6 +1,13 @@
+# 请在source目录下运行 mkdocs build
+
 site_name: Huang Hao's Blog
 
-theme: readthedocs
+theme:
+  name: material
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
 
 
 extra_javascript:

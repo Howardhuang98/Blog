@@ -1,0 +1,1875 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>《统计学习方法》 - Huang Hao's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-header__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang Hao's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              《统计学习方法》
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-nav__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Huang Hao's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Huang Hao' Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          书籍阅读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="书籍阅读" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          书籍阅读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E5%87%B8%E4%BC%98%E5%8C%96%E3%80%8B/" class="md-nav__link">
+        凸优化学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-nav__link">
+        《操作系统》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8%E3%80%8B/" class="md-nav__link">
+        《深入浅出强化学习：原理入门》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B/" class="md-nav__link">
+        深度学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《算法导论》阅读笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B/" class="md-nav__link">
+        《线性代数及其应用》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          《统计学习方法》
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        《统计学习方法》
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    统计学习
+  </a>
+  
+    <nav class="md-nav" aria-label="统计学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    概括：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    步骤：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    监督学习
+  </a>
+  
+    <nav class="md-nav" aria-label="监督学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    联合概率分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    假设空间：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    统计学习的三要素
+  </a>
+  
+    <nav class="md-nav" aria-label="统计学习的三要素">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    模型评估与模型选择
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    泛化能力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    生成模型与判别模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    分类问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    标注问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    回归问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    感知机
+  </a>
+  
+    <nav class="md-nav" aria-label="感知机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    K近邻
+  </a>
+  
+    <nav class="md-nav" aria-label="K近邻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    模型
+  </a>
+  
+    <nav class="md-nav" aria-label="模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    距离度量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k_1" class="md-nav__link">
+    k值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    分类决策规则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kd" class="md-nav__link">
+    预测（kd树）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    朴素贝叶斯
+  </a>
+  
+    <nav class="md-nav" aria-label="朴素贝叶斯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    总结：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    决策树
+  </a>
+  
+    <nav class="md-nav" aria-label="决策树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    策略
+  </a>
+  
+    <nav class="md-nav" aria-label="策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    特征选择：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    算法
+  </a>
+  
+    <nav class="md-nav" aria-label="算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id3" class="md-nav__link">
+    ID3算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    剪枝算法：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart" class="md-nav__link">
+    CART算法
+  </a>
+  
+    <nav class="md-nav" aria-label="CART算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    回归树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    最小二乘回归树：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    分类树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart_1" class="md-nav__link">
+    CART生成算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart_2" class="md-nav__link">
+    CART剪枝
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logistic" class="md-nav__link">
+    Logistic 回归
+  </a>
+  
+    <nav class="md-nav" aria-label="Logistic 回归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    二项分类模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    多项分类模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    最大熵模型
+  </a>
+  
+    <nav class="md-nav" aria-label="最大熵模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《计算机网络》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%8A%E8%BF%90%E7%AD%B9%E5%AD%A6%E6%95%99%E7%A8%8B%E3%80%8B/" class="md-nav__link">
+        《运筹学教程》
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    统计学习
+  </a>
+  
+    <nav class="md-nav" aria-label="统计学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    概括：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    步骤：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    监督学习
+  </a>
+  
+    <nav class="md-nav" aria-label="监督学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    联合概率分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    假设空间：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    统计学习的三要素
+  </a>
+  
+    <nav class="md-nav" aria-label="统计学习的三要素">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    模型评估与模型选择
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    泛化能力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    生成模型与判别模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    分类问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    标注问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    回归问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    感知机
+  </a>
+  
+    <nav class="md-nav" aria-label="感知机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    K近邻
+  </a>
+  
+    <nav class="md-nav" aria-label="K近邻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    模型
+  </a>
+  
+    <nav class="md-nav" aria-label="模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    距离度量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k_1" class="md-nav__link">
+    k值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    分类决策规则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kd" class="md-nav__link">
+    预测（kd树）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    朴素贝叶斯
+  </a>
+  
+    <nav class="md-nav" aria-label="朴素贝叶斯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    总结：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    决策树
+  </a>
+  
+    <nav class="md-nav" aria-label="决策树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    策略
+  </a>
+  
+    <nav class="md-nav" aria-label="策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    特征选择：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    算法
+  </a>
+  
+    <nav class="md-nav" aria-label="算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id3" class="md-nav__link">
+    ID3算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    剪枝算法：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart" class="md-nav__link">
+    CART算法
+  </a>
+  
+    <nav class="md-nav" aria-label="CART算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    回归树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    最小二乘回归树：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    分类树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart_1" class="md-nav__link">
+    CART生成算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart_2" class="md-nav__link">
+    CART剪枝
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logistic" class="md-nav__link">
+    Logistic 回归
+  </a>
+  
+    <nav class="md-nav" aria-label="Logistic 回归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    二项分类模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    多项分类模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    最大熵模型
+  </a>
+  
+    <nav class="md-nav" aria-label="最大熵模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">《统计学习方法》</h1>
+<p><img alt="image-20220323143355564" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220323143355564.png" /></p>
+<h2 id="_2">统计学习</h2>
+<ol>
+<li>以计算机和网络为平台</li>
+<li>对象：数据为研究对象</li>
+<li>目的：对数据进行预测和分析</li>
+<li>方法：构建模型</li>
+<li>多学科交叉</li>
+</ol>
+<p><strong>基本假设：同类数据具有一定的统计规律性。</strong></p>
+<p>方法：基于数据构建统计模型从而对数据进行分析与预测。</p>
+<ul>
+<li>监督学习</li>
+<li>非监督学习</li>
+<li>半监督学习</li>
+<li>强化学习</li>
+</ul>
+<h3 id="_3">概括：</h3>
+<p>从给定的、有限的、用于学习的训练数据集合出发，假设数据是<strong>独立同分布</strong>产生的；并且假设要学习的模型属于某个函数的集合，称为<strong>假设空间</strong>；应用某个<strong>评价标准</strong>，从假设空间中选取一个最优的预测；最优模型的选取由算法实现。最优模型的选取由<strong>算法</strong>实现。三要素：模型，策略，算法。</p>
+<h3 id="_4">步骤：</h3>
+<ol>
+<li>训练集（搜集数据）</li>
+<li>确定假设空间（挑选函数，比如ANN，k近邻）</li>
+<li>确定准则（确定损失函数）</li>
+<li>确定求解算法（梯度下降法等）</li>
+<li>学习到最优模型（求解，学习）</li>
+<li>使用模型</li>
+</ol>
+<h2 id="_5">监督学习</h2>
+<h3 id="_6">基本概念</h3>
+<p>输入空间：输入可能的所有的取值的集合</p>
+<p>输出空间：输出可能的取值的集合</p>
+<p>一个样本，称为一个实例 <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(x\)</span>由特征向量表示：</p>
+<p><span class="arithmatex">\(x = [x^{(1)},x^{(2)},x^{(3)},...,x^{(n)}]^T\)</span></p>
+<p>数据集：</p>
+<p><span class="arithmatex">\(T=\left\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\right\}\)</span></p>
+<p>针对不同的数据类型，预测任务有不同的名称：1. 回归任务，2. 分类问题，3. 标注问题。</p>
+<h3 id="_7">联合概率分布</h3>
+<div class="arithmatex">\[
+P(X,Y)
+\]</div>
+<p>输入变量和输出变量是依据联合概率分布产生的，这是一个基本假设。</p>
+<h3 id="_8">假设空间：</h3>
+<p>假设空间就是x是如何映射到y的，这是未知的。我们使用模型来“近似”这个空间。</p>
+<p>分为<strong>概率模型</strong>和<strong>非概率模型</strong>：
+$$
+Y=f(x)\
+P(y|x)
+$$
+<strong>决策函数</strong>，<strong>条件概率</strong>就是我们需要学习的模型。</p>
+<h2 id="_9">统计学习的三要素</h2>
+<p>统计学习 = 模型 + 策略 + 算法</p>
+<h3 id="_10">模型</h3>
+<p><strong>假设空间</strong>包含所有可能的<strong>决策函数</strong>以及<strong>条件概率</strong>分布：
+$$
+\mathcal{F}=\left{f \mid Y=f_{\theta}(X), \theta \in \mathbf{R}^{n}\right}\
+\mathcal{F}=\left{P \mid P_{\theta}(Y \mid X), \theta \in \mathbf{R}^{n}\right}
+$$</p>
+<h3 id="_11">策略</h3>
+<p><strong>损失函数</strong>用于度量模型预测一次的好坏；</p>
+<p><strong>风险函数</strong>度量平均意义下模型预测的好坏。</p>
+<p>常用的损失函数：</p>
+<ol>
+<li>0-1损失函数</li>
+<li>平方损失函数</li>
+<li>绝对损失函数</li>
+<li>对数损失函数，概率模型</li>
+</ol>
+<p><strong>期望损失</strong>：</p>
+<p>X,Y 从联合概率P中生成：
+$$
+R_{\exp }(f)=E_{P}[L(Y, f(X))]=\int_{x \times y} L(y, f(x)) P(x, y) \mathrm{d} x \mathrm{~d} y
+$$
+很显然，我们并不知道联合概率分布P，所以我们无法计算期望损失。我们采用蒙特卡洛方法，求期望的近似：
+$$
+E_P(X)\approx 1/n\sum^n_{i=1} X_i
+$$
+那么期望损失的近似，<strong>经验损失</strong>为：
+$$
+R_{\mathrm{emp}}(f)=\frac{1}{N} \sum_{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)
+$$
+选择模型的准则：</p>
+<ol>
+<li>经验风险最小化</li>
+</ol>
+<div class="arithmatex">\[
+\min _{f \in \mathcal{F}} \frac{1}{N} \sum_{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)
+\]</div>
+<ol>
+<li>结构风险最小化</li>
+</ol>
+<div class="arithmatex">\[
+R_{\mathrm{smm}}(f)=\frac{1}{N} \sum_{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)+\lambda J(f)
+\]</div>
+<div class="arithmatex">\[
+\min _{f \in \mathcal{F}} \frac{1}{N} \sum_{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)+\lambda J(f)
+\]</div>
+<h3 id="_12">算法</h3>
+<p>根据策略，找到假设空间中的最优模型。</p>
+<h2 id="_13">模型评估与模型选择</h2>
+<ol>
+<li>正则化</li>
+<li>交叉验证</li>
+<li>简单交叉验证</li>
+<li>s折交叉验证</li>
+<li>留一交叉验证</li>
+<li>留一交叉验证</li>
+</ol>
+<h2 id="_14">泛化能力</h2>
+<p>由该方法学习到的模型对未知数据的预测能力。</p>
+<h2 id="_15">生成模型与判别模型</h2>
+<p>生成模型的学习目标是联合概率分布<span class="arithmatex">\(P(X,Y)\)</span>，最后求出条件概率分布</p>
+<p>例子有：朴素贝叶斯法，隐马尔可夫模型</p>
+<p>判别模型直接学习<span class="arithmatex">\(f(X),P(Y|X)\)</span>,</p>
+<p>例子有：k近邻，感知机，决策树，逻辑斯蒂回归，最大熵模型，支持向量机，提升方法等。</p>
+<h2 id="_16">分类问题</h2>
+<p>二分类问题的评价指标：</p>
+<ol>
+<li>精确率（预测正，正确的概率）</li>
+<li>召回率（真正的正中，预测到的）</li>
+<li>F1值</li>
+</ol>
+<h2 id="_17">标注问题</h2>
+<p>标注问题其实就是多分类问题。</p>
+<h2 id="_18">回归问题</h2>
+<p>函数拟合</p>
+<h2 id="_19">感知机</h2>
+<h3 id="_20">模型</h3>
+<div class="arithmatex">\[
+f(x)=\operatorname{sign}(w \cdot x+b)
+\]</div>
+<div class="arithmatex">\[
+\operatorname{sign}(x)= \begin{cases}+1, &amp; x \geqslant 0 \\ -1, &amp; x&lt;0\end{cases}
+\]</div>
+<h3 id="_21">策略</h3>
+<p>假设数据是线性可分的</p>
+<p>损失函数写为：
+$$
+L(w, b)=-\sum_{x_{i} \in M} y_{i}\left(w \cdot x_{i}+b\right)
+$$</p>
+<h3 id="_22">算法</h3>
+<p><strong>随机梯度下降法</strong></p>
+<p><img alt="image-20220323161116801" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220323161116801.png" /></p>
+<h2 id="k">K近邻</h2>
+<h3 id="_23">模型</h3>
+<p>距离度量，k值，分类决策规则。</p>
+<p>如果k=1，那么就是最近邻算法，预测为和最近的<span class="arithmatex">\(x\)</span>一类。</p>
+<p>如果k = k，那么就找到与x最近的k个x，进行投票选择。</p>
+<h4 id="_24">距离度量</h4>
+<p>衡量两个向量之间的距离，或者说相似度：</p>
+<ol>
+<li>Lp距离</li>
+<li>欧式距离，平方开根号</li>
+<li>曼哈顿距离，差值的绝对值相加</li>
+</ol>
+<h4 id="k_1">k值</h4>
+<p>一般采用交叉验证来确定k值</p>
+<h4 id="_25">分类决策规则</h4>
+<p>一般是多数表决</p>
+<h3 id="_26">策略</h3>
+<p>最优化k值，使得
+$$
+\sum_{x_{i} \in N_{k}(x)} I\left(y_{i}=c_{j}\right)
+$$
+达到最大</p>
+<h3 id="_27">算法</h3>
+<p>k近邻的参数是k，一般采用多折交叉验证的方式来确定，主要面临的问题是如何对数据进行高效的k近邻搜索。</p>
+<h3 id="kd">预测（kd树）</h3>
+<p>kd树用于对数据进行高效的k近邻搜索。</p>
+<p>kd树是一个二叉树，用于实现搜索。</p>
+<p>kd树的平均搜索时间复杂度为<span class="arithmatex">\(O(logn)\)</span>, 相比起全部遍历一遍，节约时间。</p>
+<p>二叉树的左枝叶小于父节点，右枝叶大于父节点，通过与父节点比较，递归地向左右枝叶递归。达到叶子节点或者目标值后，再回溯找到k近邻。有点类似于<strong>堆</strong>的思想</p>
+<p><img alt="image-20220323165259037" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220323165259037.png" /></p>
+<h2 id="_28">朴素贝叶斯</h2>
+<h3 id="_29">模型</h3>
+<p>朴素贝叶斯的假设：<strong>每个特征都是符合条件独立</strong>，所以其贝叶斯网络结构是个简单的树结构。</p>
+<p>朴素贝叶斯法是一个<strong>生成模型</strong>，用于学习<span class="arithmatex">\(P(X, Y)\)</span></p>
+<p>根据上面的假设，我们可以写出<strong>似然概率</strong>：
+$$
+P(X|Y)=P(x_1,x_2,...,x_n|Y)
+$$
+也可以给定<strong>先验概率</strong>：
+$$
+P(Y)
+$$
+那么就可以计算出<strong>后验概率</strong>：
+$$
+P(Y|X) \propto P(X|Y)P(Y)=P(x_1,x_2,...,x_n|Y)P(Y)
+$$</p>
+<div class="arithmatex">\[
+P(Y|X) \propto P(x_1|Y)P(x_2|Y)P(X_3|Y)...P(Y)
+\]</div>
+<p>模型包括概率分布的形状及其参数，有了这些可以用x预测y，也可以由y计算x，这就是生成模型。</p>
+<p>分类器可以写为：
+$$
+y=f(x)=\arg \max <em>{c</em>{k}} \frac{P\left(Y=c_{k}\right) \prod_{j} P\left(X^{(j)}=x^{(j)} \mid Y=c_{k}\right)}{\sum_{k} P\left(Y=c_{k}\right) \prod_{j} P\left(X^{(j)}=x^{(j)} \mid Y=c_{k}\right)}
+$$
+可以看到，其实是看哪一个类别<span class="arithmatex">\(c_k\)</span>，可以让<strong>后验概率</strong>达到最大。</p>
+<h3 id="_30">策略</h3>
+<p><strong>最大似然估计</strong>：我们需要知道条件概率与先验概率，可以采用极大似然法进行估计。</p>
+<p>对于离散的遍历，极大似然可以根据观测样本估计出表格式的条件概率与先验概率。</p>
+<p><strong>贝叶斯估计</strong>：采用极大似然估计，可能出现概率值为0的极端情况。</p>
+<p>贝叶斯估计的条件概率如此表示，<strong>拉普拉斯平滑</strong>
+$$
+P_{\lambda}\left(X^{(j)}=a_{j l} \mid Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(x_{i}^{(j)}=a_{j l}, y_{i}=c_{k}\right)+\lambda}{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)+S_{j} \lambda}
+$$</p>
+<h3 id="_31">算法</h3>
+<p>主要是概率分布的估计与计算</p>
+<h3 id="_32">总结：</h3>
+<ol>
+<li>特征变量的相互独立，极大地缩小了条件概率的复杂度</li>
+</ol>
+<h2 id="_33">决策树</h2>
+<p>决策树是一种基本的分类、回归方法。</p>
+<p>特点：模型具有可读性，分类速度快。</p>
+<h3 id="_34">模型</h3>
+<p>决策树是if-then规则的集合</p>
+<p>节点和有向边组成。</p>
+<p><img alt="image-20220324151903343" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220324151903343.png" /></p>
+<p>互斥且完备：每一个可能的实例都要被包括，而且只能被一条路径包括。</p>
+<p><img alt="image-20220324152202588" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220324152202588.png" /></p>
+<h3 id="_35">策略</h3>
+<p>决策树的学习本质上是从训练集合上归纳出一组分类规则，与训练集不矛盾的分类规则不止一种，也可能一个都没有。</p>
+<p>特征选择，决策树的生成，剪枝这三个过程</p>
+<h4 id="_36">特征选择：</h4>
+<p>根据信息论的原理进行选择。</p>
+<p><strong>熵</strong>：一个随机变量的熵描述了其“不确定度”。</p>
+<p><img alt="image-20220324153003092" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220324153003092.png" /></p>
+<p><strong>条件熵</strong>：描述了在给定某个变量的时候，这个变量的不确定性。</p>
+<p><strong>信息增益</strong>：在未给定Y，与给定Y，这两个情况下，X的熵的差。
+$$
+g(D, A)=H(D)-H(D \mid A)
+$$
+<strong>信息增益比</strong>：
+$$
+g_{R}(D, A)=\frac{g(D, A)}{H(D)}
+$$
+<strong>根据信息增益来进行特征选择</strong>：数据集D，计算每个变量的信息增益，选择信息增益最大的特征。</p>
+<p>计算信息增益：</p>
+<ol>
+<li>计算D的熵</li>
+<li>计算A对数据集D的条件熵</li>
+<li>求差</li>
+</ol>
+<p><strong>信息增益最大的变量A：如果给定A，会使得数据的熵减小最多。</strong></p>
+<h3 id="_37">算法</h3>
+<h4 id="id3">ID3算法</h4>
+<p>使用信息增益来选择特征，递归构建决策树。</p>
+<p>输入：数据集D，特征集A，阈值<span class="arithmatex">\(\mathcal{E}\)</span></p>
+<ol>
+<li>计算最大信息增益的特征<span class="arithmatex">\(A_g\)</span></li>
+<li>如果<span class="arithmatex">\(A_g&gt;\mathcal{E}\)</span>：</li>
+<li>依据该特征将D进行分割，在以此数据集递归执行ID3</li>
+<li>如果小于<span class="arithmatex">\(\mathcal{E}\)</span>，</li>
+<li>作为叶子节点</li>
+</ol>
+<h4 id="_38">剪枝算法：</h4>
+<p>最小化整棵树的损失函数：
+$$
+C_{\alpha}(T)=\sum_{t=1}^{|T|} N_{t} H_{t}(T)+\alpha|T|
+$$
+<span class="arithmatex">\(H()\)</span>是每个叶子节点上的经验熵，展开写为：
+$$
+H_{t}(T)=-\sum_{k} \frac{N_{t k}}{N_{t}} \log \frac{N_{t k}}{N_{t}}
+$$
+可以发现，如果叶子节点上直落了一类样本，那么经验熵为0。</p>
+<p><span class="arithmatex">\(N()\)</span>是该叶子节点的样本点</p>
+<p>后面是一个对复杂树的惩罚</p>
+<p>通过减少枝叶来最小化整棵树的损失函数。</p>
+<h4 id="cart">CART算法</h4>
+<p>判别模型，学习出的是P(Y|X)。</p>
+<ol>
+<li>基于数据集生成决策树，决策树要尽量大</li>
+<li>决策树剪枝，用验证数据集对已经生成的树进行剪枝并选择最优子树，这时使用损失函数最小作为剪枝标准。</li>
+</ol>
+<h5 id="_39">回归树</h5>
+<p>树模型实际上是对空间的划分，假设划分为M个单元，每个单元对应的输出值为<span class="arithmatex">\(c_m\)</span>
+$$
+f(x)=\sum_{m=1}^{M} c_{m} I\left(x \in R_{m}\right)
+$$
+损失函数：
+$$
+\hat{c}<em>{m}=\operatorname{ave}\left(y</em>{i} \mid x_{i} \in R_{m}\right)
+$$
+如何找到最优切分点，就是构建树的过程：</p>
+<p>对于<span class="arithmatex">\(x^{(j)}\)</span>来说，切分为两部分<span class="arithmatex">\(R_1\)</span>,<span class="arithmatex">\(R_2\)</span>：
+$$
+R_{1}(j, s)=\left{x \mid x^{(j)} \leqslant s\right} \quad \text { 和 } \quad R_{2}(j, s)=\left{x \mid x^{(j)}&gt;s\right}
+$$
+最优切分点为：
+$$
+\min <em>{j, s}\left[\min </em>{c_{1}} \sum_{x_{i} \in R_{1}(j, s)}\left(y_{i}-c_{1}\right)^{2}+\min <em>{c</em>{2}} \sum_{x_{i} \in R_{2}(j, s)}\left(y_{i}-c_{2}\right)^{2}\right]
+$$</p>
+<h5 id="_40">最小二乘回归树：</h5>
+<ol>
+<li>遍历遍历<span class="arithmatex">\(x_j\)</span>与切分点<span class="arithmatex">\(s\)</span>，使之损失函数最小</li>
+</ol>
+<div class="arithmatex">\[
+\min _{j, s}\left[\min _{c_{1}} \sum_{x_{i} \in R_{1}(j, s)}\left(y_{i}-c_{1}\right)^{2}+\min _{c_{2}} \sum_{x_{i} \in R_{2}(j, s)}\left(y_{i}-c_{2}\right)^{2}\right]
+\]</div>
+<ol>
+<li>根据已经确定好的j, s 确定划分区域的输出值</li>
+</ol>
+<p><img alt="image-20220324162207034" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220324162207034.png" /></p>
+<ol>
+<li>继续往下划分，直到满足终止条件。</li>
+</ol>
+<h5 id="_41">分类树</h5>
+<p>分类树用基尼系数来选择最优特征。
+$$
+\operatorname{Gini}(p)=\sum_{k=1}^{K} p_{k}\left(1-p_{k}\right)=1-\sum_{k=1}^{K} p_{k}^{2}
+$$
+对于一个<strong>样本集</strong>（其实指的是<span class="arithmatex">\(P(D)\)</span>），其基尼系数为：
+$$
+\operatorname{Gini}(D)=1-\sum_{k=1}^{K}\left(\frac{\left|C_{k}\right|}{|D|}\right)^{2}
+$$
+基尼系数表示集合的不确定性，基尼指数<span class="arithmatex">\(Gini(D,A)\)</span>表示经过A分割后集合D的不确定性。</p>
+<p><span class="arithmatex">\(D_1\)</span>和<span class="arithmatex">\(D_2\)</span>是依据特征A的分割点a来确定的。
+$$
+\operatorname{Gini}(D, A)=\frac{\left|D_{1}\right|}{|D|} \operatorname{Gini}\left(D_{1}\right)+\frac{\left|D_{2}\right|}{|D|} \operatorname{Gini}\left(D_{2}\right)
+$$
+<img alt="image-20220324171243583" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220324171243583.png" /></p>
+<h5 id="cart_1">CART生成算法</h5>
+<ol>
+<li>遍历各个特征，以及特征a的分割点，找到最优的A，与分割点a。</li>
+<li>生成两个子节点</li>
+<li>递归的使用该算法，知道节点的样本数少于阈值</li>
+</ol>
+<h5 id="cart_2">CART剪枝</h5>
+<p>计算<strong>子树</strong>的损失函数：
+$$
+C_{\alpha}(T)=C(T)+\alpha|T|
+$$
+某个<strong>节点</strong>的损失函数：
+$$
+C_{\alpha}(t)=C(t)+\alpha
+$$</p>
+<p>如果说T是一个棵树，t是一个单节点，那么存在一个足够大的<span class="arithmatex">\(\alpha\)</span>使得：
+$$
+C_{\alpha}\left(T_{t}\right)=C_{\alpha}(t)
+$$
+此时：
+$$
+\alpha=\frac{C(t)-C\left(T_{t}\right)}{\left|T_{t}\right|-1}
+$$
+把这个数值作为剪枝的标准g(t):
+$$
+g(t)=\frac{C(t)-C\left(T_{t}\right)}{\left|T_{t}\right|-1}
+$$
+这个数字越大，说明越需要依赖正则项优势，所以最小的<span class="arithmatex">\(g(t)\)</span>, 是我们需要减去的。</p>
+<p>越是拥有大的<span class="arithmatex">\(\alpha\)</span> 越是会剪枝，所以对应于<span class="arithmatex">\(\alpha_1, \alpha_2,...,\alpha_n\)</span>都有一颗子树</p>
+<p>找到最优子树（使用交叉验证）， 就可以确定<span class="arithmatex">\(\alpha\)</span> 了。</p>
+<h2 id="logistic">Logistic 回归</h2>
+<p>logistic distribution：
+$$
+\begin{aligned}
+&amp;F(x)=P(X \leqslant x)=\frac{1}{1+\mathrm{e}^{-(x-\mu) / \gamma}} \
+&amp;f(x)=F^{\prime}(x)=\frac{\mathrm{e}^{-(x-\mu) / \gamma}}{\gamma\left(1+\mathrm{e}^{-(x-\mu) / \gamma}\right)^{2}}
+\end{aligned}
+$$</p>
+<h3 id="_42">二项分类模型</h3>
+<p>二项逻辑斯蒂回归是一个判别模型，拟合P(Y|X)，其模型的显式表达为：
+$$
+\begin{aligned}
+&amp;P(Y=1 \mid x)=\frac{\exp (w \cdot x+b)}{1+\exp (w \cdot x+b)} \
+&amp;P(Y=0 \mid x)=\frac{1}{1+\exp (w \cdot x+b)}
+\end{aligned}
+$$
+有参数<span class="arithmatex">\(w,b\)</span>。可以将b整合到输入向量中，得到
+$$
+\begin{aligned}
+&amp;P(Y=1 \mid x)=\frac{\exp (w \cdot x)}{1+\exp (w \cdot x)} \
+&amp;P(Y=0 \mid x)=\frac{1}{1+\exp (w \cdot x)}
+\end{aligned}
+$$
+一个事件发生的概率与不发生的概率的比值，是该事件的<strong>几率</strong>（odds）。
+$$
+odds = p/(1-p)
+$$
+那么对于逻辑斯蒂回归而言，事件的<strong>对数几率</strong>：
+$$
+\log \frac{P(Y=1 \mid x)}{1-P(Y=1 \mid x)}=w \cdot x
+$$
+这既是说：逻辑斯蒂模型输出Y=1的<strong>对数几率</strong>是输入向量x的<strong>线性函数</strong>。</p>
+<h3 id="_43">策略</h3>
+<p>参数使用最大似然估计。</p>
+<p>记：
+$$
+P(Y=1 \mid x)=\pi(x), \quad P(Y=0 \mid x)=1-\pi(x)
+$$
+似然函数写为：
+$$
+\prod_{i=1}^{N}\left[\pi\left(x_{i}\right)\right]^{y_{i}}\left[1-\pi\left(x_{i}\right)\right]^{1-y_{i}}
+$$
+将其展开，并结合上文提到的性质，最终似然函数可以写为：
+$$
+L(w) =\sum_{i=1}^{N}\left[y_{i}\left(w \cdot x_{i}\right)-\log \left(1+\exp \left(w \cdot x_{i}\right)\right]\right.
+$$</p>
+<h3 id="_44">算法</h3>
+<div class="arithmatex">\[
+\max_w L(w)
+\]</div>
+<p>一般使用牛顿法或者梯度下降法。</p>
+<h3 id="_45">多项分类模型</h3>
+<div class="arithmatex">\[
+\begin{gathered}
+P(Y=k \mid x)=\frac{\exp \left(w_{k} \cdot x\right)}{1+\sum_{k=1}^{K-1} \exp \left(w_{k} \cdot x\right)}, \quad k=1,2, \cdots, K-1 \\
+P(Y=K \mid x)=\frac{1}{1+\sum_{k=1}^{K-1} \exp \left(w_{k} \cdot x\right)}
+\end{gathered}
+\]</div>
+<p>前K-1个的分子是<span class="arithmatex">\(exp(w_k\cdot x)\)</span>, 第K个是1。</p>
+<h2 id="_46">最大熵模型</h2>
+<p><strong>熵</strong>：一个随机变量的熵描述了其“不确定度”。</p>
+<p><img alt="image-20220324153003092" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220324153003092.png" /></p>
+<p>一个概率分布的熵计算公式：
+$$
+H(P)=-\sum_{x} P(x) \log P(x)
+$$
+当X取均匀分布的时候，熵最大。</p>
+<p><strong>条件熵</strong>：描述了在给定某个变量的时候，这个变量的不确定性。
+$$
+H(Y \mid X)=\sum_{i=1}^{n} p\left(x_{i}\right) H\left(Y \mid X=x_{i}\right)=-\sum_{i=1}^{n} p\left(x_{i}\right) \sum_{j=1}^{m} p\left(y_{j} \mid x_{i}\right) \log p\left(y_{j} \mid x_{i}\right)
+$$
+最大熵可以作为我们模型选择的准则。</p>
+<p>现假设数据的联合概率为：
+$$
+P(X,Y)
+$$
+根据观测数据，我们可以得到<strong>经验联合概率分布</strong>为：
+$$
+\begin{aligned}
+&amp;\tilde{P}(X=x, Y=y)=\frac{v(X=x, Y=y)}{N} \
+&amp;\tilde{P}(X=x)=\frac{v(X=x)}{N}
+\end{aligned}
+$$
+对于判别模型<span class="arithmatex">\(P(y|x)\)</span>
+$$
+\sum_{x, y} \tilde{P}(x) P(y \mid x) f(x, y)=\sum_{x, y} \tilde{P}(x, y) f(x, y)
+$$
+对于满足这个条件的模型<span class="arithmatex">\(P(y|x)\)</span>，我们都可以认为它是“有效”的，但不一定是最好的。</p>
+<blockquote>
+<p>举个例子:</p>
+<p>对于x=0,y=?</p>
+<p>p(y=1|x=0)=1,p(y=1|x=0)=0 是一种模型；</p>
+<p>p(y=1|x=0)=0.75,p(y=1|x=0)=0.25 也是一种模型；</p>
+<p>它们都可以正确地估计出y=1这个结果，但是哪个模型更好呢？</p>
+</blockquote>
+<p>记
+$$
+\mathcal{C} \equiv\left{P \in \mathcal{P} \mid E_{P}\left(f_{i}\right)=E_{\tilde{P}}\left(f_{i}\right), \quad i=1,2, \cdots, n\right}
+$$
+这个集合里的所有模型都是有效的，具有最大熵的模型为：
+$$
+H(P)=-\sum_{x, y} \tilde{P}(x) P(y \mid x) \log P(y \mid x)
+$$
+最大化这个式子，得到的P(Y|X)是具有最大熵的“有效”模型。</p>
+<p>这就是最大熵模型选择。</p>
+<h3 id="_47">策略</h3>
+<p><img alt="image-20220328213618433" src="../%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B.assets/image-20220328213618433.png" /></p>
+<p>用拉格朗日乘子法进行求解。（等号约束是一种强约束，如果是小于等于的弱约束则使用KKT定理）</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../%E3%80%8A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 《线性代数及其应用》" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              《线性代数及其应用》
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" aria-label="Next: 《计算机网络》读书笔记" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              《计算机网络》读书笔记
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
