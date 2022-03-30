@@ -1,15 +1,8 @@
-#!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-"""
-@File    :   DQN实现.py    
-@Contact :   huanghoward@foxmail.com
-@Modify Time :    2022/3/29 15:59  
-------------      
-"""
 import gym
 import math
 import random
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from collections import namedtuple, deque
 from itertools import count
@@ -20,17 +13,21 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 import torchvision.transforms as T
-import os
-os.environ["KMP_DUPLICATE_LIB_OK"]  =  "TRUE"
+
 
 env = gym.make('CartPole-v0').unwrapped
+
+# set up matplotlib
+is_ipython = 'inline' in matplotlib.get_backend()
+if is_ipython:
+    from IPython import display
 
 plt.ion()
 
 # if gpu is to be used
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
 
-# 一次经验
 Transition = namedtuple('Transition',
                         ('state', 'action', 'next_state', 'reward'))
 
@@ -38,8 +35,7 @@ Transition = namedtuple('Transition',
 class ReplayMemory(object):
 
     def __init__(self, capacity):
-        # 用队列将经验存在经验回放类中
-        self.memory = deque([], maxlen=capacity)
+        self.memory = deque([],maxlen=capacity)
 
     def push(self, *args):
         """Save a transition"""
@@ -50,7 +46,6 @@ class ReplayMemory(object):
 
     def __len__(self):
         return len(self.memory)
-
 
 class DQN(nn.Module):
 
@@ -65,9 +60,8 @@ class DQN(nn.Module):
 
         # Number of Linear input connections depends on output of conv2d layers
         # and therefore the input image size, so compute it.
-        def conv2d_size_out(size, kernel_size=5, stride=2):
-            return (size - (kernel_size - 1) - 1) // stride + 1
-
+        def conv2d_size_out(size, kernel_size = 5, stride = 2):
+            return (size - (kernel_size - 1) - 1) // stride  + 1
         convw = conv2d_size_out(conv2d_size_out(conv2d_size_out(w)))
         convh = conv2d_size_out(conv2d_size_out(conv2d_size_out(h)))
         linear_input_size = convw * convh * 32
@@ -82,7 +76,6 @@ class DQN(nn.Module):
         x = F.relu(self.bn3(self.conv3(x)))
         return self.head(x.view(x.size(0), -1))
 
-
 resize = T.Compose([T.ToPILImage(),
                     T.Resize(40, interpolation=Image.CUBIC),
                     T.ToTensor()])
@@ -93,14 +86,13 @@ def get_cart_location(screen_width):
     scale = screen_width / world_width
     return int(env.state[0] * scale + screen_width / 2.0)  # MIDDLE OF CART
 
-
 def get_screen():
     # Returned screen requested by gym is 400x600x3, but is sometimes larger
     # such as 800x1200x3. Transpose it into torch order (CHW).
     screen = env.render(mode='rgb_array').transpose((2, 0, 1))
     # Cart is in the lower half, so strip off the top and bottom of the screen
     _, screen_height, screen_width = screen.shape
-    screen = screen[:, int(screen_height * 0.4):int(screen_height * 0.8)]
+    screen = screen[:, int(screen_height*0.4):int(screen_height * 0.8)]
     view_width = int(screen_width * 0.6)
     cart_location = get_cart_location(screen_width)
     if cart_location < view_width // 2:
@@ -126,6 +118,8 @@ plt.imshow(get_screen().cpu().squeeze(0).permute(1, 2, 0).numpy(),
            interpolation='none')
 plt.title('Example extracted screen')
 plt.show()
+
+
 
 BATCH_SIZE = 128
 GAMMA = 0.999
@@ -189,6 +183,9 @@ def plot_durations():
         plt.plot(means.numpy())
 
     plt.pause(0.001)  # pause a bit so that plots are updated
+    if is_ipython:
+        display.clear_output(wait=True)
+        display.display(plt.gcf())
 
 def optimize_model():
     if len(memory) < BATCH_SIZE:
@@ -235,7 +232,7 @@ def optimize_model():
         param.grad.data.clamp_(-1, 1)
     optimizer.step()
 
-num_episodes = 50
+num_episodes = 5000
 for i_episode in range(num_episodes):
     # Initialize the environment and state
     env.reset()
@@ -273,6 +270,7 @@ for i_episode in range(num_episodes):
         target_net.load_state_dict(policy_net.state_dict())
 
 print('Complete')
+torch.save(policy_net, 'DQN.pth')
 env.render()
 env.close()
 plt.ioff()
