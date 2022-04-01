@@ -12,10 +12,8 @@ import gym
 
 env = gym.make('CartPole-v1')
 state = env.reset()
-for t in range(100):
-    time.sleep(0.5)
+for t in range(10000):
     env.render()
-    print(state)
     action = env.action_space.sample()
     state, reward, done, info = env.step(action)
 

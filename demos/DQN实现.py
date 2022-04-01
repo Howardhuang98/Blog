@@ -89,6 +89,7 @@ def get_cart_location(screen_width):
 def get_screen():
     # Returned screen requested by gym is 400x600x3, but is sometimes larger
     # such as 800x1200x3. Transpose it into torch order (CHW).
+    env.render(mode="human")
     screen = env.render(mode='rgb_array').transpose((2, 0, 1))
     # Cart is in the lower half, so strip off the top and bottom of the screen
     _, screen_height, screen_width = screen.shape
@@ -261,6 +262,7 @@ for i_episode in range(num_episodes):
 
         # Perform one step of the optimization (on the policy network)
         optimize_model()
+
         if done:
             episode_durations.append(t + 1)
             plot_durations()
