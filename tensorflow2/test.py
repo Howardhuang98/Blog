@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 """
-@File    :   test.py    
+@File    :   使用pytorch进行梯度下降.py
 @Contact :   huanghoward@foxmail.com
 @Modify Time :    2021/10/23 10:38  
 ------------      
