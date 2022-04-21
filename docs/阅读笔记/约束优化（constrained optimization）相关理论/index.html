@@ -1,0 +1,608 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>约束优化（constrained optimization）相关理论 - Huang Hao's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#constrained-optimization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-header__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang Hao's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              约束优化（constrained optimization）相关理论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-nav__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Huang Hao's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Huang Hao' Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          阅读笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="阅读笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          阅读笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-nav__link">
+        VAE模型——目前最流行的生成模型之一
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          约束优化（constrained optimization）相关理论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        约束优化（constrained optimization）相关理论
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    情况1：一个等号约束
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    情况2：一个不等号约束
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    情况3：两个不等号约束
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kkt" class="md-nav__link">
+    一阶最优条件,KKT条件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    情况1：一个等号约束
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    情况2：一个不等号约束
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    情况3：两个不等号约束
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kkt" class="md-nav__link">
+    一阶最优条件,KKT条件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="constrained-optimization">约束优化（constrained optimization）相关理论</h1>
+<h2 id="_1">概念</h2>
+<p>对于一个约束优化问题，通常建模为：</p>
+<p><img alt="image-20220420142613447" src="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA.assets/image-20220420142613447.png" /></p>
+<p>通常 <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 是光滑的实值函数。<span class="arithmatex"><span class="MathJax_Preview">\mathcal{E}</span><script type="math/tex">\mathcal{E}</script></span> 代表等号约束的有限集合，<span class="arithmatex"><span class="MathJax_Preview">\mathcal{I}</span><script type="math/tex">\mathcal{I}</script></span> 是不等式约束的优先集合。用 <span class="arithmatex"><span class="MathJax_Preview">\Omega</span><script type="math/tex">\Omega</script></span> 代表可行域。</p>
+<p>紧凑的写法就是：
+$$
+\min_{x\in\Omega} f(x)
+$$</p>
+<p>回顾，对于非约束优化问题的条件：</p>
+<p>necessary condition 必要条件：<strong>局部极小值点</strong>有 一阶导数为零，二阶导数半正定；</p>
+<blockquote>
+<p>必要条件就是解必须满足的条件。</p>
+</blockquote>
+<p>sufficient condition 充分条件：所有点满足一阶导数为零，二阶导数是整数的点是函数的<strong>局部极小值点</strong>。</p>
+<blockquote>
+<p>充分条件就是：如果x满足该条件，那么x就是解。</p>
+</blockquote>
+<p>局部解：</p>
+<p>严格局部解：</p>
+<p>隔离局部解：</p>
+<h2 id="1">情况1：一个等号约束</h2>
+<p>对于这样的问题：
+$$\min x_1+x_2\ s.t. x_1^2+x_2^2=2 $$
+<img alt="image-20220420215313005" src="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA.assets/image-20220420215313005.png" /></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> 点（红色）是最优解，可以发现在这个圆上，除了<span class="arithmatex"><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> 以外所有的点都可以找到一个路径，减小 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的同时，保持可行。</p>
+<p>同时可以发现，<span class="arithmatex"><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> 点（红色）的约束法线 <span class="arithmatex"><span class="MathJax_Preview">\nabla c_{1}\left(x^{*}\right)</span><script type="math/tex">\nabla c_{1}\left(x^{*}\right)</script></span> 是平行于梯度 <span class="arithmatex"><span class="MathJax_Preview">\nabla f(x^*)</span><script type="math/tex">\nabla f(x^*)</script></span> 的，所以存在一个系数使得:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla f\left(x^{*}\right)=\lambda_{1}^{*} \nabla c_{1}\left(x^{*}\right)
+</div>
+<script type="math/tex; mode=display">
+\nabla f\left(x^{*}\right)=\lambda_{1}^{*} \nabla c_{1}\left(x^{*}\right)
+</script>
+</div>
+<p>下面使用一节泰勒展开推导上式：</p>
+<p>对于 <span class="arithmatex"><span class="MathJax_Preview">c_{1}\left(x\right)=0</span><script type="math/tex">c_{1}\left(x\right)=0</script></span> , 有一个微小的步长<span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，满足<span class="arithmatex"><span class="MathJax_Preview">c_1(x+s)=0</span><script type="math/tex">c_1(x+s)=0</script></span>，写为：
+$$
+0=c_1(x+s)\approx c_1(x)+ \nabla c_1(x)^Ts=\nabla c_1(x)^Ts
+$$
+ 所以可以说，如果说微小步长 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 满足 <span class="arithmatex"><span class="MathJax_Preview">c_1</span><script type="math/tex">c_1</script></span> 的可行性，在一阶情况下，满足条件：
+$$
+\nabla c_1(x)^Ts=0
+$$
+同样的，对于 <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 来说，我们希望步长s使得 <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 减小，所以：
+$$
+0&gt;f(x+s)-f(x)\approx \nabla f(x)^Ts
+$$
+所以说对于上面两个条件：</p>
+<ol>
+<li><span class="arithmatex"><span class="MathJax_Preview">\nabla c_1(x)^Ts=0</span><script type="math/tex">\nabla c_1(x)^Ts=0</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">0&gt; \nabla f(x)^Ts</span><script type="math/tex">0> \nabla f(x)^Ts</script></span> </li>
+</ol>
+<p>这两个条件满足--&gt;存在微小步长s---&gt;那么就存在一个方向d，<span class="arithmatex"><span class="MathJax_Preview">d \approx s/||s||</span><script type="math/tex">d \approx s/||s||</script></span> 满足上面两个条件：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\nabla c_1(x)^Td=0</span><script type="math/tex">\nabla c_1(x)^Td=0</script></span> 并且<span class="arithmatex"><span class="MathJax_Preview">0&gt; \nabla f(x)^Td</span><script type="math/tex">0> \nabla f(x)^Td</script></span> 。</p>
+<p>反而言之，如果说这个d不存在，那么我们就在x附近找不到比它小的数值，说明x是局部最小。</p>
+<p>通过画图可以发现，当<span class="arithmatex"><span class="MathJax_Preview">\nabla c(x)</span><script type="math/tex">\nabla c(x)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> 平行的时候，也就是<span class="arithmatex"><span class="MathJax_Preview">\nabla c(x)=\lambda \nabla f(x)</span><script type="math/tex">\nabla c(x)=\lambda \nabla f(x)</script></span>，我们是找不到满足条件的  <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>。</p>
+<p>引入拉格朗日函数：
+$$
+\mathcal{L}\left(x, \lambda_{1}\right)=f(x)-\lambda_{1} c_{1}(x)
+$$
+导数为：
+$$
+\nabla_{x} \mathcal{L}\left(x, \lambda_{1}\right)=\nabla f(x)-\lambda_{1} \nabla c_{1}(x)
+$$
+若存在乘子 <span class="arithmatex"><span class="MathJax_Preview">\lambda_{1}^*</span><script type="math/tex">\lambda_{1}^*</script></span> 使得 <span class="arithmatex"><span class="MathJax_Preview">\nabla_{x} \mathcal{L}\left(x, \lambda_{1}\right)=0</span><script type="math/tex">\nabla_{x} \mathcal{L}\left(x, \lambda_{1}\right)=0</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">\nabla f(x)=\lambda c(x)</span><script type="math/tex">\nabla f(x)=\lambda c(x)</script></span>。这样一来，我们可以将等号约束的问题转化为寻找拉格朗日函数的驻点问题。<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 为拉格朗日乘子。</p>
+<p>显然，<span class="arithmatex"><span class="MathJax_Preview">\nabla c(x)=\lambda \nabla f(x)</span><script type="math/tex">\nabla c(x)=\lambda \nabla f(x)</script></span> 这个条件只能是一个必要条件，不能说是充分条件。</p>
+<h2 id="2">情况2：一个不等号约束</h2>
+<p>对于这样的不等号约束问题：
+$$
+\min x_1+x_2\
+s.t. x_1^2+x_2^2&lt;=2
+$$
+将情况1的圆环转化为了一个圆的内部与环。</p>
+<p><img alt="image-20220421003622477" src="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA.assets/image-20220421003622477.png" /></p>
+<p>对于这个问题，依旧可以知道<span class="arithmatex"><span class="MathJax_Preview">x^*=(-1,-1)^T</span><script type="math/tex">x^*=(-1,-1)^T</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lambda =1/2</span><script type="math/tex">\lambda =1/2</script></span> 。</p>
+<p>对于不等式约束，我们希望x附件比当前c(x)大，或者相等：
+$$
+0 \geq c(x+s) \approx c(x)+ \nabla c(x)^Ts
+$$
+所以在一阶情况写为：
+$$
+c(x)+ \nabla c(x)^Ts \geq 0
+$$
+第二个条件和情况1一样，写为：
+$$
+0&gt; \nabla f(x)^Ts
+$$
+如果说 x严格位于圆的内部，也就是说 c(x)&gt;0。那么任何方向上的步长都能满足<span class="arithmatex"><span class="MathJax_Preview">c(x)+ \nabla c(x)^Ts \geq 0</span><script type="math/tex">c(x)+ \nabla c(x)^Ts \geq 0</script></span> ，只要它足够短。</p>
+<p>如果说x位于圆环上，那么就和情况1讨论的一样。只要 <span class="arithmatex"><span class="MathJax_Preview">\nabla c(x)</span><script type="math/tex">\nabla c(x)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> 不平行，就能找到一个方向d进行搜索。如下图所示，两者不平行，灰色区域都是可以搜索的空间，满足两个条件。</p>
+<p><img alt="image-20220421112443597" src="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA.assets/image-20220421112443597.png" /></p>
+<p>总结成拉格朗日函数形式：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla \mathcal{L}(x^*,\lambda^*)=0,对于任意 \lambda \geq 0\\
+\lambda^* c(x^*)=0
+</div>
+<script type="math/tex; mode=display">
+\nabla \mathcal{L}(x^*,\lambda^*)=0,对于任意 \lambda \geq 0\\
+\lambda^* c(x^*)=0
+</script>
+</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">\lambda^* c(x^*)=0</span><script type="math/tex">\lambda^* c(x^*)=0</script></span> 这也被称之为互补松弛条件：</p>
+<p>当c(x)&gt;0的时候（约束不起作用），<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 为0，也就是说只需要满足<span class="arithmatex"><span class="MathJax_Preview">\nabla f(x)=0</span><script type="math/tex">\nabla f(x)=0</script></span> 这一个条件。</p>
+<p>当c(x)=0的时候，约束发挥作用，类比于情况一，要满足两个条件。 </p>
+<h2 id="3">情况3：两个不等号约束</h2>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min x_1+x_2\\
+s.t.2-x_1^2-x_2^2 \geq 0,\\
+x_2 \geq 0
+</div>
+<script type="math/tex; mode=display">
+\min x_1+x_2\\
+s.t.2-x_1^2-x_2^2 \geq 0,\\
+x_2 \geq 0
+</script>
+</div>
+<p>问题转化为一个半圆，如图所示：</p>
+<p><img alt="image-20220421113753513" src="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA.assets/image-20220421113753513.png" /></p>
+<p>条件写为:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla \mathcal{L}(x^*,\lambda^*)=0\\
+\lambda^* \geq 0
+</div>
+<script type="math/tex; mode=display">
+\nabla \mathcal{L}(x^*,\lambda^*)=0\\
+\lambda^* \geq 0
+</script>
+</div>
+<p>互补松弛条件：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\lambda^* c(x^*)=0
+</div>
+<script type="math/tex; mode=display">
+\lambda^* c(x^*)=0
+</script>
+</div>
+<p>找一些点进行检查：
+<span class="arithmatex"><span class="MathJax_Preview">x=(\sqrt 2,0)^T</span><script type="math/tex">x=(\sqrt 2,0)^T</script></span>，可以找到 <span class="arithmatex"><span class="MathJax_Preview">d=(-1,0)^T</span><script type="math/tex">d=(-1,0)^T</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">x=(1,0)^T</span><script type="math/tex">x=(1,0)^T</script></span>，可以找到 <span class="arithmatex"><span class="MathJax_Preview">d=(-1/2,1/4)^T</span><script type="math/tex">d=(-1/2,1/4)^T</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">x=(-\sqrt 2,0)^T</span><script type="math/tex">x=(-\sqrt 2,0)^T</script></span>，满足条件，<span class="arithmatex"><span class="MathJax_Preview">\lambda^*=(1/2 \sqrt2,1)^T</span><script type="math/tex">\lambda^*=(1/2 \sqrt2,1)^T</script></span>, 是一个极值点。</p>
+<h2 id="kkt">一阶最优条件,KKT条件</h2>
+<p>定义拉格朗日函数：
+$$
+\mathcal{L}(x, \lambda)=f(x)-\sum_{i \in \mathcal{E} \cup \mathcal{I}} \lambda_{i} c_{i}(x)
+$$
+一阶必要条件：</p>
+<p><img alt="image-20220420171733957" src="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA.assets/image-20220420171733957.png" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VAE模型——目前最流行的生成模型之一" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              VAE模型——目前最流行的生成模型之一
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
