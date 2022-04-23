@@ -1,0 +1,578 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>图注意力神经网络：《graph attention network》阅读笔记 - Huang Hao's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#graph-attention-network" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-header__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang Hao's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              图注意力神经网络：《graph attention network》阅读笔记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang Hao&#39;s Blog" class="md-nav__button md-logo" aria-label="Huang Hao's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Huang Hao's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Huang Hao' Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          阅读笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="阅读笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          阅读笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-nav__link">
+        VAE模型——目前最流行的生成模型之一
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          图注意力神经网络：《graph attention network》阅读笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        图注意力神经网络：《graph attention network》阅读笔记
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gat-architecture" class="md-nav__link">
+    GAT architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    个人总结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyg" class="md-nav__link">
+    pyG实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA/" class="md-nav__link">
+        约束优化（constrained optimization）相关理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gat-architecture" class="md-nav__link">
+    GAT architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    个人总结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyg" class="md-nav__link">
+    pyG实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="graph-attention-network">图注意力神经网络：《graph attention network》阅读笔记</h1>
+<p><img alt="image-20220423204253167" src="../%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220423204253167.png" /></p>
+<h2 id="abstract">abstract</h2>
+<p>提出图注意力网络，一个新的基于图结构数据的神经网络构架。借助注意力层来克服图卷积操作的短处。</p>
+<p>节点可以参与到邻居节点的特征。</p>
+<h2 id="introduction">introduction</h2>
+<p>卷积操作适用于grid-like structure，卷积网络的构架高效地重复使用local filters。</p>
+<p>但是对于别的情况，比如3D meshes， 社交网络，生物学网路来说，他们并不是grid-like data。</p>
+<p>已经有一些尝试将神经网络应用在任意结构的图（相比于grid like structure）上。</p>
+<p>目前，研究者对使用卷积操作到图领域这件事非常感兴趣，分为两类spectral approach和non-spectral approach。谱方法和非谱方法。</p>
+<p>（#TODO: 对于图上卷积操作的review）</p>
+<p>本文提出一个基于<strong>注意力机制</strong>的节点分类方法：computing <strong>hidden representations</strong> by attending over its neighbors following a <strong>self-attention</strong> strategy. </p>
+<p>具备以下几个优势：</p>
+<ol>
+<li>操作非常高效，parallelizable；</li>
+<li>可以适用于具有不同度的节点；</li>
+<li>模型适用于 inductive learning problem，包括使用在其他图上。</li>
+</ol>
+<h3 id="gat-architecture">GAT architecture</h3>
+<p>在此描述一层GAT。</p>
+<p><strong>输入</strong>N个节点与其节点特征：<span class="arithmatex"><span class="MathJax_Preview">h=[h_1,h_2,...,h_N], h_i \in R^F</span><script type="math/tex">h=[h_1,h_2,...,h_N], h_i \in R^F</script></span></p>
+<p><strong>输出</strong>N个节点与其节点特征，其特征维度更新到 <span class="arithmatex"><span class="MathJax_Preview">F'</span><script type="math/tex">F'</script></span> ,<span class="arithmatex"><span class="MathJax_Preview">h'=[h'_1,h'_2,...,h'_N], h'_i \in R^{F'}</span><script type="math/tex">h'=[h'_1,h'_2,...,h'_N], h'_i \in R^{F'}</script></span></p>
+<hr />
+<p>在这一层中，包括一个<strong>共享的注意力机制</strong>：<span class="arithmatex"><span class="MathJax_Preview">a: R^{F'}\times R^{F} \rightarrow R</span><script type="math/tex">a: R^{F'}\times R^{F} \rightarrow R</script></span> 。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+e_{ij}=a(Wh_i,Wh_j)
+</div>
+<script type="math/tex; mode=display">
+e_{ij}=a(Wh_i,Wh_j)
+</script>
+</div>
+<p>这代表的是对于j节点对于i节点的重要度，使用masked attention，只计算 <span class="arithmatex"><span class="MathJax_Preview">e_{ij}</span><script type="math/tex">e_{ij}</script></span> for node <span class="arithmatex"><span class="MathJax_Preview">j\in \mathcal{N_i}</span><script type="math/tex">j\in \mathcal{N_i}</script></span> ，准确地说是一阶的邻居节点。</p>
+<p>为了使系数方便比较，将重要度归一化为一个<strong>标量</strong>：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\alpha_{i j}=\operatorname{softmax}_{j}\left(e_{i j}\right)=\frac{\exp \left(e_{i j}\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(e_{i k}\right)}
+</div>
+<script type="math/tex; mode=display">
+\alpha_{i j}=\operatorname{softmax}_{j}\left(e_{i j}\right)=\frac{\exp \left(e_{i j}\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(e_{i k}\right)}
+</script>
+</div>
+<p>在本文，a是一个单层神经网络，所以综合写为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\alpha_{i j}=\frac{\exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{j}\right]\right)\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{k}\right]\right)\right)}
+</div>
+<script type="math/tex; mode=display">
+\alpha_{i j}=\frac{\exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{j}\right]\right)\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{k}\right]\right)\right)}
+</script>
+</div>
+<p>计算图如左图所示：</p>
+<p><img alt="image-20220423213201580" src="../%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220423213201580.png" /></p>
+<p>计算完每个边上的“注意力”后，使用一个非线性变换进行更新节点：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\vec{h}_{i}^{\prime}=\sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j} \mathbf{W} \vec{h}_{j}\right)
+</div>
+<script type="math/tex; mode=display">
+\vec{h}_{i}^{\prime}=\sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j} \mathbf{W} \vec{h}_{j}\right)
+</script>
+</div>
+<p>为了稳定学习过程，可以将增加多头注意力，如上图的右图，就是三头注意力。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\vec{h}_{i}^{\prime}=\|_{k=1}^{K} \sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j}^{k} \mathbf{W}^{k} \vec{h}_{j}\right)
+</div>
+<script type="math/tex; mode=display">
+\vec{h}_{i}^{\prime}=\|_{k=1}^{K} \sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j}^{k} \mathbf{W}^{k} \vec{h}_{j}\right)
+</script>
+</div>
+<p>应为有K个head，所以得到的<span class="arithmatex"><span class="MathJax_Preview">h'_i</span><script type="math/tex">h'_i</script></span> 的长度为 KF'，为了避免这种情况，可以让K个head的F'长度的向量取平均值。 </p>
+<h3 id="_1">个人总结</h3>
+<ol>
+<li>GAT并不使用edge attribution；</li>
+<li>适用于节点分类任务。   </li>
+</ol>
+<h3 id="pyg">pyG实现</h3>
+<p><img alt="image-20220423222010470" src="../%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220423222010470.png" /></p>
+<p>显然，我们只需要定义好F，和F'，就可以初始化一个注意力图神经网络了。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VAE模型——目前最流行的生成模型之一" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              VAE模型——目前最流行的生成模型之一
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA/" class="md-footer__link md-footer__link--next" aria-label="Next: 约束优化（constrained optimization）相关理论" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              约束优化（constrained optimization）相关理论
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
