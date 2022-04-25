@@ -13,7 +13,7 @@
     
     
       
-        <title>图注意力神经网络：《graph attention network》阅读笔记 - Huang Hao's Blog</title>
+        <title>使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》 - Huang Hao's Blog</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#graph-attention-network" class="md-skip">
+        <a href="#a-graph-autoencoder-approach-to-causal-structure-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              图注意力神经网络：《graph attention network》阅读笔记
+              使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
             
           </span>
         </div>
@@ -281,20 +281,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B/" class="md-nav__link">
-        使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -307,12 +293,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          图注意力神经网络：《graph attention network》阅读笔记
+          使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        图注意力神经网络：《graph attention network》阅读笔记
+        使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
       </a>
       
         
@@ -339,35 +325,36 @@
       
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
-    introduction
-  </a>
-  
-    <nav class="md-nav" aria-label="introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gat-architecture" class="md-nav__link">
-    GAT architecture
+    Introduction
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#gradient-based-causal-structure-learning" class="md-nav__link">
+    Gradient-based causal structure learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-autoencoder" class="md-nav__link">
+    graph autoencoder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#augmented-lagrangian-method" class="md-nav__link">
+    Augmented Lagrangian Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    个人总结
+    评价
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pyg" class="md-nav__link">
-    pyG实现
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -375,6 +362,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9A%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        图注意力神经网络：《graph attention network》阅读笔记
+      </a>
     </li>
   
 
@@ -435,35 +436,36 @@
       
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
-    introduction
-  </a>
-  
-    <nav class="md-nav" aria-label="introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gat-architecture" class="md-nav__link">
-    GAT architecture
+    Introduction
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#gradient-based-causal-structure-learning" class="md-nav__link">
+    Gradient-based causal structure learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-autoencoder" class="md-nav__link">
+    graph autoencoder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#augmented-lagrangian-method" class="md-nav__link">
+    Augmented Lagrangian Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    个人总结
+    评价
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pyg" class="md-nav__link">
-    pyG实现
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -481,86 +483,59 @@
                 
 
 
-<h1 id="graph-attention-network">图注意力神经网络：《graph attention network》阅读笔记</h1>
-<p><img alt="image-20220423204253167" src="../%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220423204253167.png" /></p>
+<h1 id="a-graph-autoencoder-approach-to-causal-structure-learning">使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》</h1>
+<p><img alt="image-20220425202021192" src="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B.assets/image-20220425202021192.png" /></p>
 <h2 id="abstract">abstract</h2>
-<p>提出图注意力网络，一个新的基于图结构数据的神经网络构架。借助注意力层来克服图卷积操作的短处。</p>
-<p>节点可以参与到邻居节点的特征。</p>
-<h2 id="introduction">introduction</h2>
-<p>卷积操作适用于grid-like structure，卷积网络的构架高效地重复使用local filters。</p>
-<p>但是对于别的情况，比如3D meshes， 社交网络，生物学网路来说，他们并不是grid-like data。</p>
-<p>已经有一些尝试将神经网络应用在任意结构的图（相比于grid like structure）上。</p>
-<p>目前，研究者对使用卷积操作到图领域这件事非常感兴趣，分为两类spectral approach和non-spectral approach。谱方法和非谱方法。</p>
-<p>（#TODO: 对于图上卷积操作的review）</p>
-<p>本文提出一个基于<strong>注意力机制</strong>的节点分类方法：computing <strong>hidden representations</strong> by attending over its neighbors following a <strong>self-attention</strong> strategy. </p>
-<p>具备以下几个优势：</p>
+<p>NOTEARS方法将组合优化的结构学习问题转化为连续优化问题，使用梯度进行优化。</p>
+<h2 id="introduction">Introduction</h2>
+<p>Zheng 提出了一个 smooth characterization on acyclicity constraint。用h(x)描述有向无环性，且h(x)可导。</p>
+<h2 id="gradient-based-causal-structure-learning">Gradient-based causal structure learning</h2>
+<p>现有 d 个节点 <span class="arithmatex"><span class="MathJax_Preview">x_1,x_2,...,x_d,x \in R^l</span><script type="math/tex">x_1,x_2,...,x_d,x \in R^l</script></span> 。</p>
+<p>假定数据的生成过程：
+$$
+x_i = f_i(x_{pa(i)})+z_i
+$$
+<span class="arithmatex"><span class="MathJax_Preview">z \in R^l</span><script type="math/tex">z \in R^l</script></span> 是噪声。对于线性模型（SEM）来说，符合：
+$$
+x_i = Xa_i+Z_i
+$$
+ <span class="arithmatex"><span class="MathJax_Preview">A=[a_1,a_2,...,a_d]</span><script type="math/tex">A=[a_1,a_2,...,a_d]</script></span></p>
+<p>有向无环约束写为:
+$$
+tr(e^{A\bigodot A})-d=0
+$$</p>
+<h2 id="graph-autoencoder">graph autoencoder</h2>
+<p><img alt="image-20220425203901081" src="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B.assets/image-20220425203901081.png" /></p>
+<p>计算图定义如下：</p>
 <ol>
-<li>操作非常高效，parallelizable；</li>
-<li>可以适用于具有不同度的节点；</li>
-<li>模型适用于 inductive learning problem，包括使用在其他图上。</li>
+<li>X [d,l]</li>
+<li>MLP</li>
+<li>[d,hidden_dim]</li>
+<li>与A相乘(线性变换)[d,d][d,hidden_dim]---&gt;[d,hidden_dim]</li>
+<li>[d,hidden_dim]</li>
+<li>MLP</li>
+<li>[d,l]</li>
 </ol>
-<h3 id="gat-architecture">GAT architecture</h3>
-<p>在此描述一层GAT。</p>
-<p><strong>输入</strong>N个节点与其节点特征：<span class="arithmatex"><span class="MathJax_Preview">h=[h_1,h_2,...,h_N], h_i \in R^F</span><script type="math/tex">h=[h_1,h_2,...,h_N], h_i \in R^F</script></span></p>
-<p><strong>输出</strong>N个节点与其节点特征，其特征维度更新到 <span class="arithmatex"><span class="MathJax_Preview">F'</span><script type="math/tex">F'</script></span> ,<span class="arithmatex"><span class="MathJax_Preview">h'=[h'_1,h'_2,...,h'_N], h'_i \in R^{F'}</span><script type="math/tex">h'=[h'_1,h'_2,...,h'_N], h'_i \in R^{F'}</script></span></p>
-<hr />
-<p>在这一层中，包括一个<strong>共享的注意力机制</strong>：<span class="arithmatex"><span class="MathJax_Preview">a: R^{F'}\times R^{F} \rightarrow R</span><script type="math/tex">a: R^{F'}\times R^{F} \rightarrow R</script></span> 。</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-e_{ij}=a(Wh_i,Wh_j)
-</div>
-<script type="math/tex; mode=display">
-e_{ij}=a(Wh_i,Wh_j)
-</script>
-</div>
-<p>这代表的是对于j节点对于i节点的重要度，使用masked attention，只计算 <span class="arithmatex"><span class="MathJax_Preview">e_{ij}</span><script type="math/tex">e_{ij}</script></span> for node <span class="arithmatex"><span class="MathJax_Preview">j\in \mathcal{N_i}</span><script type="math/tex">j\in \mathcal{N_i}</script></span> ，准确地说是一阶的邻居节点。</p>
-<p>为了使系数方便比较，将重要度归一化为一个<strong>标量</strong>：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\alpha_{i j}=\operatorname{softmax}_{j}\left(e_{i j}\right)=\frac{\exp \left(e_{i j}\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(e_{i k}\right)}
-</div>
-<script type="math/tex; mode=display">
-\alpha_{i j}=\operatorname{softmax}_{j}\left(e_{i j}\right)=\frac{\exp \left(e_{i j}\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(e_{i k}\right)}
-</script>
-</div>
-<p>在本文，a是一个单层神经网络，所以综合写为：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\alpha_{i j}=\frac{\exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{j}\right]\right)\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{k}\right]\right)\right)}
-</div>
-<script type="math/tex; mode=display">
-\alpha_{i j}=\frac{\exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{j}\right]\right)\right)}{\sum_{k \in \mathcal{N}_{i}} \exp \left(\operatorname{LeakyReLU}\left(\overrightarrow{\mathbf{a}}^{T}\left[\mathbf{W} \vec{h}_{i} \| \mathbf{W} \vec{h}_{k}\right]\right)\right)}
-</script>
-</div>
-<p>计算图如左图所示：</p>
-<p><img alt="image-20220423213201580" src="../%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220423213201580.png" /></p>
-<p>计算完每个边上的“注意力”后，使用一个非线性变换进行更新节点：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\vec{h}_{i}^{\prime}=\sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j} \mathbf{W} \vec{h}_{j}\right)
-</div>
-<script type="math/tex; mode=display">
-\vec{h}_{i}^{\prime}=\sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j} \mathbf{W} \vec{h}_{j}\right)
-</script>
-</div>
-<p>为了稳定学习过程，可以将增加多头注意力，如上图的右图，就是三头注意力。</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\vec{h}_{i}^{\prime}=\|_{k=1}^{K} \sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j}^{k} \mathbf{W}^{k} \vec{h}_{j}\right)
-</div>
-<script type="math/tex; mode=display">
-\vec{h}_{i}^{\prime}=\|_{k=1}^{K} \sigma\left(\sum_{j \in \mathcal{N}_{i}} \alpha_{i j}^{k} \mathbf{W}^{k} \vec{h}_{j}\right)
-</script>
-</div>
-<p>应为有K个head，所以得到的<span class="arithmatex"><span class="MathJax_Preview">h'_i</span><script type="math/tex">h'_i</script></span> 的长度为 KF'，为了避免这种情况，可以让K个head的F'长度的向量取平均值。 </p>
-<h3 id="_1">个人总结</h3>
+<h2 id="augmented-lagrangian-method">Augmented Lagrangian Method</h2>
+<p>使用拉格朗日乘子法进行优化。使用的是一阶梯度。</p>
+<p><img alt="image-20220425212551312" src="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B.assets/image-20220425212551312.png" /></p>
+<p>优化一系列的拉格朗日函数<span class="arithmatex"><span class="MathJax_Preview">L_{\rho,\alpha}^1,L_{\rho,\alpha}^2,...,L_{\rho,\alpha}^k</span><script type="math/tex">L_{\rho,\alpha}^1,L_{\rho,\alpha}^2,...,L_{\rho,\alpha}^k</script></span></p>
+<p>根据规则来更新 <span class="arithmatex"><span class="MathJax_Preview">\rho,\alpha</span><script type="math/tex">\rho,\alpha</script></span>，两个量都会越变越大。</p>
+<p><img alt="image-20220425213037858" src="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B.assets/image-20220425213037858.png" /></p>
+<pre><code class="language-python">def train_loop():
+    for _ in range(k)
+        for _ in range(n):
+            # optimize current Lagragian function.
+            loss = loss_function(alpha,rho)
+            loss.backward()
+            optimizor.step()
+        update_alpha_and_rho()
+</code></pre>
+<h2 id="_1">评价</h2>
 <ol>
-<li>GAT并不使用edge attribution；</li>
-<li>适用于节点分类任务。   </li>
+<li>验证只使用了自定函数的合成数据，有可能对其他算法不公平；</li>
+<li>充分利用NOTEARS的工作，good。</li>
 </ol>
-<h3 id="pyg">pyG实现</h3>
-<p><img alt="image-20220423222010470" src="../%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.assets/image-20220423222010470.png" /></p>
-<p>显然，我们只需要定义好F，和F'，就可以初始化一个注意力图神经网络了。</p>
 
               
             </article>
@@ -574,7 +549,7 @@ e_{ij}=a(Wh_i,Wh_j)
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》" rel="prev">
+        <a href="../VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VAE模型——目前最流行的生成模型之一" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -583,20 +558,20 @@ e_{ij}=a(Wh_i,Wh_j)
               <span class="md-footer__direction">
                 Previous
               </span>
-              使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
+              VAE模型——目前最流行的生成模型之一
             </div>
           </div>
         </a>
       
       
         
-        <a href="../%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA/" class="md-footer__link md-footer__link--next" aria-label="Next: 约束优化（constrained optimization）相关理论" rel="next">
+        <a href="../%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9A%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" aria-label="Next: 图注意力神经网络：《graph attention network》阅读笔记" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              约束优化（constrained optimization）相关理论
+              图注意力神经网络：《graph attention network》阅读笔记
             </div>
           </div>
           <div class="md-footer__button md-icon">
