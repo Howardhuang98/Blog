@@ -13,7 +13,7 @@
     
     
       
-        <title>R语言基础 - Huang Hao's Blog</title>
+        <title>python logging 标准库 - Huang Hao's Blog</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#r" class="md-skip">
+        <a href="#python-logging" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              R语言基础
+              python logging 标准库
             
           </span>
         </div>
@@ -233,141 +233,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          R语言基础
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../R%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         R语言基础
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    赋值
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    数据类型
-  </a>
-  
-    <nav class="md-nav" aria-label="数据类型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    向量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    矩阵
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#array" class="md-nav__link">
-    array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dataframe" class="md-nav__link">
-    dataframe
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factor" class="md-nav__link">
-    factor
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    逻辑操作
-  </a>
-  
-    <nav class="md-nav" aria-label="逻辑操作">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#if" class="md-nav__link">
-    if 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#while" class="md-nav__link">
-    while 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for" class="md-nav__link">
-    for 语句
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#package" class="md-nav__link">
-    使用包package
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -391,11 +261,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          python logging 标准库
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         python logging 标准库
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    logging 的模块化设计
+  </a>
+  
+    <nav class="md-nav" aria-label="logging 的模块化设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    Logger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlers" class="md-nav__link">
+    Handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatter-filter" class="md-nav__link">
+    Formatter, Filter (可选)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger-handler-formatter" class="md-nav__link">
+    将Logger, Handler, Formatter 连接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    实际使用
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -552,97 +504,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    logging 的模块化设计
+  </a>
+  
+    <nav class="md-nav" aria-label="logging 的模块化设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    Logger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlers" class="md-nav__link">
+    Handlers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatter-filter" class="md-nav__link">
+    Formatter, Filter (可选)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger-handler-formatter" class="md-nav__link">
+    将Logger, Handler, Formatter 连接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    赋值
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    数据类型
-  </a>
-  
-    <nav class="md-nav" aria-label="数据类型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    向量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    矩阵
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#array" class="md-nav__link">
-    array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dataframe" class="md-nav__link">
-    dataframe
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#factor" class="md-nav__link">
-    factor
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    逻辑操作
-  </a>
-  
-    <nav class="md-nav" aria-label="逻辑操作">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#if" class="md-nav__link">
-    if 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#while" class="md-nav__link">
-    while 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for" class="md-nav__link">
-    for 语句
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#package" class="md-nav__link">
-    使用包package
+    实际使用
   </a>
   
 </li>
@@ -661,75 +565,76 @@
                 
 
 
-<h1 id="r">R语言基础</h1>
-<p>R语言虽然是基于面向对象开发的，但是其是为数学工作者设计的，所以是一个偏指令型语言。</p>
-<h2 id="_1">赋值</h2>
-<p>左右箭头和等号都是支持的。</p>
-<p>变量名可以带<code>.</code>比如说<code>var.name</code>。</p>
-<pre><code class="language-R">a &lt;- 123
-b &lt;- 456
-print(a + b)
-a = 123
-b = 456
-print(a + b)
+<h1 id="python-logging">python logging 标准库</h1>
+<p>什么时候使用日志？</p>
+<p><img alt="image-20220107220250308" src="../python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93.assets/image-20220107220250308.png" /></p>
+<p>日志的级别：</p>
+<ul>
+<li>DEBUG(调试级别)</li>
+<li>INFO(信息)</li>
+<li>WARNING(警告)</li>
+<li>ERROR(错误)</li>
+<li>CRITICAL(严重错误)</li>
+</ul>
+<blockquote>
+<p>默认情况下只有warning以上才会输出到console。一般来说logging都是多线程的，避免io对主线程的影响。</p>
+</blockquote>
+<h2 id="logging">logging 的模块化设计</h2>
+<p><img alt="img" src="../python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93.assets/v2-6e74d55d4a43848e7762a7cad1d27f16_720w.jpg" /></p>
+<p>四个组件：</p>
+<ul>
+<li>Loggers记录器，相当于笔，用于写log</li>
+<li>Handlers处理器，可以把写好的log发送到目的地，比如email，文本等</li>
+<li>Filter过滤器。（可选）</li>
+<li>Formatters格式化器。（可选）</li>
+</ul>
+<h3 id="logger">Logger</h3>
+<p>Logger可以在每个文件中获取。</p>
+<pre><code class="language-python">logger = logging.getLogger('simple_example')
+logger.setLevel(logging.DEBUG)
 </code></pre>
-<h2 id="_2">数据类型</h2>
-<p>数字，字符串，布尔等，R语言都具备。</p>
-<p>重要提醒：R的从1开始索引。</p>
-<p>额外的，它还具备一些数学方面的数据结构：</p>
-<h3 id="_3">向量</h3>
-<pre><code class="language-R">a = c(3, 4)
-a = c(10, 20, 30, 40, 50)
+<h3 id="handlers">Handlers</h3>
+<p>将日志分发到不同的目的地。</p>
+<pre><code class="language-python">logging.StreamHandler()
+logging.RotatingFileHandler()
+....
 </code></pre>
-<h3 id="_4">矩阵</h3>
-<pre><code class="language-R">&gt; vector=c(1, 2, 3, 4, 5, 6)
-&gt; matrix(vector, 2, 3)
-     [,1] [,2] [,3]
-[1,]    1    3    5
-[2,]    2    4    6
+<h3 id="formatter-filter">Formatter, Filter (可选)</h3>
+<p>格式化输出，与过滤输出</p>
+<pre><code class="language-python">logger.addHandler()
+logger.addFilter()
 </code></pre>
-<h3 id="array">array</h3>
-<pre><code class="language-R"># 创建两个不同长度的向量
-vector1 &lt;- c(5,9,3)
-vector2 &lt;- c(10,11,12,13,14,15)
+<h3 id="logger-handler-formatter">将Logger, Handler, Formatter 连接</h3>
+<pre><code class="language-python">handler.setFormatter(formatter)
+logger.addHandler(ch)
+</code></pre>
+<h2 id="_1">实际使用</h2>
+<p>对于大型项目，最好使用config文件的形式进行配置，但是对于中小型项目，使用脚本进行配置就好。</p>
+<p>创建一个log.py文件，在里面定义所有的logger与Handler等组件。</p>
+<pre><code class="language-pyhton">-package
+    -module1
+    -module2
+    -log.py
+</code></pre>
+<p>在其他的模块中，直接导入组装好的logger即可</p>
+<pre><code class="language-python">from .log import your_logger
+your_logger.debug(&quot;Test&quot;)
+</code></pre>
+<p>log.py文件简易模板：</p>
+<pre><code class="language-python">import logging
+import os
+from logging.handlers import RotatingFileHandler
 
-# 创建数组
-result &lt;- array(c(vector1,vector2),dim = c(3,3,2))
-print(result)
-</code></pre>
-<h3 id="dataframe">dataframe</h3>
-<pre><code class="language-R">table = data.frame(
-    姓名 = c(&quot;张三&quot;, &quot;李四&quot;),
-    工号 = c(&quot;001&quot;,&quot;002&quot;),
-    月薪 = c(1000, 2000)
-)
-print(table) # 查看 table 数据
-</code></pre>
-<h3 id="factor">factor</h3>
-<pre><code class="language-R">x &lt;- c(&quot;男&quot;, &quot;女&quot;, &quot;男&quot;, &quot;男&quot;,  &quot;女&quot;)
-sex &lt;- factor(x)
-print(sex)
-print(is.factor(sex))
-</code></pre>
-<h2 id="_5">逻辑操作</h2>
-<h3 id="if">if 语句</h3>
-<pre><code class="language-R">if(boolean_expression) {
-    // 布尔表达式为真将执行的语句
-}
-</code></pre>
-<h3 id="while">while 语句</h3>
-<pre><code class="language-R">while(condition)
-{
-   statement(s);
-}
-</code></pre>
-<h3 id="for">for 语句</h3>
-<pre><code class="language-R">for (value in vector) {
-    statements
-}
-</code></pre>
-<h2 id="package">使用包package</h2>
-<pre><code>library(&quot;包名&quot;)
+os.makedirs('.logs', exist_ok=True)
+your_logger = logging.getLogger('bnsl')
+your_logger.setLevel(logging.INFO)
+
+fh = RotatingFileHandler(os.path.join('.logs', 'log'), maxBytes=5 * 1024 * 1024, backupCount=10, encoding='utf-8')
+
+f = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+fh.setFormatter(f)
+your_logger.addHandler(fh)
 </code></pre>
 
               
@@ -744,7 +649,7 @@ print(is.factor(sex))
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Python%E4%BD%BF%E7%94%A8Bisect%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python使用Bisect二分查找" rel="prev">
+        <a href="../numpy%20%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AF%BB%E5%8F%96/" class="md-footer__link md-footer__link--prev" aria-label="Previous: numpy 的数据存储与读取" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -753,20 +658,20 @@ print(is.factor(sex))
               <span class="md-footer__direction">
                 Previous
               </span>
-              Python使用Bisect二分查找
+              numpy 的数据存储与读取
             </div>
           </div>
         </a>
       
       
         
-        <a href="../numpy%20%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AF%BB%E5%8F%96/" class="md-footer__link md-footer__link--next" aria-label="Next: numpy 的数据存储与读取" rel="next">
+        <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/SEM%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E5%A4%84%E7%90%86/" class="md-footer__link md-footer__link--next" aria-label="Next: SEM模型的公式处理" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              numpy 的数据存储与读取
+              SEM模型的公式处理
             </div>
           </div>
           <div class="md-footer__button md-icon">
