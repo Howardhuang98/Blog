@@ -1,6 +1,6 @@
 # 请在source目录下运行 mkdocs build
 
-site_name: Huang Hao's Blog
+site_name: Huang & Ma
 
 theme:
   name: material
