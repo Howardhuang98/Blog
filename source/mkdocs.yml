@@ -6,7 +6,7 @@ theme:
   name: material
 
 markdown_extensions:
-  - pymdownx.arithmatex:
+  - pymdownx.arithmatex
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6

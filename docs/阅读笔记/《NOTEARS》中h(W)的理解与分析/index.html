@@ -13,7 +13,7 @@
     
     
       
-        <title>分类任务的指标：accuracy，precision，recall，ROC curve，AUC - Huang & Ma</title>
+        <title>《NOTEARS》中h(W)的理解与分析 - Huang & Ma</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accuracyprecisionrecallroc-curveauc" class="md-skip">
+        <a href="#notearshw" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              分类任务的指标：accuracy，precision，recall，ROC curve，AUC
+              《NOTEARS》中h(W)的理解与分析
             
           </span>
         </div>
@@ -337,11 +337,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E3%80%8ANOTEARS%E3%80%8B%E4%B8%ADh%28W%29%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E5%88%86%E6%9E%90/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          《NOTEARS》中h(W)的理解与分析
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         《NOTEARS》中h(W)的理解与分析
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#binary-adjacent-matrix" class="md-nav__link">
+    特殊情况（binary adjacent matrix）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weighted-adjacency-matrix" class="md-nav__link">
+    一般情况（weighted adjacency matrix）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -365,87 +420,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          分类任务的指标：accuracy，precision，recall，ROC curve，AUC
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%87%E6%A0%87%EF%BC%9Aaccuracy%EF%BC%8Cprecision%EF%BC%8Crecall%EF%BC%8CROC%20curve%EF%BC%8CAUC/" class="md-nav__link">
         分类任务的指标：accuracy，precision，recall，ROC curve，AUC
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tpfpfntn" class="md-nav__link">
-    定义TP,FP,FN,TN
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accuracy" class="md-nav__link">
-    Accuracy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#precision" class="md-nav__link">
-    Precision
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recall" class="md-nav__link">
-    Recall
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roc-curve" class="md-nav__link">
-    ROC curve
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#auc" class="md-nav__link">
-    AUC
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -512,43 +491,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tpfpfntn" class="md-nav__link">
-    定义TP,FP,FN,TN
+  <a href="#binary-adjacent-matrix" class="md-nav__link">
+    特殊情况（binary adjacent matrix）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#accuracy" class="md-nav__link">
-    Accuracy
+  <a href="#weighted-adjacency-matrix" class="md-nav__link">
+    一般情况（weighted adjacency matrix）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#precision" class="md-nav__link">
-    Precision
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recall" class="md-nav__link">
-    Recall
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roc-curve" class="md-nav__link">
-    ROC curve
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#auc" class="md-nav__link">
-    AUC
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -567,60 +525,106 @@
                 
 
 
-<h1 id="accuracyprecisionrecallroc-curveauc">分类任务的指标：accuracy，precision，recall，ROC curve，AUC</h1>
-<p>https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc</p>
-<h2 id="tpfpfntn">定义TP,FP,FN,TN</h2>
-<p><img alt="image-20220428171429674" src="../%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%87%E6%A0%87%EF%BC%9Aaccuracy%EF%BC%8Cprecision%EF%BC%8Crecall%EF%BC%8CROC%20curve%EF%BC%8CAUC.assets/image-20220428171429674.png" /></p>
-<p>如何计算TP？</p>
-<p>True 代表正确，说明模型预测正确；</p>
-<p>Positive 代表阳性，代表预测内容为阳性；</p>
-<p>TP 是模型正确预测为1（阳性）的概率；</p>
-<p>TF是模型正确预测为0的概率；</p>
-<p>FN是模型错误预测，模型预测为0的概率；</p>
-<p>FP是模型错误预测，模型预测为1的概率。</p>
-<p>总结：这是个指标实际上是2<em>2的组合，针对</em><em>模型对错</em><em>，</em><em>模型预测内容</em>*来说的</p>
-<h2 id="accuracy">Accuracy</h2>
-<p>对于二分类问题：
+<h1 id="notearshw">《NOTEARS》中h(W)的理解与分析</h1>
+<pre><code>@article{zheng2018dags,
+  title={Dags with no tears: Continuous optimization for structure learning},
+  author={Zheng, Xun and Aragam, Bryon and Ravikumar, Pradeep K and Xing, Eric P},
+  journal={Advances in Neural Information Processing Systems},
+  volume={31},
+  year={2018}
+}
+</code></pre>
+<p>在论文中，提出了
 $$
-ACC=\frac{TP+TN}{TP+TN+FP+FN}
+h(W)=0&lt;=&gt;\text{W is acyclic}
 $$
-实际上ACC是一个更加宽泛的指标：
+并且<span class="arithmatex"><span class="MathJax_Preview">h(W)</span><script type="math/tex">h(W)</script></span> 具有以下性质：</p>
+<ol>
+<li>是acyclic的充分必要条件；</li>
+<li>h量化了图的“有向无环性”；</li>
+<li>h是光滑的；</li>
+<li>h和h的导数方便计算。</li>
+</ol>
+<p>分两步进行推导，首先考虑特殊情况（binary adjacent matrix），再泛化到一般情况（weighted adjacent matrix）。</p>
+<h2 id="binary-adjacent-matrix">特殊情况（binary adjacent matrix）</h2>
+<p>定理1：如果<span class="arithmatex"><span class="MathJax_Preview">B\in\{0,1\}^{d\times d}</span><script type="math/tex">B\in\{0,1\}^{d\times d}</script></span>,且<span class="arithmatex"><span class="MathJax_Preview">r(B)&lt;1</span><script type="math/tex">r(B)<1</script></span>，那么B是DAG 当且仅当：
 $$
-ACC=\frac{Correct_predictions}{All_predictions}
+tr(I-B)^{-1}=d
 $$
-但是ACC 并不是一个平衡的准则：当样本的<strong>类别不平衡</strong>的时候，ACC不能说明情况。</p>
-<h2 id="precision">Precision</h2>
-<p>准确度：模型描述预测1的时候，多少概率是正确的。
+证明：<span class="arithmatex"><span class="MathJax_Preview">tr(B^k)</span><script type="math/tex">tr(B^k)</script></span>计算的是长度为k的闭环数量，那么当<span class="arithmatex"><span class="MathJax_Preview">k=1,2,...,\infty</span><script type="math/tex">k=1,2,...,\infty</script></span>时， <span class="arithmatex"><span class="MathJax_Preview">tr(B^k)=0</span><script type="math/tex">tr(B^k)=0</script></span>均成立，那么说可以说B没有闭环，当且仅当<span class="arithmatex"><span class="MathJax_Preview">f(B)=\sum_{k=1}^\infty \sum_{i=1}^d(B^K)_{ii}=0</span><script type="math/tex">f(B)=\sum_{k=1}^\infty \sum_{i=1}^d(B^K)_{ii}=0</script></span>，写为：
 $$
-Precision=\frac{TP}{TP+FP}
+tr(\sum_{k=0}^\infty B^k)
+$$
+使用等比数列求和公式：
+$$
+\sum_{k=0}^\infty B^k=B^0+B^1+...+B^\infty=\frac{I-B^\infty}{I-B}
+$$
+当<span class="arithmatex"><span class="MathJax_Preview">r(B)&lt;1</span><script type="math/tex">r(B)<1</script></span>，所以<span class="arithmatex"><span class="MathJax_Preview">B^\infty=0</span><script type="math/tex">B^\infty=0</script></span>，可以得到<span class="arithmatex"><span class="MathJax_Preview">\sum_{k=0}^\infty B^k=(I-B)^{-1}</span><script type="math/tex">\sum_{k=0}^\infty B^k=(I-B)^{-1}</script></span>。将上面两个式子合并，写为:
+$$
+tr(I-B)^{-1}=tr(\sum_{k=0}^\infty B^k)=trI+\sum_{k=1}^\infty B^k=d+f(B)
 $$</p>
-<h2 id="recall">Recall</h2>
-<p>回召度：多大的概率1被正确地识别出来。
+<blockquote>
+<p>r(B)&lt;1是一个强假设，虽然当B是DAG的时候的确满足，但是其他时候并不能满足。为了避免无限序列情况，将<span class="arithmatex"><span class="MathJax_Preview">\sum_{k=0}^\infty B^k</span><script type="math/tex">\sum_{k=0}^\infty B^k</script></span>改写为有限序列，使得谱半径假设不再需要。</p>
+</blockquote>
+<p>最大环的长度是d，所以在此将无限序列改为长度为d的序列。</p>
+<p>定理2：如果<span class="arithmatex"><span class="MathJax_Preview">B\in\{0,1\}^{d\times d}</span><script type="math/tex">B\in\{0,1\}^{d\times d}</script></span>，那么B是DAG 当且仅当：
 $$
-Recall=\frac{TP}{TP+FN}
-$$</p>
-<h2 id="roc-curve">ROC curve</h2>
-<p><strong>ROC receiver operating characteristic curve</strong>：描述分类模型在各个阈值下的分类性能。</p>
-<p><img alt="ROC Curve showing TP Rate vs. FP Rate at different classification thresholds." src="../%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%87%E6%A0%87%EF%BC%9Aaccuracy%EF%BC%8Cprecision%EF%BC%8Crecall%EF%BC%8CROC%20curve%EF%BC%8CAUC.assets/ROCCurve.svg" />
+tr(e^B)=d
 $$
-TPR=\frac{TP}{TP+FN}
-$$</p>
+证明：当<span class="arithmatex"><span class="MathJax_Preview">k=1,2,...,d</span><script type="math/tex">k=1,2,...,d</script></span>时， <span class="arithmatex"><span class="MathJax_Preview">tr(B^k)=0</span><script type="math/tex">tr(B^k)=0</script></span>均成立，则B为DAG。那么可以推广位为：</p>
+<p>当<span class="arithmatex"><span class="MathJax_Preview">k=1,2,...,d</span><script type="math/tex">k=1,2,...,d</script></span>时， <span class="arithmatex"><span class="MathJax_Preview">tr(B^k/k!)=0</span><script type="math/tex">tr(B^k/k!)=0</script></span>均成立，则B为DAG。</p>
+<blockquote>
+<p>矩阵指数的定义：<span class="arithmatex"><span class="MathJax_Preview">e^X=\sum_{k=0}^\infty \frac{1}{k!}X^k</span><script type="math/tex">e^X=\sum_{k=0}^\infty \frac{1}{k!}X^k</script></span></p>
+</blockquote>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-FPR=\frac{FP}{FP+TN}
+tr(e^B)=tr(I)+tr(\sum_{k=1}^d\frac{1}{k!}B^k)+tr(\sum_{k=d+1}^\infty\frac{1}{k!}B^k)\\
+tr(e^B)-d-tr(\sum_{k=d+1}^\infty\frac{1}{k!}B^k)=tr(\sum_{k=1}^d\frac{1}{k!}B^k)
 </div>
 <script type="math/tex; mode=display">
-FPR=\frac{FP}{FP+TN}
+tr(e^B)=tr(I)+tr(\sum_{k=1}^d\frac{1}{k!}B^k)+tr(\sum_{k=d+1}^\infty\frac{1}{k!}B^k)\\
+tr(e^B)-d-tr(\sum_{k=d+1}^\infty\frac{1}{k!}B^k)=tr(\sum_{k=1}^d\frac{1}{k!}B^k)
 </script>
 </div>
-<h2 id="auc">AUC</h2>
-<p><img alt="AUC (Area under the ROC Curve)." src="../%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%87%E6%A0%87%EF%BC%9Aaccuracy%EF%BC%8Cprecision%EF%BC%8Crecall%EF%BC%8CROC%20curve%EF%BC%8CAUC.assets/AUC.svg" /></p>
-<p>Area under the ROC curve</p>
-<p>AUC 是一个综合的方法评价所有阈值下的模型。</p>
-<p>如何理解AUC？</p>
-<p>首先它可以理解为TP对于所有阈值的积分，这是一个不考虑阈值的评价指标。</p>
-<p>AUC在模型全对的时候为1；</p>
-<p>AUC在模型全错的时候为0。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">tr(\sum_{k=d+1}^\infty\frac{1}{k!}B^k)</span><script type="math/tex">tr(\sum_{k=d+1}^\infty\frac{1}{k!}B^k)</script></span> 是大于d长度的闭环数目，肯定为0，所以，上式可以最终化简为:
+$$
+tr(e^B)-d=0
+$$</p>
+<h2 id="weighted-adjacency-matrix">一般情况（weighted adjacency matrix）</h2>
+<p>定理3：将定理2，推广到加权邻接矩阵，对于<span class="arithmatex"><span class="MathJax_Preview">W\in R^{d\times d}</span><script type="math/tex">W\in R^{d\times d}</script></span>，其为DAG，当且仅当：
+$$
+h(W)=tr(e^{W\circ W })-d=0
+$$
+且<span class="arithmatex"><span class="MathJax_Preview">h(W)</span><script type="math/tex">h(W)</script></span>的导数为：
+$$
+\nabla h(W)=(e^{W\circ W })^T\circ 2W
+$$
+证明：类似于前面定理1的证明，<span class="arithmatex"><span class="MathJax_Preview">tr(B^k)</span><script type="math/tex">tr(B^k)</script></span>计算的是长度为k的闭环数量，因为W可能为负数，所以使用哈达玛积（元素对应位置相乘）将路径长度写为<span class="arithmatex"><span class="MathJax_Preview">w_{ij}^2</span><script type="math/tex">w_{ij}^2</script></span>。</p>
+<h2 id="links">Links</h2>
+<p>第一篇将代数与环数结合的文献：</p>
+<pre><code>@article{harary1971number,
+  title={On the number of cycles in a graph},
+  author={Harary, Frank and Manvel, Bennet},
+  journal={Matematick{\`y} {\v{c}}asopis},
+  volume={21},
+  number={1},
+  pages={55--63},
+  year={1971},
+  publisher={Mathematical Institute of the Slovak Academy of Sciences}
+}
+</code></pre>
+<p>计算矩阵指数的文献：</p>
+<pre><code>@article{al2010new,
+  title={A new scaling and squaring algorithm for the matrix exponential},
+  author={Al-Mohy, Awad H and Higham, Nicholas J},
+  journal={SIAM Journal on Matrix Analysis and Applications},
+  volume={31},
+  number={3},
+  pages={970--989},
+  year={2010},
+  publisher={SIAM}
+}
+</code></pre>
 
               
             </article>
@@ -634,7 +638,7 @@ FPR=\frac{FP}{FP+TN}
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》" rel="prev">
+        <a href="../VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VAE模型——目前最流行的生成模型之一" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -643,20 +647,20 @@ FPR=\frac{FP}{FP+TN}
               <span class="md-footer__direction">
                 Previous
               </span>
-              使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
+              VAE模型——目前最流行的生成模型之一
             </div>
           </div>
         </a>
       
       
         
-        <a href="../%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9A%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" aria-label="Next: 图注意力神经网络：《graph attention network》阅读笔记" rel="next">
+        <a href="../%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B/" class="md-footer__link md-footer__link--next" aria-label="Next: 使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              图注意力神经网络：《graph attention network》阅读笔记
+              使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
             </div>
           </div>
           <div class="md-footer__button md-icon">
