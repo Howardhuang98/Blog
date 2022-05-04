@@ -13,7 +13,7 @@
     
     
       
-        <title>numpy 的数据存储与读取 - Huang & Ma</title>
+        <title>Pandas的索引与切片 - Huang & Ma</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#numpy" class="md-skip">
+        <a href="#pandas" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              numpy 的数据存储与读取
+              Pandas的索引与切片
             
           </span>
         </div>
@@ -219,11 +219,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Pandas%E7%9A%84%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%88%87%E7%89%87/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pandas的索引与切片
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Pandas的索引与切片
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#label-based" class="md-nav__link">
+    Label-based方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position-based" class="md-nav__link">
+    Position-based方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getitem" class="md-nav__link">
+    getitem方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -261,21 +316,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../numpy%20%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AF%BB%E5%8F%96/" class="md-nav__link">
         numpy 的数据存储与读取
       </a>
-      
     </li>
   
 
@@ -467,6 +512,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#label-based" class="md-nav__link">
+    Label-based方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position-based" class="md-nav__link">
+    Position-based方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getitem" class="md-nav__link">
+    getitem方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -479,25 +553,32 @@
                 
 
 
-<h1 id="numpy">numpy 的数据存储与读取</h1>
-<p>https://numpy.org/doc/stable/reference/routines.io.html</p>
-<p>常用的数据格式有：csv，txt，npy，npz。</p>
-<p>将numpy转化为<strong>二进制文件</strong>或者<strong>文本文件</strong>，以此来持久化数据。</p>
-<ol>
-<li>
-<p>将<strong>一个</strong><code>array</code>存储为<strong>一个</strong>二进制文件；<code>numpy.save</code></p>
-</li>
-<li>
-<p>将<strong>多个</strong><code>array</code>存储为<strong>一个</strong>二进制文件；<code>numpy.savez</code></p>
-</li>
-<li>
-<p>将一个array存储为文本文件；<code>numpy.savetxt</code></p>
-</li>
-</ol>
-<p>读取numpy<strong>二进制文件</strong>，使用 <code>numpy.load</code>，读取<strong>文本格式文件</strong>，使用<code>numpy.loadtxt</code></p>
+<h1 id="pandas">Pandas的索引与切片</h1>
+<p>Pandas提供了多种索引模式与切片方法，因为常常混用，导致实际每次使用起来并不熟练，在此整理DataFrame的索引与切片方式，给出几种常用的切片方式。</p>
 <blockquote>
-<p>读取 .npz格式时，请使用上下文管理器</p>
+<p><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html">官方教学</a></p>
 </blockquote>
+<h2 id="label-based">Label-based方法</h2>
+<ol>
+<li>找某一列：<code>DataFrame.loc[:,'column0']</code></li>
+<li>找某几列：<code>DataFrame.loc[:,['column0','column1','column2']]</code></li>
+<li>找某一行：<code>DataFrame.loc['index',:]</code></li>
+<li>找某几行：<code>DataFrame.loc[['index0','index1','index2'],:]</code></li>
+<li>布尔索引：<code>DataFrame.loc[boolean expression]</code></li>
+</ol>
+<p>可见，<code>.loc</code>的功能非常强大，包括两种模式<code>.loc[[行],[列]]</code>，<code>.loc[布尔表达式]</code></p>
+<h2 id="position-based">Position-based方法</h2>
+<ol>
+<li>找某一列：<code>DataFrame.iloc[:1]</code></li>
+<li>找某几列：<code>DataFrame.iloc[:,[0,1,2]]</code></li>
+<li>找某一行：<code>DataFrame.iloc[1,:]</code></li>
+<li>找某几行：<code>DataFrame.iloc[[0,1,2],:]</code></li>
+<li>布尔索引：<code>DataFrame.iloc[boolean expression]</code></li>
+</ol>
+<p>iloc是<code>.loc</code>的位置模式，只能依据位置（在DataFrame中并不显式存储）来索引，在使用中并不算常用。</p>
+<h2 id="getitem">getitem方法</h2>
+<p><code>[]</code>就是getitem方法，这个方法常常造成混淆。所以尽量避免使用。</p>
+<p><code>DataFrame['column0']</code>返回对应<strong>列</strong>的Series，这与Python直观的存储并不相符。</p>
 
               
             </article>
@@ -511,7 +592,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../R%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="md-footer__link md-footer__link--prev" aria-label="Previous: R语言基础" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: 皇家马德里书单" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -520,20 +601,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              R语言基础
+              皇家马德里书单
             </div>
           </div>
         </a>
       
       
         
-        <a href="../python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-footer__link md-footer__link--next" aria-label="Next: python logging 标准库" rel="next">
+        <a href="../Python%E4%BD%BF%E7%94%A8Bisect%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-footer__link md-footer__link--next" aria-label="Next: Python使用Bisect二分查找" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              python logging 标准库
+              Python使用Bisect二分查找
             </div>
           </div>
           <div class="md-footer__button md-icon">
