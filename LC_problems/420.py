@@ -10,6 +10,8 @@ import re
 from heapq import heappush, heappop
 from itertools import groupby
 
+def function(x,y):
+    print(x+y)
 
 class Solution:
     def strongPasswordChecker(self, password: str) -> int:
