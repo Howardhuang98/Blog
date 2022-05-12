@@ -1,0 +1,2144 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>算法练习笔记 I - Huang & Ma</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang &amp; Ma" class="md-header__button md-logo" aria-label="Huang & Ma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang & Ma
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              算法练习笔记 I
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang &amp; Ma" class="md-nav__button md-logo" aria-label="Huang & Ma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Huang & Ma
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        皇家马德里书单
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Python编程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python编程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Pandas%E7%9A%84%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%88%87%E7%89%87/" class="md-nav__link">
+        Pandas的索引与切片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Python%E4%BD%BF%E7%94%A8Bisect%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        Python使用Bisect二分查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/R%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        R语言基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/numpy%20%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AF%BB%E5%8F%96/" class="md-nav__link">
+        numpy 的数据存储与读取
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
+        python logging 标准库
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          小马的文献阅读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="小马的文献阅读" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          小马的文献阅读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%8F%E9%A9%AC%E7%9A%84%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E5%A4%8D%E8%AF%BB%E4%B8%8E%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E8%8E%B7%E5%BE%97%E4%B8%8D%E5%B9%B3%E7%AD%89/" class="md-nav__link">
+        复读与高等教育获得不平等
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%8F%E9%A9%AC%E7%9A%84%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E7%88%B6%E6%AF%8D%E7%9A%84%E5%A9%9A%E5%A7%BB%E6%95%99%E8%82%B2%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%AD%90%E5%A5%B3%E5%AD%A6%E4%B8%9A%E8%A1%A8%E7%8E%B0/" class="md-nav__link">
+        父母的婚姻教育匹配与子女学业表现
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          日常读书
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日常读书" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          日常读书
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E4%BA%BA%E6%80%A7%E7%9A%84%E6%9E%B7%E9%94%81%20%E5%AE%8C%E7%BB%93/" class="md-nav__link">
+        人性的枷锁 完结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E8%8F%B2%E5%88%A9%E6%99%AE%E7%9A%84%E7%9F%9B%E7%9B%BE/" class="md-nav__link">
+        菲利普的矛盾
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          算法练习笔记 I
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        算法练习笔记 I
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acm" class="md-nav__link">
+    ACM模式
+  </a>
+  
+    <nav class="md-nav" aria-label="ACM模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    单行输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    多行输入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    数据结构
+  </a>
+  
+    <nav class="md-nav" aria-label="数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    链表-两数之和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie" class="md-nav__link">
+    前缀树Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    找出自除数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    线段树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    **差分数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    双指针，滑动窗口
+  </a>
+  
+    <nav class="md-nav" aria-label="双指针，滑动窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    排序+双指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    如果相邻两个颜色均相同则删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    有效的山脉数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    和大于等于target的最短子数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    滑动窗口模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    仅仅翻转字母
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    乘积小于k的子数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    搜索旋转排序数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    盛最多水的容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    二分查找
+  </a>
+  
+    <nav class="md-nav" aria-label="二分查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    每个小孩最多能分到多少糖果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    绝对插值和（非侵入式二分）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    递归算法
+  </a>
+  
+    <nav class="md-nav" aria-label="递归算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    二叉树
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    二叉函数展开为链表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    二叉搜索树的序列化与反序列化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k_1" class="md-nav__link">
+    二叉搜索树第k小的元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    通过中序遍历，后序遍历的数组构建二叉树
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    回溯算法
+  </a>
+  
+    <nav class="md-nav" aria-label="回溯算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    分割回文串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    迷路的机器人
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    零钱兑换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    深度优先搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="深度优先搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    迷你语法分析器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    找逆序对，归并排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    广度优先搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="广度优先搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    最大人工岛问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    动态规划
+  </a>
+  
+    <nav class="md-nav" aria-label="动态规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    最大公共子数组问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    贪心算法
+  </a>
+  
+    <nav class="md-nav" aria-label="贪心算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    排布二进制网格的最少交换次数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    翻卡片游戏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    美化数组中的最小删除数字
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trick" class="md-nav__link">
+    小trick
+  </a>
+  
+    <nav class="md-nav" aria-label="小trick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    找到指定长度的回文数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    分类讨论算法：强密码检验器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    分类讨论算法：HTML实体解析器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    密码验证合格程序：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    模拟：删除第p个元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    如何判断是否为质数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    把字母进行二进制编码进行哈希
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anyall" class="md-nav__link">
+    使用any和all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digit" class="md-nav__link">
+    排列组合的计算：数字中各个digit都不同的个数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    曼哈顿距离：最短路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o1" class="md-nav__link">
+    O(1) 时间插入、删除和获取随机元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    前缀树：键值映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    暴力遍历中的缩小搜索空间：最大回文数乘积
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    双向扫描：字符的最短距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    文件的最长绝对路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k_2" class="md-nav__link">
+    贪心：和为 K 的最少斐波那契数字数目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    分治：漂亮数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    寻找并简化递归关系：旋转函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    （未完成）求凸包：安装栅栏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    自定义排序，自定义比较规则：重新排列日志文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    队列模拟，约瑟夫环：丢手绢
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    贪心：增减字符串匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    二分查找：搜索二维矩阵 II
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          阅读笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="阅读笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          阅读笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/SEM%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E5%A4%84%E7%90%86/" class="md-nav__link">
+        SEM模型的公式处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-nav__link">
+        VAE模型——目前最流行的生成模型之一
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E3%80%8ANOTEARS%E3%80%8B%E4%B8%ADh%28W%29%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E5%88%86%E6%9E%90/" class="md-nav__link">
+        《NOTEARS》中h(W)的理解与分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B/" class="md-nav__link">
+        使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%87%E6%A0%87%EF%BC%9Aaccuracy%EF%BC%8Cprecision%EF%BC%8Crecall%EF%BC%8CROC%20curve%EF%BC%8CAUC/" class="md-nav__link">
+        分类任务的指标：accuracy，precision，recall，ROC curve，AUC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9A%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        图注意力神经网络：《graph attention network》阅读笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E6%8E%A2%E7%B4%A2%E2%80%9C%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96%E2%80%9D/" class="md-nav__link">
+        探索“贝叶斯优化”
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA/" class="md-nav__link">
+        约束优化（constrained optimization）相关理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acm" class="md-nav__link">
+    ACM模式
+  </a>
+  
+    <nav class="md-nav" aria-label="ACM模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    单行输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    多行输入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    数据结构
+  </a>
+  
+    <nav class="md-nav" aria-label="数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    链表-两数之和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie" class="md-nav__link">
+    前缀树Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    找出自除数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    线段树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    **差分数组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    双指针，滑动窗口
+  </a>
+  
+    <nav class="md-nav" aria-label="双指针，滑动窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    排序+双指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    如果相邻两个颜色均相同则删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    有效的山脉数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    和大于等于target的最短子数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    滑动窗口模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    仅仅翻转字母
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    乘积小于k的子数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    搜索旋转排序数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    盛最多水的容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    二分查找
+  </a>
+  
+    <nav class="md-nav" aria-label="二分查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    每个小孩最多能分到多少糖果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    绝对插值和（非侵入式二分）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    递归算法
+  </a>
+  
+    <nav class="md-nav" aria-label="递归算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    二叉树
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    二叉函数展开为链表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    二叉搜索树的序列化与反序列化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k_1" class="md-nav__link">
+    二叉搜索树第k小的元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    通过中序遍历，后序遍历的数组构建二叉树
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    回溯算法
+  </a>
+  
+    <nav class="md-nav" aria-label="回溯算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    分割回文串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    迷路的机器人
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    零钱兑换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    深度优先搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="深度优先搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    迷你语法分析器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    找逆序对，归并排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    广度优先搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="广度优先搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    最大人工岛问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    动态规划
+  </a>
+  
+    <nav class="md-nav" aria-label="动态规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    最大公共子数组问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    贪心算法
+  </a>
+  
+    <nav class="md-nav" aria-label="贪心算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    排布二进制网格的最少交换次数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    翻卡片游戏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    美化数组中的最小删除数字
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trick" class="md-nav__link">
+    小trick
+  </a>
+  
+    <nav class="md-nav" aria-label="小trick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    找到指定长度的回文数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    分类讨论算法：强密码检验器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    分类讨论算法：HTML实体解析器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    密码验证合格程序：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    模拟：删除第p个元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    如何判断是否为质数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    把字母进行二进制编码进行哈希
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anyall" class="md-nav__link">
+    使用any和all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digit" class="md-nav__link">
+    排列组合的计算：数字中各个digit都不同的个数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    曼哈顿距离：最短路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o1" class="md-nav__link">
+    O(1) 时间插入、删除和获取随机元素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    前缀树：键值映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    暴力遍历中的缩小搜索空间：最大回文数乘积
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    双向扫描：字符的最短距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    文件的最长绝对路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k_2" class="md-nav__link">
+    贪心：和为 K 的最少斐波那契数字数目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    分治：漂亮数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    寻找并简化递归关系：旋转函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    （未完成）求凸包：安装栅栏
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    自定义排序，自定义比较规则：重新排列日志文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    队列模拟，约瑟夫环：丢手绢
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    贪心：增减字符串匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    二分查找：搜索二维矩阵 II
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="i">算法练习笔记 I</h1>
+<p>以此笔记本记录算法题目的解题思路与题型分类。</p>
+<p>本笔记本以实战编程为主，理论与思想主要写在《算法导论》阅读笔记中。</p>
+<p>[toc]</p>
+<h2 id="acm">ACM模式</h2>
+<p>一般情况下，会给<strong>多组</strong>数据！</p>
+<p>一组数据的格式会给定。</p>
+<pre><code class="language-python">import sys
+for line in sys.stdin:
+    a = line.split()
+    print(a)
+</code></pre>
+<p>strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。</p>
+<h3 id="_1">单行输入</h3>
+<pre><code class="language-python">in_list = list(map(lambda x:int(x),input().strip().split()))
+print(in_list)
+</code></pre>
+<h3 id="_2">多行输入</h3>
+<pre><code class="language-python">while True:
+        try:
+            line = input().strip()
+            print(line)
+            # 指定情况终止
+            if line == '0 0':
+                break
+        except:
+            break
+</code></pre>
+<h2 id="_3">数据结构</h2>
+<h3 id="-">链表-两数之和</h3>
+<p>https://leetcode-cn.com/problems/add-two-numbers/</p>
+<h3 id="trie">前缀树Trie</h3>
+<p>Trie树，即字典树，又称单词查找树或键树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计和排序大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较。</p>
+<pre><code class="language-python">class TrieNode:
+    &quot;&quot;&quot;
+    前缀树的链式存储
+    &quot;&quot;&quot;
+    def __init__(self):
+        self.val = 0
+        self.next = [None for _ in range(26)]
+</code></pre>
+<h3 id="_4">找出自除数</h3>
+<p>https://leetcode-cn.com/problems/self-dividing-numbers/</p>
+<p>这道题需要解决的问题是如何找出n的每一位数？</p>
+<ol>
+<li>str()</li>
+<li>n,d = divmod(n,10)</li>
+</ol>
+<h3 id="_5">线段树</h3>
+<p>线段树是一个二叉树。</p>
+<p>节点保存 [start,end]的最小值，最大值，和总和等信息</p>
+<p>给定数组：[1,5,3,7,3,2,5,7]</p>
+<p><img alt="segment tree interval representation" src="../%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/70.png" /></p>
+<p>线段树的构建是自顶向上的！！</p>
+<h3 id="_6">**差分数组</h3>
+<p>https://leetcode-cn.com/problems/minimum-moves-to-make-array-complementary/</p>
+<p>我们要维护一个数组;</p>
+<p>对数组的操作是 nums[a:b]这个区间内所有的元素+1;</p>
+<p>为了避免 for n in nums[a:b]，可以使用差分数组，diff[a]+1,diff[b]-1来记录</p>
+<p>nums[i] = sum(diff[:i])</p>
+<h2 id="_7">双指针，滑动窗口</h2>
+<h4 id="_8">排序+双指针</h4>
+<p>https://leetcode-cn.com/problems/3sum/</p>
+<p>本来是N\^3算法，通过双指针降低为N\^2。</p>
+<h4 id="_9">如果相邻两个颜色均相同则删除</h4>
+<p>https://leetcode-cn.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/</p>
+<p>使用一个滑动窗口来寻找连续的相同颜色，并记录。</p>
+<h4 id="_10">有效的山脉数组</h4>
+<p>https://leetcode-cn.com/problems/valid-mountain-array/</p>
+<p>双指针夹心</p>
+<h4 id="target">和大于等于target的最短子数组</h4>
+<h4 id="_11">滑动窗口模板</h4>
+<pre><code>初始化左边界 left = 0
+初始化返回值 ret = 最小值 or 最大值
+for 右边界 in 可迭代对象:
+    更新窗口内部信息
+    while 根据题意进行调整：
+        比较并更新ret(收缩场景时)
+        扩张或收缩窗口大小
+    比较并更新ret(扩张场景时)
+返回 ret
+</code></pre>
+<h4 id="_12">仅仅翻转字母</h4>
+<p>https://leetcode-cn.com/problems/reverse-only-letters/</p>
+<p>使用双指针或者栈</p>
+<p>栈是一个高效的翻转工具。</p>
+<h4 id="k">乘积小于k的子数组</h4>
+<p>https://leetcode-cn.com/problems/subarray-product-less-than-k/</p>
+<p>滑动窗口，主要问题是，窗口扩张和未扩展之前的子数组增加数量的计算。</p>
+<h4 id="_13">搜索旋转排序数组</h4>
+<p>当数组是局部有序的，还是可以使用二分查找！</p>
+<h4 id="_14">盛最多水的容器</h4>
+<p>双指针，对于盛水问题，双指针收缩时有一个原则：</p>
+<p><strong>放弃当前的短板</strong>，往内侧收缩才<strong>有可能</strong>使得盛更多的水！</p>
+<h3 id="_15">二分查找</h3>
+<pre><code class="language-python">def binary_search(a,target):
+    l = 0
+    r = len(a)# 二分查找并不包括右边界
+    while l&lt;r-1:
+        M = (L + R) // 2
+        #逻辑操作
+        #对比a[M]与target的大小
+        #更新L或者R
+        #更新要注意等号条件，等号应该给到左边界
+    return L
+</code></pre>
+<h4 id="_16">每个小孩最多能分到多少糖果</h4>
+<p>https://leetcode-cn.com/problems/maximum-candies-allocated-to-k-children/</p>
+<h4 id="_17">绝对插值和（非侵入式二分）</h4>
+<p>最原始的遍历方法是 10^5 *10^5 , <span class="arithmatex"><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span> 的方法，通过引入二分查找来做成<span class="arithmatex"><span class="MathJax_Preview">O(nlgn)</span><script type="math/tex">O(nlgn)</script></span>，一般情况下，n=10^5</p>
+<p>二分查找时候要注意侵入与非侵入：</p>
+<p>当我们的范围定义为<code>[l,r)</code> 的时候，<code>l = mid</code> 保留了这个mid值，但是<code>r=mid</code>就会删除mid值。为了保留mid，要做<code>r=mid+1</code></p>
+<h2 id="_18">递归算法</h2>
+<h3 id="_19">二叉树</h3>
+<p>二叉树有两种存储方式，一种是用指针存储，一种是使用顺序存储。</p>
+<p>顺序存储：如果一个结点在数组的下标为 <span class="arithmatex"><span class="MathJax_Preview">node</span><script type="math/tex">node</script></span>，那么它的左子结点下标为 <span class="arithmatex"><span class="MathJax_Preview">\textit{node} \times 2 + 1</span><script type="math/tex">\textit{node} \times 2 + 1</script></span>，右子结点下标为  <span class="arithmatex"><span class="MathJax_Preview">node×2+2</span><script type="math/tex">node×2+2</script></span></p>
+<p><img alt="img" src="../%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/1620.jpeg" /></p>
+<p>Left = index * 2 + 1</p>
+<p>Right = index * 2 + 2</p>
+<p>Parent(i) = floor((i-1)/2)</p>
+<h4 id="_20">二叉函数展开为链表</h4>
+<p>后序遍历</p>
+<p>https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/</p>
+<h4 id="_21">二叉搜索树的序列化与反序列化</h4>
+<p>二叉搜索树的特点：左小右大</p>
+<p>https://leetcode.cn/problems/serialize-and-deserialize-bst/</p>
+<h4 id="k_1">二叉搜索树第k小的元素</h4>
+<p>https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/</p>
+<p>二叉搜索树的中序遍历，得到升序数组。</p>
+<h4 id="_22">通过中序遍历，后序遍历的数组构建二叉树</h4>
+<p>https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/</p>
+<p>通过后续遍历找到当前root，再通过root在中序遍历中找左右子树。递归构建</p>
+<h3 id="_23">回溯算法</h3>
+<h4 id="_24">分割回文串</h4>
+<p>https://leetcode-cn.com/problems/palindrome-partitioning/</p>
+<p>模拟一刀一刀地切过程，保证每一次切时，前面的字符是回文串。</p>
+<h4 id="_25">迷路的机器人</h4>
+<p>https://leetcode-cn.com/problems/robot-in-a-grid-lcci/</p>
+<p>记录下已经回溯过的点，避免重复探索。</p>
+<h4 id="_26">零钱兑换</h4>
+<p>每次选择一种硬币，path为选择的硬币。</p>
+<p>https://leetcode-cn.com/problems/coin-change/</p>
+<h3 id="_27">深度优先搜索</h3>
+<h4 id="_28">迷你语法分析器</h4>
+<p>https://leetcode-cn.com/problems/mini-parser/solution/mi-ni-yu-fa-fen-xi-qi-by-leetcode-soluti-l2ma/</p>
+<p>深度优先搜索或者栈。</p>
+<h3 id="_29">找逆序对，归并排序</h3>
+<p>https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/</p>
+<p>左指针每次右移，都计算其“贡献度”。</p>
+<p>如果右边全部大于左边，左指针贡献度一直是0</p>
+<p>如果有右边的先走了，他会比后来入队的左指针小，每次它都贡献1。</p>
+<h3 id="_30"></h3>
+<h2 id="_31">广度优先搜索</h2>
+<h3 id="_32">最大人工岛问题</h3>
+<p>https://leetcode-cn.com/problems/making-a-large-island/</p>
+<p>对于每个算出面积的岛屿可以为它打上独一无二的标签，以方便计算后面的面积扩张与避免重复。</p>
+<h2 id="_33">动态规划</h2>
+<h3 id="_34">最大公共子数组问题</h3>
+<h2 id="_35">贪心算法</h2>
+<h3 id="_36">排布二进制网格的最少交换次数</h3>
+<p>https://leetcode-cn.com/problems/minimum-swaps-to-arrange-a-binary-grid/</p>
+<h3 id="_37">翻卡片游戏</h3>
+<p>https://leetcode-cn.com/problems/card-flipping-game/</p>
+<p>任何正反面不重复的卡都可能是答案！</p>
+<h3 id="_38">美化数组中的最小删除数字</h3>
+<p>https://leetcode-cn.com/problems/minimum-deletions-to-make-array-beautiful/</p>
+<p>贪心的思想</p>
+<h2 id="trick">小trick</h2>
+<h3 id="_39">找到指定长度的回文数</h3>
+<p>https://leetcode-cn.com/problems/find-palindrome-with-fixed-length/</p>
+<p>回文数组可以使用字符串进行构建。</p>
+<p><strong>长度为5的回文数中，第n大的为：100+n-1</strong></p>
+<p>这是解题的关键</p>
+<h3 id="_40">分类讨论算法：强密码检验器</h3>
+<p>https://leetcode-cn.com/problems/strong-password-checker/solution/qiang-mi-ma-jian-yan-qi-by-leetcode-solu-4fqx/</p>
+<p>困难题</p>
+<p>情况1，长度小于6</p>
+<p>情况2，长度大于等于6，小于等于20</p>
+<p>情况3，大于20</p>
+<h3 id="html">分类讨论算法：HTML实体解析器</h3>
+<p><code>&amp;XX;</code>  匹配这样的字符串，不能从前向后匹配，因为&amp;后面可能没有；也可能有&amp;。但是; 前面匹配唯一一个&amp;。</p>
+<h3 id="_41">密码验证合格程序：</h3>
+<p>https://www.nowcoder.com/practice/184edec193864f0985ad2684fbc86841?tpId=37&amp;tqId=21243&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=%2Fexam%2Foj%2Fta%3FtpId%3D37&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=</p>
+<h3 id="p">模拟：删除第p个元素</h3>
+<h3 id="_42">如何判断是否为质数</h3>
+<p>一个大于1的自然数，除了1和它本身外，不能被其他自然数（质数）整除（2, 3, 5, 7等），换句话说就是该数除了1和它本身以外不再有其他的因数。</p>
+<h3 id="_43">把字母进行二进制编码进行哈希</h3>
+<p>如何把一个字母编码到一个二进制中？</p>
+<p>使用位运算：</p>
+<pre><code class="language-python">bin(1 &lt;&lt; (ord('b') - ord('a')))
+</code></pre>
+<p>使用数字计算：</p>
+<pre><code class="language-python">i = 0
+for char in set(word):
+    n = ord(char) - ord(&quot;a&quot;)
+    i += 2 ** n
+print(bin(i))
+</code></pre>
+<h3 id="anyall">使用any和all</h3>
+<pre><code>all([1,1,1]) = True
+any([1,0,0]) = True
+</code></pre>
+<p>如何按列解包：</p>
+<pre><code class="language-python">[col for col in zip(*board)]
+</code></pre>
+<h3 id="digit">排列组合的计算：数字中各个digit都不同的个数</h3>
+<p>n=0，1个</p>
+<p>n=1, 10个</p>
+<p>n=2，91个</p>
+<p>n&gt;=2时，假设第一位不用0：</p>
+<p>第n位为
+$$
+9*A_{9}^{n-1}
+$$
+所以递推公式为：
+$$
+res =9\times A_{9}^{n}+...+9\times A_{9}^{2}+9\times A_{9}^{1}+10
+$$</p>
+<h3 id="_44">曼哈顿距离：最短路径</h3>
+<p>https://leetcode-cn.com/problems/escape-the-ghosts/</p>
+<p>需要计算多个点到一个target的最短路径，而且这个地图是无限的，没有障碍的。</p>
+<p>不要被广度优先算法禁锢住思想，使用<strong>曼哈顿距离</strong>直接计算出最短路径！</p>
+<h3 id="o1">O(1) 时间插入、删除和获取随机元素</h3>
+<p>为了确保严格 O(1)，我们不能使用<strong>拒绝采样</strong>和在<strong>数组非结尾位置添加/删除元素</strong></p>
+<p>维护一个哈希表；</p>
+<p>一个数组，为了方便地修改，我们要方便地找到数的index</p>
+<p>hash[num] = index 用这样的哈希表来维护数组。</p>
+<p>random.choice()</p>
+<h3 id="_45">前缀树：键值映射</h3>
+<p>https://leetcode-cn.com/problems/map-sum-pairs/</p>
+<pre><code>class TrieNode:
+    def __init__(self):
+        self.val = 0
+        self.next = [None for _ in range(26)]
+
+</code></pre>
+<h3 id="_46">暴力遍历中的缩小搜索空间：最大回文数乘积</h3>
+<p>https://leetcode-cn.com/problems/largest-palindrome-product/</p>
+<p>n位的回文数字，这个范围实际上并不算大，可以暴力遍历。</p>
+<p>找公约数的过程要注意减小搜索空间。</p>
+<h3 id="_47">双向扫描：字符的最短距离</h3>
+<p>https://leetcode-cn.com/problems/shortest-distance-to-a-character/</p>
+<p>问题转化</p>
+<p>ans = min(和左边c的距离，和右边c的距离)</p>
+<p>假设两个哨兵c</p>
+<h3 id="_48">文件的最长绝对路径</h3>
+<p>https://leetcode-cn.com/problems/longest-absolute-file-path/</p>
+<p>处理文件字符串的时候，会遇到 \n\t等字符，注意转义。</p>
+<p>深度优先搜索可以使用栈。</p>
+<h3 id="k_2">贪心：和为 K 的最少斐波那契数字数目</h3>
+<p>https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/</p>
+<p>贪心算法，斐波那契数增长的很快，不必担心数据大小问题。</p>
+<h3 id="_49">分治：漂亮数组</h3>
+<p>https://leetcode-cn.com/problems/beautiful-array/</p>
+<p>难在将问题分割为子问题。</p>
+<h3 id="_50">寻找并简化递归关系：旋转函数</h3>
+<p>https://leetcode-cn.com/problems/rotate-function/</p>
+<p>注意要将递归关系简化成方便计算的形式。</p>
+<h3 id="_51">（未完成）求凸包：安装栅栏</h3>
+<p>https://leetcode-cn.com/problems/erect-the-fence/solution/an-zhuang-zha-lan-by-leetcode-solution-75s3/</p>
+<p>为了便于理解，本次使用 O(n^2)的算法。</p>
+<p>首先找到最左边的一个点。</p>
+<p>我们要找到“最外侧的点”：</p>
+<p>​       比如：最左侧点为A，怎么找到B点是最外侧呢？</p>
+<p>​       假定B‘ 点，然后计算其他点R：是否存在R，让B'R 与 AB’ 向量的夹角大于180度？</p>
+<p>​       如果存在就说明这个B‘点不合格，R点在更外侧。</p>
+<p>如何判断两个向量的夹角大小呢？使用向量叉积。</p>
+<h3 id="_52">自定义排序，自定义比较规则：重新排列日志文件</h3>
+<p>https://leetcode-cn.com/problems/reorder-data-in-log-files/</p>
+<p>对于需要排序的问题，有些时候有比较优先级，可以自己定义一个比较函数，用于比较。</p>
+<pre><code class="language-python">def func():
+
+    return (priority1,priority2,..,)
+
+sort(key=func)
+</code></pre>
+<h3 id="_53">队列模拟，约瑟夫环：丢手绢</h3>
+<p>https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/</p>
+<p>递归，约瑟夫环：</p>
+<p>第一次排除第k个人，第二次还是第k个，人的总数从n变为n-1</p>
+<h3 id="_54">贪心：增减字符串匹配</h3>
+<p>https://leetcode.cn/problems/di-string-match/</p>
+<p>贪心</p>
+<h3 id="ii">二分查找：搜索二维矩阵 II</h3>
+<p>定位有序数组，在改数组进行二分。</p>
+<p>https://leetcode.cn/problems/search-a-2d-matrix-ii/</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E8%8F%B2%E5%88%A9%E6%99%AE%E7%9A%84%E7%9F%9B%E7%9B%BE/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 菲利普的矛盾" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              菲利普的矛盾
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/SEM%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E5%A4%84%E7%90%86/" class="md-footer__link md-footer__link--next" aria-label="Next: SEM模型的公式处理" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SEM模型的公式处理
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
