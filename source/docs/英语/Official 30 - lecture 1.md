@@ -1,7 +1,8 @@
 # Official 30 - lecture 1
+
 <audio controls>
-  <source src="../audio/Official 30 - lecture 1.mp3">
-</audio>
+  <source src="../audio/Official 30 - lecture 2.mp3">
+</audio><br>
 
 **psychology** class.
 
@@ -9,13 +10,13 @@ we have been talking about animal cognition, the study of animal intelligence.
 
 much of the research in this area is motivated by the search of animal **analogs**, or parallels to human cognitive processes. 
 
-==one of the processes we've been investigating is meta-cognition.==
+one of the processes we've been investigating is meta-cognition.
 
 ----
 
 what is meta cognition? it is being aware of what one knows or feels, having the awareness of one's state of  mind and making decision about behavior based what one knows. 
 
-==Research have been long been interested in whether animal process this capability, but couldn't test it, because animals aren't able to report their feelings.==
+Research have been long been interested in whether animal process this capability, but couldn't test it, because animals aren't able to report their feelings.
 
 ----
 
@@ -35,7 +36,7 @@ the dolphin was **taught** to press the one of the two paddles depending on whet
 
 food was reward to a correct response, but if the wrong paddle was pressed, the dolphin had to wait several seconds before it could try again. 
 
-**==the task varied in difficulty according to the pith of the second tune. the closer it came in pith to the first one, the harder it became for the dolphin to correctly identify it as low.==** 
+**the task varied in difficulty according to the pith of the second tune. the closer it came in pith to the first one, the harder it became for the dolphin to correctly identify it as low.** 
 
 and research noted that dolphin was quite eager to press the paddle when it was sure of answer. But **exhibited** hesitation during difficult tries. 
 
@@ -47,7 +48,7 @@ the research took that as indication that animal wanted to pass because it didn'
 
 -----
 
-==but there was a problem, other research protested that the up-out response was simply learned or conditioned response, you remember that on psychology, right.==
+but there was a problem, other research protested that the up-out response was simply learned or conditioned response, you remember that on psychology, right.
 
 **In other words, by pressing the pass paddle, the dolphin avoided having to wait, and hastened the possibility of a food reward by moving directly to the next trial.** 
 
