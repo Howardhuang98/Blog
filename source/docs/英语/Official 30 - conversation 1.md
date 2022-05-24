@@ -1,8 +1,9 @@
 # Official 30 - conversation 1
 
 <audio controls>
-  <source src="../audio/Official 30 - conversation 1.mp3">
-</audio><br>
+  <source src="../audio/Official 30 - conversation 1" type="audio/mpeg">
+</audio>
+
 
 This is administrative office, right?
 

@@ -1,7 +1,7 @@
 # Official 30 - lecture 1
 
 <audio controls>
-  <source src="../audio/Official 30 - lecture 2.mp3">
+  <source src="../audio/Official 30 - lecture 1.mp3">
 </audio><br>
 
 **psychology** class.
