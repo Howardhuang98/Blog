@@ -1,0 +1,1525 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
+    
+    
+      
+        <title>Official 35 - lecture 2 - Huang & Ma</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fd896c8a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#official-35-lecture-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Huang &amp; Ma" class="md-header__button md-logo" aria-label="Huang & Ma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Huang & Ma
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Official 35 - lecture 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Huang &amp; Ma" class="md-nav__button md-logo" aria-label="Huang & Ma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Huang & Ma
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        皇家马德里书单
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Python编程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python编程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Pandas%E7%9A%84%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%88%87%E7%89%87/" class="md-nav__link">
+        Pandas的索引与切片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Pandoc%EF%BC%9A%E5%B0%86Markdown%E8%BD%AC%E4%B8%BABeamer/" class="md-nav__link">
+        Pandoc：将Markdown转为Beamer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Python%E4%BD%BF%E7%94%A8Bisect%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        Python使用Bisect二分查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Python%E4%BD%BF%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%94%BB%E5%9B%BE%EF%BC%9AObjected-Oriented%20Matplotlib/" class="md-nav__link">
+        Python使用面向对象画图：Objected-Oriented Matplotlib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/Python%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%93%8D%E4%BD%9C%EF%BC%9ARe/" class="md-nav__link">
+        Python的正则表达式操作：Re
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/R%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        R语言基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/numpy%20%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AF%BB%E5%8F%96/" class="md-nav__link">
+        numpy 的数据存储与读取
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python%E7%BC%96%E7%A8%8B/python%20logging%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
+        python logging 标准库
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          C++编程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="C++编程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/c%2B%2B%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        c++ 基本语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/c%2B%2B%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        c++核心编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E5%BC%95%E7%94%A8/" class="md-nav__link">
+        引用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E6%8C%87%E9%92%88/" class="md-nav__link">
+        指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        文件操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        类和对象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c%2B%2B%E7%BC%96%E7%A8%8B/%E7%BB%93%E6%9E%84%E4%BD%93/" class="md-nav__link">
+        结构体
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          小马的文献阅读
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="小马的文献阅读" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          小马的文献阅读
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%8F%E9%A9%AC%E7%9A%84%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E5%A4%8D%E8%AF%BB%E4%B8%8E%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E8%8E%B7%E5%BE%97%E4%B8%8D%E5%B9%B3%E7%AD%89/" class="md-nav__link">
+        复读与高等教育获得不平等
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%8F%E9%A9%AC%E7%9A%84%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/%E7%88%B6%E6%AF%8D%E7%9A%84%E5%A9%9A%E5%A7%BB%E6%95%99%E8%82%B2%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%AD%90%E5%A5%B3%E5%AD%A6%E4%B8%9A%E8%A1%A8%E7%8E%B0/" class="md-nav__link">
+        父母的婚姻教育匹配与子女学业表现
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          操作系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="操作系统" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B1/" class="md-nav__link">
+        《操作系统》1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%8A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B2/" class="md-nav__link">
+        《操作系统》2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          日常读书
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日常读书" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日常读书
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E4%BA%BA%E6%80%A7%E7%9A%84%E6%9E%B7%E9%94%81%20%E5%AE%8C%E7%BB%93/" class="md-nav__link">
+        人性的枷锁 完结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E7%94%9F%E6%AD%BB%E7%96%B2%E5%8A%B3/" class="md-nav__link">
+        生死疲劳
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E8%8F%B2%E5%88%A9%E6%99%AE%E7%9A%84%E7%9F%9B%E7%9B%BE/" class="md-nav__link">
+        菲利普的矛盾
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%97%A5%E5%B8%B8%E8%AF%BB%E4%B9%A6/%E8%A2%AB%E8%AE%A8%E5%8E%8C%E7%9A%84%E5%8B%87%E6%B0%94/" class="md-nav__link">
+        被讨厌的勇气
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          杂七杂八
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂七杂八" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          杂七杂八
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E5%8F%91%E5%B1%95/" class="md-nav__link">
+        资本主义政治经济学的发展
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E4%B8%AD%E7%AD%89%E9%A2%98%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2B%E6%A8%A1%E6%8B%9F/" class="md-nav__link">
+        中等题：二分查找+模拟
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E4%B8%AD%E7%AD%89%E9%A2%98%EF%BC%9A%E8%B4%AA%E5%BF%83%2B%E6%9C%80%E5%B0%91%E7%A7%BB%E5%8A%A8%E6%AC%A1%E6%95%B0/" class="md-nav__link">
+        中等题：贪心+最少移动次数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%9B%B0%E9%9A%BE%E9%A2%98%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2B%E4%B9%98%E6%B3%95%E8%A1%A8%E4%B8%AD%E7%9A%84%E7%AC%ACk%E5%B0%8F%E7%9A%84%E6%95%B0%E5%AD%97/" class="md-nav__link">
+        困难题：二分查找+乘法表中的第k小的数字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%9B%B0%E9%9A%BE%E9%A2%98%EF%BC%9A%E6%8B%93%E6%89%91%E9%A1%BA%E5%BA%8F%2B%E5%9B%BE%E6%9E%84%E5%BB%BA/" class="md-nav__link">
+        困难题：拓扑顺序+图构建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E5%9B%B0%E9%9A%BE%E9%A2%98%EF%BC%9A%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%2B%E8%AE%B0%E5%BF%86%E4%BD%93%2B%E4%BA%8C%E8%BF%9B%E5%88%B6/" class="md-nav__link">
+        困难题：深度优先搜索+记忆体+二进制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0%20I/" class="md-nav__link">
+        算法练习笔记 I
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          英语
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="英语" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          英语
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2029%20-%20lecture%201/" class="md-nav__link">
+        Official 29 - lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2030%20-%20conversation%201/" class="md-nav__link">
+        Official 30 - conversation 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2030%20-%20conversation%202/" class="md-nav__link">
+        Official 30 - conversation 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2030%20-%20lecture%201/" class="md-nav__link">
+        Official 30 - lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2030%20-%20lecture%202/" class="md-nav__link">
+        Official 30 - lecture 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2030%20-%20lecture%203/" class="md-nav__link">
+        Official 30 - lecture 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2030%20-%20lecture%204/" class="md-nav__link">
+        Official 30 - lecture 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2032%20-%20lecture%203/" class="md-nav__link">
+        Official 32 - lecture 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2032%20-%20lecture%204/" class="md-nav__link">
+        Official 32 - lecture 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2033%20-%20lecture%201/" class="md-nav__link">
+        Official 33 - lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2034%20-%20lecture%201/" class="md-nav__link">
+        Official 34 - lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2034%20-%20lecture%203/" class="md-nav__link">
+        Official 34 - lecture 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2034%20-%20lecture%204/" class="md-nav__link">
+        Official 34 - lecture 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Official 35 - lecture 2
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2035%20-%20lecture%203/" class="md-nav__link">
+        Official 35 - lecture 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Official%2035%20-%20lecture%204/" class="md-nav__link">
+        Official 35 - lecture 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          阅读笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="阅读笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          阅读笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Causeme%E6%8C%91%E6%88%98%EF%BC%9A%E3%80%8AInferring%20causation%20from%20time%20series%20in%20Earth%20system%20sciences%E3%80%8B%E9%98%85%E8%AF%BB/" class="md-nav__link">
+        Causeme挑战：《Inferring causation from time series in Earth system sciences》阅读
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/SEM%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E5%A4%84%E7%90%86/" class="md-nav__link">
+        SEM模型的公式处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/VAE%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E7%9B%AE%E5%89%8D%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B9%8B%E4%B8%80/" class="md-nav__link">
+        VAE模型——目前最流行的生成模型之一
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E3%80%8ANOTEARS%E3%80%8B%E4%B8%ADh%28W%29%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E5%88%86%E6%9E%90/" class="md-nav__link">
+        《NOTEARS》中h(W)的理解与分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E3%80%8A%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E3%80%8B/" class="md-nav__link">
+        《统计学习方法》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E4%BD%BF%E7%94%A8%E5%9B%BE%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%E6%9D%A5%E5%9B%A0%E6%9E%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%20%E3%80%8AA%20Graph%20Autoencoder%20Approach%20to%20Causal%20Structure%20Learning%E3%80%8B/" class="md-nav__link">
+        使用图自编码器来因果结构学习 《A Graph Autoencoder Approach to Causal Structure Learning》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%87%E6%A0%87%EF%BC%9Aaccuracy%EF%BC%8Cprecision%EF%BC%8Crecall%EF%BC%8CROC%20curve%EF%BC%8CAUC/" class="md-nav__link">
+        分类任务的指标：accuracy，precision，recall，ROC curve，AUC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9A%E3%80%8Agraph%20attention%20network%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        图注意力神经网络：《graph attention network》阅读笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E6%8E%A2%E7%B4%A2%E2%80%9C%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96%E2%80%9D/" class="md-nav__link">
+        探索“贝叶斯优化”
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E7%BA%A6%E6%9D%9F%E4%BC%98%E5%8C%96%EF%BC%88constrained%20optimization%EF%BC%89%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA/" class="md-nav__link">
+        约束优化（constrained optimization）相关理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="official-35-lecture-2">Official 35 - lecture 2</h1>
+<p><audio controls>
+  <source src="../audio/Official 35 - lecture 2.mp3" type="audio/mpeg">
+</audio></p>
+<p>Listen to part of lecture in an archaeology class. </p>
+<blockquote>
+<p>archaeology: 考古学</p>
+<p><img alt="image-20220604141210409" src="../Official%2035%20-%20lecture%202.assets/image-20220604141210409.png" /></p>
+</blockquote>
+<p>one of frustrating things about archaeology, especially for beginning students, it's the theory are constantly evolving. </p>
+<p>a theory that's been accepted for many years may suddenly be called into question. </p>
+<p>but why would that happen?</p>
+<p>there are probably number of reasons:</p>
+<p>earlier finds are always being <strong>reexamined</strong>  in the context of new finds.</p>
+<p>or it may just be what someone looks at the evidence in a different way, has a different idea of what it suggest. </p>
+<hr />
+<p>take the theory about the earliest permanent settlements. </p>
+<p>they were found in the east of the <strong>Mediterranean Sea</strong> called the Levant.</p>
+<blockquote>
+<p>Mediterranean Sea</p>
+<p><img alt="image-20220604142634302" src="../Official%2035%20-%20lecture%202.assets/image-20220604142634302.png" /></p>
+</blockquote>
+<p>the people who lived there were <strong>Natufians</strong>.</p>
+<p>it has been widely accepted that that about the 15, 000 years ago, the Natufians developed a <strong>sedentary lifestyle</strong>. </p>
+<blockquote>
+<p>sedentary lifestyle: <strong>now</strong> it means that doing or involving a lot of sitting.</p>
+<p>nomadic lifestyle</p>
+</blockquote>
+<p>Can someone remind us what that means?</p>
+<p>it means they stopped being <strong>nomadic</strong>, that they began staying in one area year round instead of moving around all the time. </p>
+<p>Right. And we think there was an abundance of edible plants and animals in the area at that time that make this <strong>shift away from a nomadic lifestyle</strong> possible.</p>
+<p>keep in mind that the Natufians were hunter-gatherers.</p>
+<blockquote>
+<p>Hunter-gatherers developed tools and methods for getting their food.</p>
+</blockquote>
+<p>so in spite of other changes, they were always pre-agriculture society. </p>
+<hr />
+<p>Anyway, after being sedentary for around 2,000 years, something happened that forced the Natufians to change their lifestyle.</p>
+<p>The general <strong>consensus</strong> is that there was a period of <strong>climatic cooling</strong>, which had a negative effect on the availability of food.</p>
+<blockquote>
+<p>consensus: a general agreement.</p>
+</blockquote>
+<p>And this food shortage likely caused the Natufians to <strong>revert to</strong> a nomadic lifestyle.</p>
+<p>Then around 11,500 years ago, the climate warmed again.</p>
+<p>Food became more abundant and the people in that area became sedentary again.</p>
+<p>now <strong>no one is contesting that</strong> these people, probably descendants of the Natufians, were indeed sedentary by 11500 years ago. </p>
+<blockquote>
+<p>no one is contesting that: 没人会质疑</p>
+</blockquote>
+<p>the evidence is quite strong.</p>
+<p>archeologist had <strong>uncovered</strong> numerous circular structures, dating from that period that appear to have been used to store <strong>grain</strong>s.</p>
+<p>First, the remains of barley houses have been found inside them.</p>
+<blockquote>
+<p><strong>barley</strong> V.S. <strong>wheat</strong></p>
+<p><img alt="image-20220604144937767" src="../Official%2035%20-%20lecture%202.assets/image-20220604144937767.png" /></p>
+<p>they are <strong>crop</strong>s used for food and drink production, as well as animal feed. </p>
+<p>Since they are grains, they look very similar on the surface</p>
+</blockquote>
+<p>Barley was the main type of grains that grew in this area. </p>
+<p>and secondly, the floor on the these structures were elevated. </p>
+<p>this design would have <strong>been consistent with</strong> the need to keep the barley dry and safe from <strong>rodents</strong>. </p>
+<blockquote>
+<p>rodent: rodents are mammals characterized by upper and lower pairs of ever-growing rootless incisor teeth.</p>
+<p><img alt="image-20220604150138708" src="../Official%2035%20-%20lecture%202.assets/image-20220604150138708.png" /></p>
+</blockquote>
+<p>So, that makes sense.</p>
+<p>And there are lots of these structures in the settlements.</p>
+<p><strong>in one settlement that was only partially excavated</strong>, archaeologists have already found four of these structures. </p>
+<p>So it's the earlier part, that the Natufians were sedentary 15,000 years ago, that's changed?</p>
+<hr />
+<p>Well, there's evidence, but some archaeologists have questioned the <strong>criteria</strong> used to identify permanent settlements.</p>
+<p>See, circular structures have also been found in early Natufian settlements, so archaeologists believe that these were also food storage structures based on their <strong>physical similarity</strong> to the structures in later settlements.</p>
+<p>And they would indicate that the Natufians were sedentary 15,000 years ago.</p>
+<p>but now they <strong>are doubt about</strong> the use of the earlier structures. </p>
+<p>researchers point to the lack of <strong>grain remnants</strong> in these earlier structures.</p>
+<p>in fact, thing other than grains have been found in them. </p>
+<p>So <strong>at the very least</strong>, they say, these structures probably had multiple purposes.</p>
+<hr />
+<p>And <strong>another problem they point to</strong> is that most early settlements have only one of these so-called storage structures.</p>
+<p>But do you think one structure would be enough to hold the <strong>surplus</strong> for an entire settlement?</p>
+<blockquote>
+<p>surplus: the amount that remains when use or need is satisfied. </p>
+</blockquote>
+<p>Well, whatever these structures were used for, couldn't they just have built them at a place they came back to regularly?</p>
+<p>Maybe to store things for their next visit?</p>
+<p>Exactly! So-called base camps, where the Natufians didn't stay all year round.</p>
+<hr />
+<p>But <strong>artifacts</strong> that were found at a number of Natufian sites seem to present evidence of a sedentary way of life.</p>
+<p><strong>Large heavy mortars,</strong> the sort of thing that would have been used for <strong>grinding</strong> grain.</p>
+<blockquote>
+<p>mortar and pestle</p>
+<p><img alt="image-20220604151910487" src="../Official%2035%20-%20lecture%202.assets/image-20220604151910487.png" /></p>
+</blockquote>
+<p>Such heavy equipment could indicate that the Natufians would have stayed permanently in one place since the work involved in moving an item like this around constantly would have been <strong>substantial</strong>.</p>
+<p>But this evidence of sedentism has also been called into question because the materials used to make the <strong>stone mortars</strong> did originally come from quite a distance.</p>
+<p>And if the Natufians could move the materials over great distances...</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Official%2034%20-%20lecture%204/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Official 34 - lecture 4" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Official 34 - lecture 4
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Official%2035%20-%20lecture%203/" class="md-footer__link md-footer__link--next" aria-label="Next: Official 35 - lecture 3" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Official 35 - lecture 3
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0f659f14.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
