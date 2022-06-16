@@ -18,7 +18,7 @@ def original_f(x):
     if x == 1:
         return 1
     else:
-        res = f(x - 1) + f(x - 2)
+        res = original_f(x - 1) + original_f(x - 2)
         return res
 
 
@@ -47,7 +47,7 @@ def f_cache(x):
 
 
 if __name__ == '__main__':
-    n = 900
+    n = 18
     start = time.time()
     print(f(n))
     print("字典记忆体",time.time() - start)
