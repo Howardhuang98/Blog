@@ -62,4 +62,20 @@ Huang&Ma are reading these books:
     </tr>
 </table>
 
+<script src="https://giscus.app/client.js"
+        data-repo="Howardhuang98/Blog"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzMjUwMDk0Mjg="
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOE19AFM4CQs6_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
 
